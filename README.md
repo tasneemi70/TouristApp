@@ -1,7 +1,7 @@
 # TouristApp
 ### Project Name: Tourist
 ### Project Description :
-Tourist it's App enable users to search about touristic places in abha city .
+Tourist it's App enable users to search about touristic places in saudi arabia .
 ### Features List:
 // Add your project feature list
 - Feature 1 App can brows places of city 
