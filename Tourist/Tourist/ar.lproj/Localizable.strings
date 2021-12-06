@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Tourist
+
+  Created by Tsnim Alqahtani on 01/05/1443 AH.
+  
+*/
+
+"Login" = "تسجيل" ;
+
+"Register" = "تسجيل جديد" ;
+
+"Enter Email .."  = " الايميل ...";
+
+"Enter Password ..." = "أدخل كلمه السر";
+
+"Share a Place" = " شارك صوره لمكان 📸" ;
+
+"Visitor 🛬" = "زائر" ;
+
+"Welcome to my city" = "               أهلا بك في مدينتي" ;
+
+"Save" = "حفظ" ;
+
+"ABHA CITY " = "مدينه أبها" ;

@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Tourist
+
+  Created by Tsnim Alqahtani on 01/05/1443 AH.
+  
+*/
+
+"Login" = "Login" ;
+
+"Register" = "Register" ;
+
+"Enter Email .."  = "Enter Email ...";
+
+"Enter Password ..." = "Enter Password ...";
+
+"Visitor 🛬" = "Visitor" ;
+
+"Share a Place" = "Share a Place" ;
+
+"Welcome to my city" = "Welcome to my city" ;
+
+"Save" = "Save" ; 
+
+"ABHA CITY " = "ABHA CITY " ;

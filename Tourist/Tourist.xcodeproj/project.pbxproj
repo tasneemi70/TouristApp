@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */; };
+		8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */; };
+		8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */; };
+		8F6E5CA1274CF819009C7BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CA0274CF819009C7BD8 /* Assets.xcassets */; };
+		8F6E5CA4274CF819009C7BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CA2274CF819009C7BD8 /* LaunchScreen.storyboard */; };
+		8F6E5CB4274CFE08009C7BD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */; };
+		8F6E5CD7274E7A59009C7BD8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CD6274E7A59009C7BD8 /* UserService.swift */; };
+		8F6E5CD9274E7A65009C7BD8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CD8274E7A64009C7BD8 /* User.swift */; };
+		8F6E5CDB274E7A6D009C7BD8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CDA274E7A6D009C7BD8 /* Data.swift */; };
+		8F6E5CDD274E7A7C009C7BD8 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */; };
+		8F6E5CE1274E7AAA009C7BD8 /* VisitorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */; };
+		8F6E5CE3274E7AB4009C7BD8 /* VisitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE2274E7AB4009C7BD8 /* VisitorVC.swift */; };
+		8F6E5CE7274E7AC3009C7BD8 /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE6274E7AC3009C7BD8 /* ShareVC.swift */; };
+		8F6E5CE9274E7AC7009C7BD8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */; };
+		8F6E5CEB274E7ACB009C7BD8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */; };
+		8F6E5CED274E7AD4009C7BD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CEC274E7AD4009C7BD8 /* LoginVC.swift */; };
+		8F6E5CEF274E7ADB009C7BD8 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CEE274E7ADB009C7BD8 /* MapVC.swift */; };
+		8F6E5CF3274F5FD1009C7BD8 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CF2274F5FD1009C7BD8 /* GradientView.swift */; };
+		8F6E5CF627523C13009C7BD8 /* PlaceDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CF527523C13009C7BD8 /* PlaceDetailCell.swift */; };
+		8F6E5CFA2752B1CE009C7BD8 /* DataWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CF92752B1CE009C7BD8 /* DataWeather.swift */; };
+		8F6E5D0D2754ABD2009C7BD8 /* videoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */; };
+		8F6E5D0F2754AC06009C7BD8 /* videoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5D0E2754AC06009C7BD8 /* videoCell.swift */; };
+		8F6E5D112754AF58009C7BD8 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5D102754AF58009C7BD8 /* video1.mp4 */; };
+		8F6E5D152754AF71009C7BD8 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5D122754AF71009C7BD8 /* video2.mp4 */; };
+		8F6E5D162754AF71009C7BD8 /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5D132754AF71009C7BD8 /* video4.mp4 */; };
+		8F6E5D172754AF71009C7BD8 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5D142754AF71009C7BD8 /* video3.mp4 */; };
+		8F9DD07A2754F8BB00E48F40 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9DD0792754F8BB00E48F40 /* MyProfileVC.swift */; };
+		8FAA483E275CD306008D5915 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8FAA4840275CD306008D5915 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8F6E5C94274CF817009C7BD8 /* Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8F6E5CA0274CF819009C7BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F6E5CA3274CF819009C7BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F6E5CA5274CF819009C7BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F6E5CD6274E7A59009C7BD8 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		8F6E5CD8274E7A64009C7BD8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8F6E5CDA274E7A6D009C7BD8 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabVC.swift; path = Views/TabVC.swift; sourceTree = "<group>"; };
+		8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorCell.swift; sourceTree = "<group>"; };
+		8F6E5CE2274E7AB4009C7BD8 /* VisitorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorVC.swift; sourceTree = "<group>"; };
+		8F6E5CE6274E7AC3009C7BD8 /* ShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareVC.swift; sourceTree = "<group>"; };
+		8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
+		8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		8F6E5CEC274E7AD4009C7BD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		8F6E5CEE274E7ADB009C7BD8 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		8F6E5CF2274F5FD1009C7BD8 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		8F6E5CF527523C13009C7BD8 /* PlaceDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailCell.swift; sourceTree = "<group>"; };
+		8F6E5CF92752B1CE009C7BD8 /* DataWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWeather.swift; sourceTree = "<group>"; };
+		8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoVC.swift; sourceTree = "<group>"; };
+		8F6E5D0E2754AC06009C7BD8 /* videoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoCell.swift; sourceTree = "<group>"; };
+		8F6E5D102754AF58009C7BD8 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		8F6E5D122754AF71009C7BD8 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		8F6E5D132754AF71009C7BD8 /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video4.mp4; sourceTree = "<group>"; };
+		8F6E5D142754AF71009C7BD8 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
+		8F9DD0792754F8BB00E48F40 /* MyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		8FAA483B275CD2C3008D5915 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8FAA483F275CD306008D5915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8FAA4841275CD313008D5915 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A43135D4B18A1D7AAF2F03A5 /* Pods-Tourist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist.release.xcconfig"; path = "Target Support Files/Pods-Tourist/Pods-Tourist.release.xcconfig"; sourceTree = "<group>"; };
+		C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tourist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D12BC7995EF1338873203D49 /* Pods-Tourist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tourist.debug.xcconfig"; path = "Target Support Files/Pods-Tourist/Pods-Tourist.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F6E5C91274CF817009C7BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D8B3E0906BF16B08C3691AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D12BC7995EF1338873203D49 /* Pods-Tourist.debug.xcconfig */,
+				A43135D4B18A1D7AAF2F03A5 /* Pods-Tourist.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8F4C8345274D010300D7D240 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5CE6274E7AC3009C7BD8 /* ShareVC.swift */,
+				8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */,
+				8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */,
+				8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */,
+				8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */,
+				8F9DD0792754F8BB00E48F40 /* MyProfileVC.swift */,
+				8F6E5CE2274E7AB4009C7BD8 /* VisitorVC.swift */,
+				8F6E5CEE274E7ADB009C7BD8 /* MapVC.swift */,
+				8FAA4842275DE801008D5915 /* Views */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8F6E5C8B274CF817009C7BD8 = {
+			isa = PBXGroup;
+			children = (
+				8F6E5C96274CF817009C7BD8 /* Tourist */,
+				8F6E5C95274CF817009C7BD8 /* Products */,
+				3D8B3E0906BF16B08C3691AC /* Pods */,
+				FEF3689E4F6D4FB16813D852 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8F6E5C95274CF817009C7BD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5C94274CF817009C7BD8 /* Tourist.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F6E5C96274CF817009C7BD8 /* Tourist */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */,
+				8FFCF0DD2757AB21002B5A95 /* Videos */,
+				8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */,
+				8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */,
+				8FFCF0DC2757AAFD002B5A95 /* Service */,
+				8FFCF0D92757A0A0002B5A95 /* Login */,
+				8F6E5CF4274FB736009C7BD8 /* model */,
+				8F4C8345274D010300D7D240 /* controller */,
+				8F6E5CA0274CF819009C7BD8 /* Assets.xcassets */,
+				8FAA4840275CD306008D5915 /* Localizable.strings */,
+				8F6E5CA2274CF819009C7BD8 /* LaunchScreen.storyboard */,
+				8F6E5CA5274CF819009C7BD8 /* Info.plist */,
+			);
+			path = Tourist;
+			sourceTree = "<group>";
+		};
+		8F6E5CF4274FB736009C7BD8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5CF92752B1CE009C7BD8 /* DataWeather.swift */,
+				8F6E5CDA274E7A6D009C7BD8 /* Data.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8FAA4842275DE801008D5915 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5D0E2754AC06009C7BD8 /* videoCell.swift */,
+				8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */,
+				8F6E5CF527523C13009C7BD8 /* PlaceDetailCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8FFCF0D92757A0A0002B5A95 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5CEC274E7AD4009C7BD8 /* LoginVC.swift */,
+				8F6E5CF2274F5FD1009C7BD8 /* GradientView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8FFCF0DC2757AAFD002B5A95 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5CD8274E7A64009C7BD8 /* User.swift */,
+				8F6E5CD6274E7A59009C7BD8 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8FFCF0DD2757AB21002B5A95 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				8F6E5D132754AF71009C7BD8 /* video4.mp4 */,
+				8F6E5D142754AF71009C7BD8 /* video3.mp4 */,
+				8F6E5D122754AF71009C7BD8 /* video2.mp4 */,
+				8F6E5D102754AF58009C7BD8 /* video1.mp4 */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		FEF3689E4F6D4FB16813D852 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F6E5C93274CF817009C7BD8 /* Tourist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F6E5CA8274CF819009C7BD8 /* Build configuration list for PBXNativeTarget "Tourist" */;
+			buildPhases = (
+				6305F439EFA84E8E55114CBB /* [CP] Check Pods Manifest.lock */,
+				8F6E5C90274CF817009C7BD8 /* Sources */,
+				8F6E5C91274CF817009C7BD8 /* Frameworks */,
+				8F6E5C92274CF817009C7BD8 /* Resources */,
+				3799061BDAE9E6D4B6ABEB41 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tourist;
+			productName = Tourist;
+			productReference = 8F6E5C94274CF817009C7BD8 /* Tourist.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F6E5C8C274CF817009C7BD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					8F6E5C93274CF817009C7BD8 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 8F6E5C8F274CF817009C7BD8 /* Build configuration list for PBXProject "Tourist" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+			);
+			mainGroup = 8F6E5C8B274CF817009C7BD8;
+			productRefGroup = 8F6E5C95274CF817009C7BD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F6E5C93274CF817009C7BD8 /* Tourist */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F6E5C92274CF817009C7BD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6E5D162754AF71009C7BD8 /* video4.mp4 in Resources */,
+				8F6E5CA4274CF819009C7BD8 /* LaunchScreen.storyboard in Resources */,
+				8F6E5D112754AF58009C7BD8 /* video1.mp4 in Resources */,
+				8F6E5CA1274CF819009C7BD8 /* Assets.xcassets in Resources */,
+				8F6E5D152754AF71009C7BD8 /* video2.mp4 in Resources */,
+				8FAA483E275CD306008D5915 /* Localizable.strings in Resources */,
+				8F6E5CB4274CFE08009C7BD8 /* GoogleService-Info.plist in Resources */,
+				8F6E5D172754AF71009C7BD8 /* video3.mp4 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3799061BDAE9E6D4B6ABEB41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tourist/Pods-Tourist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tourist/Pods-Tourist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tourist/Pods-Tourist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6305F439EFA84E8E55114CBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tourist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F6E5C90274CF817009C7BD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F6E5CDD274E7A7C009C7BD8 /* TabVC.swift in Sources */,
+				8F6E5CE7274E7AC3009C7BD8 /* ShareVC.swift in Sources */,
+				8F6E5CF3274F5FD1009C7BD8 /* GradientView.swift in Sources */,
+				8F6E5CEF274E7ADB009C7BD8 /* MapVC.swift in Sources */,
+				8F6E5CD9274E7A65009C7BD8 /* User.swift in Sources */,
+				8F6E5D0F2754AC06009C7BD8 /* videoCell.swift in Sources */,
+				8F6E5CE1274E7AAA009C7BD8 /* VisitorCell.swift in Sources */,
+				8F6E5CDB274E7A6D009C7BD8 /* Data.swift in Sources */,
+				8F9DD07A2754F8BB00E48F40 /* MyProfileVC.swift in Sources */,
+				8F6E5CE3274E7AB4009C7BD8 /* VisitorVC.swift in Sources */,
+				8F6E5CE9274E7AC7009C7BD8 /* WeatherVC.swift in Sources */,
+				8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */,
+				8F6E5CED274E7AD4009C7BD8 /* LoginVC.swift in Sources */,
+				8F6E5CF627523C13009C7BD8 /* PlaceDetailCell.swift in Sources */,
+				8F6E5CFA2752B1CE009C7BD8 /* DataWeather.swift in Sources */,
+				8F6E5D0D2754ABD2009C7BD8 /* videoVC.swift in Sources */,
+				8F6E5CEB274E7ACB009C7BD8 /* HomeVC.swift in Sources */,
+				8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */,
+				8F6E5CD7274E7A59009C7BD8 /* UserService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8F6E5CA2274CF819009C7BD8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F6E5CA3274CF819009C7BD8 /* Base */,
+				8FAA483B275CD2C3008D5915 /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8FAA4840275CD306008D5915 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8FAA483F275CD306008D5915 /* en */,
+				8FAA4841275CD313008D5915 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F6E5CA6274CF819009C7BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F6E5CA7274CF819009C7BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F6E5CA9274CF819009C7BD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D12BC7995EF1338873203D49 /* Pods-Tourist.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD75LLCY6G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tourist/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tasneem.Tourist2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F6E5CAA274CF819009C7BD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43135D4B18A1D7AAF2F03A5 /* Pods-Tourist.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD75LLCY6G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tourist/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tasneem.Tourist2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F6E5C8F274CF817009C7BD8 /* Build configuration list for PBXProject "Tourist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F6E5CA6274CF819009C7BD8 /* Debug */,
+				8F6E5CA7274CF819009C7BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F6E5CA8274CF819009C7BD8 /* Build configuration list for PBXNativeTarget "Tourist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F6E5CA9274CF819009C7BD8 /* Debug */,
+				8F6E5CAA274CF819009C7BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F6E5C8C274CF817009C7BD8 /* Project object */;
+}
