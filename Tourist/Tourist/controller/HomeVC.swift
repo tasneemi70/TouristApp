@@ -57,7 +57,7 @@ class HomeVC: UIViewController {
      view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         //UIColor(named: "Color")
         var image = UIImage(systemName: "house.circle.fill")
-        tabBarItem = .init(title: "Home", image: image, selectedImage: image)
+        tabBarItem = .init(title: NSLocalizedString("Home", comment: ""), image: image, selectedImage: image)
     
         
         view.addSubview(arabicBtn)

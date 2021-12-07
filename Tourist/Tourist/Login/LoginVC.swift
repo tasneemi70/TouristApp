@@ -141,6 +141,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         
     }
     @objc func loginBtnPressed() {
+        
         let email = emailTF.text ?? ""
         let password = passwordTF.text ?? ""
         
@@ -153,12 +154,22 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 print(error as Any)
                 return
             }
-          let newvc1 = TabVC()
-            newvc1.navigationItem.largeTitleDisplayMode = .never
-            self.navigationController?.viewControllers = [newvc1]
-          
+//          let newvc1 = TabVC()
+//            newvc1.navigationItem.largeTitleDisplayMode = .never
+//            self.navigationController?.viewControllers = [newvc1]
+//
             
         }
         
-    }
+  
+    
+   
+    let vc = TabVC()
+    let nav = UINavigationController()
+    nav.viewControllers = [vc]
+    nav.modalPresentationStyle = .fullScreen
+    nav.modalTransitionStyle = .flipHorizontal
+    self.present(nav, animated: true, completion: nil)
 }
+}
+

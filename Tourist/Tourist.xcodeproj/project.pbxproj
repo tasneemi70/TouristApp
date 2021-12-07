@@ -151,6 +151,7 @@
 		8F6E5CF4274FB736009C7BD8 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				8F6E5CD8274E7A64009C7BD8 /* User.swift */,
 				8F6E5CF92752B1CE009C7BD8 /* DataWeather.swift */,
 				8F6E5CDA274E7A6D009C7BD8 /* Data.swift */,
 			);
@@ -179,7 +180,6 @@
 		8FFCF0DC2757AAFD002B5A95 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8F6E5CD8274E7A64009C7BD8 /* User.swift */,
 				8F6E5CD6274E7A59009C7BD8 /* UserService.swift */,
 			);
 			path = Service;

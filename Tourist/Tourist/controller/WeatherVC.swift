@@ -73,7 +73,7 @@ class Weather: UIViewController {
         
         view.backgroundColor = .white
                         let image = UIImage(systemName: "cloud.sun.fill")
-                        tabBarItem = .init(title: "Weather", image: image, selectedImage: image)
+                        tabBarItem = .init(title: NSLocalizedString("Weather", comment: ""), image: image, selectedImage: image)
                 
                  
 

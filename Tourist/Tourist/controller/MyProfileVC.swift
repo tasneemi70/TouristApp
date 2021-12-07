@@ -128,7 +128,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         
         view.backgroundColor = .darkGray
                         let image = UIImage(systemName: "person.crop.rectangle.fill")
-                        tabBarItem = .init(title: "profile", image: image, selectedImage: image)
+                        tabBarItem = .init(title: NSLocalizedString("profile", comment: ""), image: image, selectedImage: image)
         // Gesture to image
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         profileImage.addGestureRecognizer(tapRecognizer)
@@ -154,10 +154,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
             profileImage.heightAnchor.constraint (equalToConstant: 200),
             profileImage.widthAnchor.constraint(equalToConstant: 200),
         ])
-//        guard let currentUserID = Auth.auth().currentUser?.uid else {return}
-//        RegisterService.shared.listenToUsers { ubdateUser in
-//            self.users = ubdateUser
-//        }
+
     }
     
     

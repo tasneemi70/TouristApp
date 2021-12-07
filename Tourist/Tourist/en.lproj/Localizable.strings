@@ -6,6 +6,7 @@
   
 */
 
+
 "Login" = "Login" ;
 
 "Register" = "Register" ;
@@ -23,3 +24,18 @@
 "Save" = "Save" ; 
 
 "ABHA CITY " = "ABHA CITY " ;
+
+" Place Name...." = " Place Name...." ;
+
+"Home" = "Home" ;
+
+"Share" = "Share" ;
+
+"Weather" = "Weather" ;
+
+"video" = "video" ;
+
+
+"profile" = "profile" ;
+
+"Location" = "Location" ;

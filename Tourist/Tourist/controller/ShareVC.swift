@@ -50,7 +50,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         tf.backgroundColor = UIColor(named: "Color")
         tf.layer.cornerRadius = .minimumMagnitude(20, 20)
         tf.text = ""
-        tf.placeholder = (" Place Name....")
+        tf.placeholder = (NSLocalizedString(" Place Name....", comment: ""))
         return tf
     }()
 
@@ -59,7 +59,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         btn.translatesAutoresizingMaskIntoConstraints = false
 //        btn.layer.cornerRadius = .maximumMagnitude(20, 20)
         btn.setTitleColor(.black, for: .normal)
-        btn.setTitle("Share", for: .normal)
+        btn.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
         btn.backgroundColor = UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
         btn.addTarget(self, action: #selector(sharePlace), for: .touchUpInside)
         btn.layer.cornerRadius = 25

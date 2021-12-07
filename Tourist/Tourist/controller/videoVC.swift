@@ -82,7 +82,7 @@ class TikTok: UIViewController {
         collectionView? .frame = view.bounds
         view.backgroundColor = .darkGray
                         let image = UIImage(systemName: "video.fill")
-                        tabBarItem = .init(title: "video", image: image, selectedImage: image)
+                        tabBarItem = .init(title: NSLocalizedString("video", comment: ""), image: image, selectedImage: image)
     }
     
 }

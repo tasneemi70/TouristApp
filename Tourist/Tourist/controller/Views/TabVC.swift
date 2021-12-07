@@ -37,7 +37,7 @@ class TabVC: UITabBarController {
            ViewController(),
            TikTok(),
            MyProfileVC(),
-         //FirstVC()
+         
 
         ]
     }
