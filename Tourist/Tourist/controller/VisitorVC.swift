@@ -137,8 +137,8 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     }
-   
     
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let newVC = Place1()
         newVC.title = a?.placeA[indexPath.row].PlaceName

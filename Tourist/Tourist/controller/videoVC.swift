@@ -98,7 +98,7 @@ extension TikTok: UICollectionViewDataSource{
             UICollectionViewCell {
             let model = data[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
-                                                               for: indexPath) as! VideoCollectionViewCell
+            for: indexPath) as! VideoCollectionViewCell
             cell.configure(with: model)
                 cell.delegate = self
             return cell

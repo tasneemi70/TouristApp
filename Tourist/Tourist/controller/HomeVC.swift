@@ -6,11 +6,45 @@
 //  Created by Tsnim Alqahtani  on 18/04/1443 AH.
 //
 
+
+
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
     
-    var arabicBtn: UIButton = {
+    var arrCollecPhoto = [UIImage(named: "11")!,
+                          UIImage(named: "1")! ,
+                          UIImage(named: "3")!]
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrCollecPhoto.count        }
+
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            
+          let cell  = collectionView.dequeueReusableCell(withReuseIdentifier:
+            "cell", for: indexPath) as! collectionViewCell
+        
+            cell.imageC.image = arrCollecPhoto[indexPath.row]
+            cell.backgroundColor = .white
+            return cell
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 350, height: 200)
+    }
+
+
+
+    let collectionView: UICollectionView = {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+             cv.backgroundColor = .lightGray
+             return cv
+       }()
+    var visitorBtn: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
 //        btn.layer.cornerRadius = .maximumMagnitude(20, 20)
@@ -23,7 +57,7 @@ class HomeVC: UIViewController {
         return btn
     }()
     
-    var englishBtn: UIButton = {
+    var sharePlaceBtn: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = .maximumMagnitude(20, 20)
@@ -47,7 +81,13 @@ class HomeVC: UIViewController {
         return welcome
     }()
     
- 
+//    var imgHome: UIImageView = {
+//        letUICollectionView with standard layoutUICollectionView with standard layout imgView = UIImageView()
+//        imgView.image = UIImage(named: "11")
+//        imgView.translatesAutoresizingMaskIntoConstraints = false
+//        return imgView
+//    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,30 +100,51 @@ class HomeVC: UIViewController {
         tabBarItem = .init(title: NSLocalizedString("Home", comment: ""), image: image, selectedImage: image)
     
         
-        view.addSubview(arabicBtn)
+        view.addSubview(visitorBtn)
         view.addSubview(WelcLabel)
-        view.addSubview(englishBtn)
-       
+        view.addSubview(sharePlaceBtn)
+       //view.addSubview(imgHome)
+        view.addSubview(collectionView)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(collectionViewCell.self,
+        forCellWithReuseIdentifier: "cell")
+        setupCollectionConstraints()
+        
+        
+        func setupCollectionConstraints() {
+             collectionView.translatesAutoresizingMaskIntoConstraints = false
+             collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+             collectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+         }
+
+        
         NSLayoutConstraint.activate([
-            arabicBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            arabicBtn.self.heightAnchor.constraint(equalToConstant: 50),
-            arabicBtn.self.widthAnchor.constraint(equalToConstant: 250),
-            arabicBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 350),
+            visitorBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            visitorBtn.self.heightAnchor.constraint(equalToConstant: 70),
+            visitorBtn.self.widthAnchor.constraint(equalToConstant: 250),
+            visitorBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 600),
             
-            englishBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            englishBtn.self.heightAnchor.constraint(equalToConstant: 50),
-            englishBtn.self.widthAnchor.constraint(equalToConstant: 250),
-            englishBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 420),
+            sharePlaceBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            sharePlaceBtn.self.heightAnchor.constraint(equalToConstant: 70),
+            sharePlaceBtn.self.widthAnchor.constraint(equalToConstant: 250),
+            sharePlaceBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
             
             WelcLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             WelcLabel.self.heightAnchor.constraint(equalToConstant: 50),
             WelcLabel.self.widthAnchor.constraint(equalToConstant: 250),
-            WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)])
            
-           
-            
-             
-        ])
+//
+//            imgHome.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
+//            imgHome.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            imgHome.heightAnchor.constraint(equalToConstant: 300),
+//            imgHome.widthAnchor.constraint(equalTo: imgHome.heightAnchor,multiplier: 100/100)])
+//            imgHome.layer.cornerRadius = 100
+//
     
     }
     @objc func arabicButtonPressed() {
