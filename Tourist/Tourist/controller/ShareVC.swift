@@ -149,12 +149,16 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
 
     
     @objc func sharePlace() {
-
-        let updatedProduct = abhPlace(image: Image.image ?? UIImage(named: "a") ,
+        let name = fieldPlace.text ?? ""
+        
+        
+        
+        
+        let updatedProduct = abhPlace(image:  Image.image ,
                                       name: fieldPlace.text ?? "",
                                       placeA: [])
-        
-      
+
+
         
         PlaceList.append(updatedProduct)
         let alert1 = UIAlertController(
@@ -163,9 +167,9 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
             print("OK")
         }
                                       )
-        )
+       )
         present(alert1, animated: true, completion: nil)
-    
+
 
     }
 }

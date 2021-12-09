@@ -11,8 +11,8 @@ var newPlace: Array<abhPlace> = []
 
 struct abhPlace {
     var image: UIImage!
-    var name: String
-    var placeA: Array<PlaceInformation>
+    let name: String
+    let placeA: Array<PlaceInformation>
 }
 
 
@@ -63,17 +63,11 @@ abhPlace(image: UIImage(named: "6"), name: "Fog cafe ☕️ ", placeA: [
     
            ]
 
-struct English {
+
+struct FavArabic {
     var image: String
     var name: String
+   
 }
-
-let placeList2 = [
-    English(image: "1", name: "wk"),
-    English(image: "1", name: "wk"),
-    English(image: "1", name: "wk"),
-     
-] as [Any]
-
 
 var searchPlace1 = [String]()

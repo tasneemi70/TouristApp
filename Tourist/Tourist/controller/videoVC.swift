@@ -80,8 +80,7 @@ class TikTok: UIViewController {
     override func viewDidLayoutSubviews () {
         super.viewDidLayoutSubviews ()
         collectionView? .frame = view.bounds
-        view.backgroundColor = .darkGray
-                        let image = UIImage(systemName: "video.fill")
+        view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1);                        let image = UIImage(systemName: "video.fill")
                         tabBarItem = .init(title: NSLocalizedString("video", comment: ""), image: image, selectedImage: image)
     }
     

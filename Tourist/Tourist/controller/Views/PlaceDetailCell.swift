@@ -18,10 +18,34 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
     t.register(PlaceCell1.self, forCellReuseIdentifier: PlaceCell1.identifier)
     return t
    }()
+    
+    
+    let sharePlace: UIButton = {
+       let share = UIButton()
+      
+        share.translatesAutoresizingMaskIntoConstraints = false
+        share.setTitleColor(.black, for: .normal)
+        share.setTitle("Share a Place", for: .normal)
+        share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 1)
+        share.layer.cornerRadius = 20
+        share.layer.masksToBounds = true
+        share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
+
+       return share
+       
+   }()
+    //share
+   @objc func sharePressed (_ sender: Any) {
+       let shareBook = UIActivityViewController(activityItems: [self.Places?.name ?? ""], applicationActivities: nil)
+       shareBook.popoverPresentationController?.sourceView = self.view
+     self.present(shareBook, animated: true, completion: nil)
+   }
+    
+    
   override func viewDidLoad() {
     super.viewDidLoad()
+      view.addSubview(sharePlace)
     view.addSubview(tableView1)
-//    view.addSubview(openBook)
     view.backgroundColor = .systemTeal
     NSLayoutConstraint.activate([
       tableView1.topAnchor.constraint(equalTo: view.topAnchor),
@@ -30,6 +54,11 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
       tableView1.leftAnchor.constraint(equalTo: view.leftAnchor),
       // x: right and left
       // y: up and down
+      sharePlace.widthAnchor.constraint(equalToConstant: -10),
+      sharePlace.heightAnchor.constraint(equalToConstant: -10),
+      sharePlace.topAnchor.constraint(equalTo:tableView1.bottomAnchor,constant: -100),
+      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -200),
+      sharePlace.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
     ])
 
@@ -48,8 +77,6 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
       cell.PlaceImage13.image = UIImage(named: b.PlaceImage3)
       
 
-      //    cell.auther.text = b.auther
-//    cell.pagesN.text = b.pageNumber
     return cell
   }
   var selectedIndex = -1
@@ -82,6 +109,8 @@ class PlaceCell1: UITableViewCell {
     return PlaceImage0
   }()
     
+
+ 
     let PlaceImage11: UIImageView = {
      let PlaceImage1 = UIImageView()
         PlaceImage1.layer.borderWidth = 1
@@ -138,6 +167,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     contentView.addSubview(PlaceImage12)
     contentView.addSubview(PlaceImage13)
     contentView.addSubview(nameLabel11)
+
    
     contentView.clipsToBounds = true
     contentView.backgroundColor = .white
@@ -180,7 +210,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
                                 width: 190,
                                 height: 200)
 
-
+      
   }
     
 }

@@ -12,28 +12,16 @@ import UIKit
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    
-    var arrCollecPhoto = [UIImage(named: "11")!,
-                          UIImage(named: "1")! ,
-                          UIImage(named: "3")!]
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrCollecPhoto.count        }
-
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            
-          let cell  = collectionView.dequeueReusableCell(withReuseIdentifier:
-            "cell", for: indexPath) as! collectionViewCell
+    struct Home {
+        var photo: UIImage
         
-            cell.imageC.image = arrCollecPhoto[indexPath.row]
-            cell.backgroundColor = .white
-            return cell
-        }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 200)
     }
+    var arrCollecPhoto = [Home(photo: UIImage(named: "ab1")!),
+                          Home(photo: UIImage(named: "ab2")!),
+                          Home(photo: UIImage(named: "ab3")!),
+                             ]
+    
+    
 
 
 
@@ -108,8 +96,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(collectionViewCell.self,
-        forCellWithReuseIdentifier: "cell")
+        collectionView.register(collectionViewCell.self, forCellWithReuseIdentifier: collectionViewCell.identfire)
         setupCollectionConstraints()
         
         
@@ -147,18 +134,27 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 //
     
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrCollecPhoto.count        }
+
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCell.identfire, for: indexPath) as! collectionViewCell
+            
+            let data = arrCollecPhoto[indexPath.row]
+        
+            cell.imageC.image = data.photo
+            cell.backgroundColor = .white
+            return cell
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 350, height: 200)
+    }
     @objc func arabicButtonPressed() {
         let arabicPage = VisitorVC()
         arabicPage.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(arabicPage, animated: true)
-        let alert1 = UIAlertController(
-            title: ("Greeting"),message: "WELCOME .... ",preferredStyle: .alert)
-        alert1.addAction(UIAlertAction(title: "OK",style: .default,handler: { action in
-            print("OK")
-        }
-                                      )
-        )
-        present(alert1, animated: true, completion: nil)
+
     
     }
     

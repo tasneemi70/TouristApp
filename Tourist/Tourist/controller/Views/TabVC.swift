@@ -36,7 +36,7 @@ class TabVC: UITabBarController {
            Weather(),
            ViewController(),
            TikTok(),
-           MyProfileVC(),
+           ProfileVC(),
          
 
         ]

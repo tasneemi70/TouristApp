@@ -36,6 +36,19 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         return titlelabel
 
     }()
+    
+//    private let favButton: UIButton = {
+//        let button = UIButton()
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.layer.cornerRadius = 20
+//        button.backgroundColor = UIColor(displayP3Red:212/255, green:  184/255, blue: 134/255, alpha: 10)
+//        button.layer.masksToBounds = true
+//        button.setImage(UIImage(named: "star"), for: .normal)
+//       // button.addTarget(self, action: #selector(addfavoriteBook), for: .touchUpInside)
+//
+//        return button
+//    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +63,7 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(title1)
+       // view.addSubview(favButton)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(VisitorCell.self,
@@ -72,7 +86,13 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
             title1.heightAnchor.constraint(equalToConstant: 50),
             title1.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             title1.leftAnchor.constraint(equalTo: view.leftAnchor,constant: -50),
-            title1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10)
+            title1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -10),
+//
+//            favButton.widthAnchor.constraint(equalToConstant: 50),
+//            favButton.heightAnchor.constraint(equalToConstant: 250),
+//            favButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+//            favButton.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 100),
+//            favButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -20)
         ])
             
         
@@ -137,8 +157,8 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     
     }
+   
     
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let newVC = Place1()
         newVC.title = a?.placeA[indexPath.row].PlaceName
