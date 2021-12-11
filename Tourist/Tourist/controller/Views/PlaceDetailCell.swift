@@ -9,7 +9,11 @@
 import UIKit
 
 class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
   var Places: abhPlace?
+    
+    
   lazy var tableView1: UITableView = {
     let t = UITableView()
     t.translatesAutoresizingMaskIntoConstraints = false
@@ -25,42 +29,47 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
       
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.black, for: .normal)
-        share.setTitle("Share a Place", for: .normal)
+        share.setTitle("Send To Friend ⬆️", for: .normal)
         share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 1)
-        share.layer.cornerRadius = 20
+        share.layer.cornerRadius = 50
         share.layer.masksToBounds = true
+        share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
        return share
        
    }()
-    //share
-   @objc func sharePressed (_ sender: Any) {
-       let shareBook = UIActivityViewController(activityItems: [self.Places?.name ?? ""], applicationActivities: nil)
-       shareBook.popoverPresentationController?.sourceView = self.view
-     self.present(shareBook, animated: true, completion: nil)
-   }
     
-    
+
   override func viewDidLoad() {
     super.viewDidLoad()
+      
       view.addSubview(sharePlace)
-    view.addSubview(tableView1)
-    view.backgroundColor = .systemTeal
+      
+       view.addSubview(tableView1)
+    
+      view.backgroundColor = .white
+
+      
+      
     NSLayoutConstraint.activate([
-      tableView1.topAnchor.constraint(equalTo: view.topAnchor),
-      tableView1.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-      tableView1.rightAnchor.constraint(equalTo: view.rightAnchor),
-      tableView1.leftAnchor.constraint(equalTo: view.leftAnchor),
+        tableView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+        tableView1.heightAnchor.constraint(equalToConstant: 400),
+        tableView1.widthAnchor.constraint(equalToConstant: 10),
+        tableView1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+        tableView1.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+        tableView1.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
       // x: right and left
       // y: up and down
-      sharePlace.widthAnchor.constraint(equalToConstant: -10),
-      sharePlace.heightAnchor.constraint(equalToConstant: -10),
-      sharePlace.topAnchor.constraint(equalTo:tableView1.bottomAnchor,constant: -100),
-      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -200),
-      sharePlace.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      sharePlace.widthAnchor.constraint(equalToConstant: 100),
+      sharePlace.heightAnchor.constraint(equalToConstant: 50),
+      sharePlace.topAnchor.constraint(equalTo: tableView1.bottomAnchor),
+      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 100),
+      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
+    
 
     ])
+      
 
   }
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -88,7 +97,12 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
      }
     }
 
-
+    //share
+   @objc func sharePressed (_ sender: Any) {
+       let shareBook = UIActivityViewController(activityItems: [self.Places?.name ?? ""], applicationActivities: nil)
+       shareBook.popoverPresentationController?.sourceView = self.view
+     self.present(shareBook, animated: true, completion: nil)
+   }
     }
 
 class PlaceCell1: UITableViewCell {
@@ -157,6 +171,18 @@ class PlaceCell1: UITableViewCell {
     return nameplace
   }()
     
+    let auther: UILabel = {
+       let auther = UILabel()
+
+         auther.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
+         auther.textColor = .blue
+         auther.textAlignment = .center
+         auther.backgroundColor =  UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
+         auther.layer.cornerRadius = 20
+         auther.layer.masksToBounds = true
+            return auther
+       
+   }()
  
   
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -167,6 +193,8 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     contentView.addSubview(PlaceImage12)
     contentView.addSubview(PlaceImage13)
     contentView.addSubview(nameLabel11)
+    contentView.addSubview(auther)
+
 
    
     contentView.clipsToBounds = true
@@ -196,7 +224,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
       
       nameLabel11.frame = CGRect(x: 10,
                     y: 430 ,
-                  width: 250,
+                  width: 150,
                   height: 50)
       
       
@@ -210,7 +238,10 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
                                 width: 190,
                                 height: 200)
 
-      
+      auther.frame =  CGRect(x: 230,
+                             y: 430 ,
+                           width: 150,
+                           height: 50)
   }
     
 }

@@ -8,10 +8,15 @@
 
 import UIKit
 
+var favoritBook: [abhPlace] = []
+
 
 class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
 
     static let identfir = "cell"
+    var book: abhPlace!
+    var isActive: Bool = false
+
     let people: [abhPlace] = []
 
     private let bookImage: UIImageView = {
@@ -29,7 +34,6 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
     private let nameLabel: UILabel = {
         let namebook = UILabel()
         namebook.text = ""
-       // namebook.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         namebook.textColor = .darkGray
         namebook.textAlignment = .right
         namebook.backgroundColor = UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
@@ -44,22 +48,38 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
     private let favButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.image = UIImage(named: "heart1")
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
-        button.setImage(UIImage(named: "bookMark"), for: .normal)
-        button.addTarget(self, action: "favFunc", for: .touchUpInside)
-
+        button.setImage(UIImage(named: "star.fill"), for: .normal)
+        button.backgroundColor = .cyan
+        button.addTarget(self, action: #selector(addfavoriteBook), for: .touchUpInside)
         return button
     }()
 
-   
+    @objc func addfavoriteBook() {
+        
+        if isActive {
+            isActive = false
+            favButton.setImage(UIImage(named: "star.fill"), for: .normal)
+        } else {
+
+               isActive = true
+                favButton.setImage(UIImage(named: "star.fill"), for: .normal)
+
+        }
+        
+        let bookname = nameLabel.text ?? ""
+        _ = bookImage.image ?? UIImage(systemName: "house")
+        FavoriteServiceArabic.shared.addToFavorite(favBook: FavArabic(image: book.image, name: bookname))
+    }
+    //(image:  Image.image ,
 
     func setCell(book: abhPlace) {
-        bookImage.image = book.image
+//        bookImage.image = book.image
+        bookImage.image = UIImage(named: book.image)
         nameLabel.text = book.name
-   //     title.text = book.name
-        
+        self.book = book
+
     }
     
  
@@ -67,10 +87,8 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
         super.init(frame: frame)
 
         contentView.addSubview(bookImage)
-        
         contentView.addSubview(nameLabel)
         contentView.addSubview(favButton)
-        //contentView.addSubview(title)
         contentView.clipsToBounds = true
 
 
@@ -89,9 +107,8 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
 
         bookImage.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
         nameLabel.frame = CGRect(x: -60 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
-        favButton.frame = CGRect(x: 2, y: contentView.frame.size.height - 55, width: 50, height: 40)
-//        title.frame = CGRect(x: 2, y: contentView.frame.size.height - 5, width: 50, height: 40)
-      
+        favButton.frame = CGRect(x: 160 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
+
         
     }
 }

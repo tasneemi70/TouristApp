@@ -63,7 +63,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let welcome = UILabel()
         welcome.translatesAutoresizingMaskIntoConstraints = false
         welcome.layer.cornerRadius = .maximumMagnitude(20, 20)
-        welcome.text = (NSLocalizedString("Welcome to my city", comment: ""))
+        welcome.text = (NSLocalizedString("Welcome to Abha city", comment: ""))
         welcome.textColor = .darkGray
         welcome.layer.masksToBounds = true
         return welcome

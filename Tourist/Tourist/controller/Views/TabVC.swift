@@ -33,12 +33,11 @@ class TabVC: UITabBarController {
 
         viewControllers = [
            HomeVC(),
-           Weather(),
+         //  Weather(),
            ViewController(),
            TikTok(),
            ProfileVC(),
-         
-
+           FavouriteVC()
         ]
     }
 }

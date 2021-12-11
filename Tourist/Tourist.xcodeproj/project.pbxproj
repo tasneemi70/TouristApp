@@ -173,9 +173,9 @@
 		8FAA4842275DE801008D5915 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */,
 				8FAA484727609B6E008D5915 /* HomeCell.swift */,
 				8F6E5D0E2754AC06009C7BD8 /* videoCell.swift */,
-				8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */,
 				8F6E5CF527523C13009C7BD8 /* PlaceDetailCell.swift */,
 			);
 			path = Views;
