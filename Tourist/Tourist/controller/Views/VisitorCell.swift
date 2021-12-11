@@ -50,32 +50,29 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
-        button.setImage(UIImage(named: "star.fill"), for: .normal)
-        button.backgroundColor = .cyan
-        button.addTarget(self, action: #selector(addfavoriteBook), for: .touchUpInside)
+        button.setImage(UIImage(named: "like"), for: .normal)
+        button.addTarget(self, action: #selector(addfavoritePlace), for: .touchUpInside)
         return button
     }()
 
-    @objc func addfavoriteBook() {
+    @objc func addfavoritePlace() {
         
         if isActive {
             isActive = false
-            favButton.setImage(UIImage(named: "star.fill"), for: .normal)
+            favButton.setImage(UIImage(named: "like"), for: .normal)
         } else {
 
                isActive = true
-                favButton.setImage(UIImage(named: "star.fill"), for: .normal)
+                favButton.setImage(UIImage(named: "like2"), for: .normal)
 
         }
         
         let bookname = nameLabel.text ?? ""
         _ = bookImage.image ?? UIImage(systemName: "house")
-        FavoriteServiceArabic.shared.addToFavorite(favBook: FavArabic(image: book.image, name: bookname))
+        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavArabic(image: book.image, name: bookname))
     }
-    //(image:  Image.image ,
 
     func setCell(book: abhPlace) {
-//        bookImage.image = book.image
         bookImage.image = UIImage(named: book.image)
         nameLabel.text = book.name
         self.book = book
@@ -107,8 +104,8 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
 
         bookImage.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
         nameLabel.frame = CGRect(x: -60 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
-        favButton.frame = CGRect(x: 160 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
-
+        favButton.frame = CGRect(x: 140, y: contentView.frame.size.height - 55, width: 40, height: 40)
+       
         
     }
 }

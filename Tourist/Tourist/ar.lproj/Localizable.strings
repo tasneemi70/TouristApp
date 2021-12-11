@@ -34,6 +34,8 @@
 
 "Weather" = "الطقس";
 
-"profile" = "الملف الشخصي" ;
+"Profile" = "الملف الشخصي" ;
 
 "Location" = "الموقع" ;
+ 
+"Favourite" = "قايمتي" ;

@@ -10,17 +10,17 @@ import FirebaseFirestore
 
 
 
-class FavoriteServiceArabic {
+class FavoriteServiceVisitor {
 
 
-  static let shared = FavoriteServiceArabic()
+  static let shared = FavoriteServiceVisitor()
   let favoriteCollection = Firestore.firestore().collection("Favorite")
 
 
-  func addToFavorite(favBook: FavArabic) {
-      favoriteCollection.document(favBook.name).setData([
-        "image": favBook.image ,
-        "name": favBook.name
+  func addToFavorite(favPlace: FavArabic) {
+      favoriteCollection.document(favPlace.name).setData([
+        "image": favPlace.image ,
+        "name": favPlace.name
 
     ])
   }

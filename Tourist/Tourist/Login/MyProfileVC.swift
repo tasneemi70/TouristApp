@@ -124,8 +124,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         super.viewDidLoad()
         setupGradientView3()
         view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-        let image = UIImage(systemName: "person.crop.rectangle.fill")
-                           tabBarItem = .init(title: NSLocalizedString("profile", comment: ""), image: image, selectedImage: image)
+//        let image = UIImage(systemName: "person.crop.rectangle.fill")
+//                           tabBarItem = .init(title: NSLocalizedString("profile", comment: ""), image: image, selectedImage: image)
 
         self.title = "Profile"
         view.backgroundColor = UIColor(named: "Color")

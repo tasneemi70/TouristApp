@@ -29,7 +29,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
             let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-             cv.backgroundColor = .lightGray
+             cv.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
              return cv
        }()
     var visitorBtn: UIButton = {
@@ -63,18 +63,13 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let welcome = UILabel()
         welcome.translatesAutoresizingMaskIntoConstraints = false
         welcome.layer.cornerRadius = .maximumMagnitude(20, 20)
-        welcome.text = (NSLocalizedString("Welcome to Abha city", comment: ""))
+        welcome.text = (NSLocalizedString("   Welcome to Abha city", comment: ""))
         welcome.textColor = .darkGray
         welcome.layer.masksToBounds = true
         return welcome
     }()
     
-//    var imgHome: UIImageView = {
-//        letUICollectionView with standard layoutUICollectionView with standard layout imgView = UIImageView()
-//        imgView.image = UIImage(named: "11")
-//        imgView.translatesAutoresizingMaskIntoConstraints = false
-//        return imgView
-//    }()
+
 
     
     override func viewDidLoad() {
@@ -91,7 +86,6 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         view.addSubview(visitorBtn)
         view.addSubview(WelcLabel)
         view.addSubview(sharePlaceBtn)
-       //view.addSubview(imgHome)
         view.addSubview(collectionView)
         
         collectionView.delegate = self
@@ -125,13 +119,7 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             WelcLabel.self.widthAnchor.constraint(equalToConstant: 250),
             WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)])
            
-//
-//            imgHome.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
-//            imgHome.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            imgHome.heightAnchor.constraint(equalToConstant: 300),
-//            imgHome.widthAnchor.constraint(equalTo: imgHome.heightAnchor,multiplier: 100/100)])
-//            imgHome.layer.cornerRadius = 100
-//
+
     
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -143,12 +131,12 @@ class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let data = arrCollecPhoto[indexPath.row]
         
             cell.imageC.image = data.photo
-            cell.backgroundColor = .white
+            cell.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
             return cell
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 200)
+        return CGSize(width: 350, height: 250)
     }
     @objc func arabicButtonPressed() {
         let arabicPage = VisitorVC()

@@ -50,8 +50,8 @@ class ViewController: UIViewController {
       locationManager.startUpdatingLocation()
     }
       view.backgroundColor = .gray
-      let image = UIImage(systemName: "globe")
-      tabBarItem = .init(title: NSLocalizedString("Location", comment: ""), image: image, selectedImage: image)
+//      let image = UIImage(systemName: "globe")
+//      tabBarItem = .init(title: NSLocalizedString("Location", comment: ""), image: image, selectedImage: image)
 
     view.addSubview(mapVC)
       view.addSubview(mapVC1)

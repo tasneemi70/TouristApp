@@ -11,19 +11,19 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 
     
     
-    var fBook: Array<FavArabic> = []
+    var APlace: Array<FavArabic> = []
     
     var selectedIndex = -1
 
     
-    lazy  var bookTV: UITableView = {
+    lazy  var placeTV: UITableView = {
           let tableV = UITableView()
           tableV.translatesAutoresizingMaskIntoConstraints = false
           tableV.delegate = self
           tableV.dataSource = self
           tableV.register(FavouriteCell.self, forCellReuseIdentifier: "Fav")
           tableV.isHidden = false
-          tableV.backgroundColor = UIColor(named: "Color")
+        tableV.backgroundColor = .white
           
           return tableV
       }()
@@ -31,44 +31,45 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "Color")
-        self.title = "Favorite Books"
+        view.backgroundColor = .white
+        self.title = "My List"
         view.reloadInputViews()
         
-        view.addSubview(bookTV)
+        view.addSubview(placeTV)
         NSLayoutConstraint.activate([
-            bookTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            bookTV.heightAnchor.constraint(equalToConstant: 400),
-            bookTV.widthAnchor.constraint(equalToConstant: 10),
-            bookTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
-            bookTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-            bookTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
+            placeTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            placeTV.heightAnchor.constraint(equalToConstant: 400),
+            placeTV.widthAnchor.constraint(equalToConstant: 10),
+            placeTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100),
+            placeTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            placeTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
         ])
         
         
-        FavoriteServiceArabic.shared.listenToFavoriteBook { favBook in
-                       self.fBook = favBook
-                       self.bookTV.reloadData()
+        FavoriteServiceVisitor.shared.listenToFavoriteBook { favPlace in
+                       self.APlace = favPlace
+                       self.placeTV.reloadData()
             
         }
         
     
 
-    var image = UIImage(systemName: "star.fill")
-    tabBarItem = .init(title: NSLocalizedString("Favorite", comment: ""), image: image, selectedImage: image)
+ //  var image = UIImage(systemName: "like2")
+//        let image = UIImage(systemName: "checkmark.seal.fill")
+//                           tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fBook.count
+        return APlace.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Fav", for: indexPath) as! FavouriteCell
         
-        let a = fBook[indexPath.row]
+        let a = APlace[indexPath.row]
         
         cell.nameLabel2.text = a.name
-        cell.bookImage2.image = UIImage(named: a.image)
-        cell.backgroundColor = UIColor(named: "Color")
+        cell.placeImage2.image = UIImage(named: a.image)
+        cell.backgroundColor = .white
         
         
         return cell
@@ -85,9 +86,9 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
        
         
-        let cell = fBook[indexPath.row]
-        let alertcontroller = UIAlertController(title: "Delete Favorite Book"
-                                                , message: "Are you sure you want to delete this Book?"
+        let cell = APlace[indexPath.row]
+        let alertcontroller = UIAlertController(title: "Delete Place"
+                                                , message: "Are you sure?"
                                                 , preferredStyle: UIAlertController.Style.alert
         )
         
@@ -104,10 +105,10 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
                           style: UIAlertAction.Style.destructive,
                           handler: { Action in
                 if editingStyle == .delete {
-                    self.fBook.remove(at: indexPath.row)
-                    self.bookTV.deleteRows(at: [indexPath], with: .fade)
+                    self.APlace.remove(at: indexPath.row)
+                    self.placeTV.deleteRows(at: [indexPath], with: .fade)
                 }
-                self.bookTV.reloadData()
+                self.placeTV.reloadData()
             })
             
         )

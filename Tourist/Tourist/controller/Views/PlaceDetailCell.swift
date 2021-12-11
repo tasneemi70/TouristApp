@@ -173,10 +173,11 @@ class PlaceCell1: UITableViewCell {
     
     let auther: UILabel = {
        let auther = UILabel()
-
          auther.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
-         auther.textColor = .blue
-         auther.textAlignment = .center
+         //auther.textColor = .blue
+         auther.textAlignment = .right
+        auther.textColor = .black
+
          auther.backgroundColor =  UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
          auther.layer.cornerRadius = 20
          auther.layer.masksToBounds = true

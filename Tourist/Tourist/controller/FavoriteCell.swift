@@ -10,44 +10,44 @@ import UIKit
 
 class FavouriteCell: UITableViewCell {
 
-    var fBook = [abhPlace]()
+    var fPlace = [abhPlace]()
 
     static let identfir = "Fav"
 
 
-     let bookImage2: UIImageView = {
-        let bookImage = UIImageView()
+     let placeImage2: UIImageView = {
+        let placeImage = UIImageView()
 
-           bookImage.layer.borderWidth = 1
-           bookImage.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-           bookImage.clipsToBounds = false
-           bookImage.layer.shadowColor = UIColor.black.cgColor
-           bookImage.layer.shadowOpacity = 9.0
-           bookImage.layer.shadowRadius = 10
-           bookImage.layer.masksToBounds = false
+           placeImage.layer.borderWidth = 1
+           placeImage.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+           placeImage.clipsToBounds = false
+           placeImage.layer.shadowColor = UIColor.black.cgColor
+           //placeImage.layer.shadowOpacity = 9.0
+           //placeImage.layer.shadowRadius = 10
+           placeImage.layer.masksToBounds = false
 
 
-              return bookImage
+              return placeImage
     }()
 
 
      let nameLabel2: UILabel = {
-        let namebook = UILabel()
+        let nameplace = UILabel()
 
-         namebook.font = UIFont(name: "AvenirNextCondensed-Medium", size: 20.0)
-         namebook.textColor = .black
-         namebook.textAlignment = .center
-         namebook.layer.cornerRadius = 20
-         namebook.layer.masksToBounds = true
-         namebook.backgroundColor = UIColor(named: "Color")
+         nameplace.font = UIFont(name: "AvenirNextCondensed-Medium", size: 20.0)
+         nameplace.textColor = .black
+         nameplace.textAlignment = .center
+         nameplace.layer.cornerRadius = 150
+         nameplace.layer.masksToBounds = true
+         nameplace.backgroundColor = UIColor(named: "Color")
 
-        return namebook
+        return nameplace
 
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        contentView.addSubview(bookImage2)
+        contentView.addSubview(placeImage2)
         contentView.addSubview(nameLabel2)
         contentView.clipsToBounds = true
     }
@@ -65,8 +65,8 @@ class FavouriteCell: UITableViewCell {
         
     
         
-        bookImage2.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
-        nameLabel2.frame = CGRect(x: -60 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
+        placeImage2.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
+        nameLabel2.frame = CGRect(x: 80 , y: contentView.frame.size.height - 40, width: contentView.frame.size.width - 5, height: 40)
       }
 }
 

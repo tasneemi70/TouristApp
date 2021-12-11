@@ -152,15 +152,15 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         let name = fieldPlace.text ?? ""
         
         
-//
-//
+        
+//        
 //        let updatedProduct = abhPlace(image:  Image.image ,
 //                                      name: fieldPlace.text ?? "",
 //                                      placeA: [])
 //
-
-        
-    //    PlaceList.append(updatedProduct)
+//
+//        
+//        PlaceList.append(updatedProduct)
         let alert1 = UIAlertController(
             title: ("Done ✅"),message: "Thnak you for sharing ",preferredStyle: .alert)
         alert1.addAction(UIAlertAction(title: "OK",style: .default,handler: { action in

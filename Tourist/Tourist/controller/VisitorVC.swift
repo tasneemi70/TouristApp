@@ -151,7 +151,6 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         newVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(newVC, animated: true)
         
-        // print("Done")
     }
     
    
