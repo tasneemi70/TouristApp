@@ -25,13 +25,13 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
      let title1 : UILabel = {
         let titlelabel = UILabel()
         titlelabel.text = NSLocalizedString("ABHA CITY ", comment: "")
-        titlelabel.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
-        titlelabel.textColor = .black
+        titlelabel.font = UIFont(name: "AvenirNextCondensed-Medium", size: 23.0)
+        titlelabel.textColor = .white
         titlelabel.textAlignment = .center
-        titlelabel.backgroundColor = UIColor(displayP3Red:212/255, green:  184/255, blue: 134/255, alpha: 10)
+         titlelabel.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 1.0)
         titlelabel.layer.cornerRadius = 100
         titlelabel.layer.masksToBounds = true
-         titlelabel.translatesAutoresizingMaskIntoConstraints = false
+        titlelabel.translatesAutoresizingMaskIntoConstraints = false
 
         return titlelabel
 
@@ -40,7 +40,8 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setGradientBackground()
+
         if #available(iOS 15, *) {
              let appearance = UINavigationBarAppearance()
              appearance.configureWithOpaqueBackground()

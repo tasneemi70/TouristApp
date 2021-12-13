@@ -30,7 +30,8 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        setGradientBackground()
+
         view.backgroundColor = .white
         self.title = "My List"
         view.reloadInputViews()
@@ -38,11 +39,11 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
         view.addSubview(placeTV)
         NSLayoutConstraint.activate([
             placeTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            placeTV.heightAnchor.constraint(equalToConstant: 400),
-            placeTV.widthAnchor.constraint(equalToConstant: 10),
+            placeTV.heightAnchor.constraint(equalToConstant: 100),
+            placeTV.widthAnchor.constraint(equalToConstant: -100),
             placeTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100),
-            placeTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-            placeTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
+            placeTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10),
+            placeTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: 150),
         ])
         
         

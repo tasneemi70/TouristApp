@@ -36,7 +36,7 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
         namebook.text = ""
         namebook.textColor = .darkGray
         namebook.textAlignment = .right
-        namebook.backgroundColor = UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
+        namebook.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
         namebook.layer.cornerRadius = 0
         namebook.layer.masksToBounds = true
 

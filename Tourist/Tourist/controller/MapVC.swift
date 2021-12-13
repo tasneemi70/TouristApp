@@ -49,7 +49,7 @@ class ViewController: UIViewController {
       locationManager.requestAlwaysAuthorization()
       locationManager.startUpdatingLocation()
     }
-      view.backgroundColor = .gray
+      //view.backgroundColor = .lightGray
 //      let image = UIImage(systemName: "globe")
 //      tabBarItem = .init(title: NSLocalizedString("Location", comment: ""), image: image, selectedImage: image)
 

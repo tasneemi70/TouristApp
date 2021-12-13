@@ -18,7 +18,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-        view.layer.cornerRadius = 25
+        view.layer.cornerRadius = 50
         view.isUserInteractionEnabled = true
         return view
     }()
@@ -35,7 +35,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = "Write your name"
         $0.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-        $0.layer.cornerRadius = 15
+        $0.layer.cornerRadius = 20
         $0.textAlignment = .center
         $0.font = .boldSystemFont(ofSize: 23)
       
@@ -46,7 +46,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         $0.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         $0.setTitle("sign out", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
-        $0.layer.cornerRadius = 15
+        $0.layer.cornerRadius = 20
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.addTarget(self, action: #selector(signOut), for: .touchUpInside)
         return $0
@@ -56,7 +56,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         let change = UIButton()
         change.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         change.translatesAutoresizingMaskIntoConstraints = false
-        change.layer.cornerRadius = 15
+        change.layer.cornerRadius = 20
         change.setTitle("Change Language", for: .normal)
         change.setTitleColor(.black, for: .normal)
         change.addTarget(self, action: #selector(btnChangeLangauge), for: .touchUpInside)
@@ -69,7 +69,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         let shareApp = UIButton()
         shareApp.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         shareApp.translatesAutoresizingMaskIntoConstraints = false
-        shareApp.layer.cornerRadius = 15
+        shareApp.layer.cornerRadius = 20
         shareApp.setTitle("Share App", for: .normal)
         shareApp.setTitleColor(.black, for: .normal)
         shareApp.addTarget(self, action: #selector(shareTheApp), for: .touchUpInside)
@@ -122,8 +122,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupGradientView3()
-        view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+      setGradientBackground()
+     view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
 //        let image = UIImage(systemName: "person.crop.rectangle.fill")
 //                           tabBarItem = .init(title: NSLocalizedString("profile", comment: ""), image: image, selectedImage: image)
 
@@ -136,7 +136,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         profileImage.image = .init(systemName: "455")
         profileImage.tintColor = UIColor(ciColor: .black)
         profileImage.layer.masksToBounds = true
-        profileImage.layer.cornerRadius = 100
+        profileImage.layer.cornerRadius = 50
         profileImage.contentMode = .scaleAspectFit
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileImage)

@@ -30,8 +30,10 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.black, for: .normal)
         share.setTitle("Send To Friend ⬆️", for: .normal)
-        share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 1)
-        share.layer.cornerRadius = 50
+        share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 0.1)
+        let image = UIImage(named: "fav")?.withRenderingMode(.alwaysTemplate)
+        share.setImage(image, for: .normal)
+        share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
         share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
@@ -43,11 +45,11 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      
+//      setGradientBackground()
+
       view.addSubview(sharePlace)
       
        view.addSubview(tableView1)
-    
       view.backgroundColor = .white
 
       
@@ -79,6 +81,7 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceCell1
     let b = Places!.placeA[indexPath.item]
     cell.nameLabel11.text = b.PlaceName
+    cell.placeDeatil.text = b.placeDetail
       
       cell.PlaceImage00.image = UIImage(named: b.PlaceImage0)
       cell.PlaceImage11.image = UIImage(named: b.PlaceImage1)
@@ -165,25 +168,25 @@ class PlaceCell1: UITableViewCell {
     let nameplace = UILabel()
     nameplace.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
     nameplace.textAlignment = .center
-    nameplace.backgroundColor = UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
+    nameplace.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
     nameplace.layer.cornerRadius = 20
     nameplace.layer.masksToBounds = true
     return nameplace
   }()
     
-    let auther: UILabel = {
-       let auther = UILabel()
-         auther.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
-         //auther.textColor = .blue
-         auther.textAlignment = .right
-        auther.textColor = .black
-
-         auther.backgroundColor =  UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
-         auther.layer.cornerRadius = 20
-         auther.layer.masksToBounds = true
-            return auther
-       
+    let placeDeatil: UILabel = {
+     let placeDeatil = UILabel()
+        placeDeatil.font = UIFont(name: "AvenirNextCondensed-Medium", size: 10.0)
+        placeDeatil.textAlignment = .center
+        placeDeatil.textColor = .red
+        placeDeatil.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        placeDeatil.layer.cornerRadius = 20
+        placeDeatil.translatesAutoresizingMaskIntoConstraints = false
+        placeDeatil.layer.masksToBounds = true
+     return placeDeatil
    }()
+       
+
  
   
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -194,7 +197,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     contentView.addSubview(PlaceImage12)
     contentView.addSubview(PlaceImage13)
     contentView.addSubview(nameLabel11)
-    contentView.addSubview(auther)
+    contentView.addSubview(placeDeatil)
 
 
    
@@ -239,7 +242,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
                                 width: 190,
                                 height: 200)
 
-      auther.frame =  CGRect(x: 230,
+      placeDeatil.frame =  CGRect(x: 230,
                              y: 430 ,
                            width: 150,
                            height: 50)

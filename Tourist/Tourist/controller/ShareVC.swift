@@ -24,6 +24,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setGradientBackground()
 
 
       view.backgroundColor = .white
@@ -47,7 +48,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
        // tf.isSecureTextEntry = true
-        tf.backgroundColor = UIColor(named: "Color")
+        tf.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
         tf.layer.cornerRadius = .minimumMagnitude(20, 20)
         tf.text = ""
         tf.placeholder = (NSLocalizedString(" Place Name....", comment: ""))
@@ -60,7 +61,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
 //        btn.layer.cornerRadius = .maximumMagnitude(20, 20)
         btn.setTitleColor(.black, for: .normal)
         btn.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
-        btn.backgroundColor = UIColor(displayP3Red: 230/255, green:  220/255, blue: 200/255, alpha: 1)
+        btn.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
         btn.addTarget(self, action: #selector(sharePlace), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true
@@ -103,6 +104,8 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
       let actionSheet = UIAlertController(title: "Attach Photo camera ",
                         message: "Where would you like to attach a photo from",
                         preferredStyle: .actionSheet)
+      
+      
       actionSheet.addAction(UIAlertAction(title: "Take A photo ", style: .default, handler: { [weak self] _ in
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -153,14 +156,13 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         
         
         
-//        
-//        let updatedProduct = abhPlace(image:  Image.image ,
+        
+//        let updatedPlace = abhPlace(image:  Image.image ,
 //                                      name: fieldPlace.text ?? "",
 //                                      placeA: [])
 //
-//
-//        
-//        PlaceList.append(updatedProduct)
+//        PlaceList.append(updatedPlace)
+        
         let alert1 = UIAlertController(
             title: ("Done ✅"),message: "Thnak you for sharing ",preferredStyle: .alert)
         alert1.addAction(UIAlertAction(title: "OK",style: .default,handler: { action in

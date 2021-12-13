@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */; };
+		8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43F3FC27661BDA000EDF59 /* GradientView2.swift */; };
 		8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */; };
 		8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */; };
 		8F6E5CA1274CF819009C7BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CA0274CF819009C7BD8 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F43F3FC27661BDA000EDF59 /* GradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView2.swift; sourceTree = "<group>"; };
 		8F6E5C94274CF817009C7BD8 /* Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		8F4C8345274D010300D7D240 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				8F43F3FC27661BDA000EDF59 /* GradientView2.swift */,
 				8F6E5CE6274E7AC3009C7BD8 /* ShareVC.swift */,
 				8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */,
 				8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */,
@@ -350,6 +353,7 @@
 				8F6E5CE3274E7AB4009C7BD8 /* VisitorVC.swift in Sources */,
 				8F6E5CE9274E7AC7009C7BD8 /* WeatherVC.swift in Sources */,
 				8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */,
+				8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */,
 				8F6E5CED274E7AD4009C7BD8 /* LoginVC.swift in Sources */,
 				8F6E5CF627523C13009C7BD8 /* PlaceDetailCell.swift in Sources */,
 				8F6E5CFA2752B1CE009C7BD8 /* DataWeather.swift in Sources */,

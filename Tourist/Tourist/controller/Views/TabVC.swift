@@ -12,6 +12,9 @@ import Firebase
 class TabVC: UITabBarController, UITabBarControllerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
+      self.tabBar.tintColor = UIColor.gray // tab bar icon tint color
+        //  self.tabBar.isTranslucent = false
+         // UITabBar.appearance().barTintColor = UIColor.lightGray // tab bar background color
     delegate = self
   }
   override func viewWillAppear(_ animated: Bool) {
@@ -22,8 +25,9 @@ class TabVC: UITabBarController, UITabBarControllerDelegate {
      let item4 =  TikTok()
       let item5 = FavouriteVC()
       let item2 = ProfileVC()
-
-      
+      //tabBar.tintColor = .white
+      tabBar.unselectedItemTintColor = .white
+    //  tabBar.backgroundColor = .white
     let icon1 = UITabBarItem(title: "Home", image: UIImage(systemName: "contextualmenu.and.cursorarrow"), selectedImage: UIImage(systemName: "contextualmenu.and.cursorarrow"))
       let icon3 = UITabBarItem(title: "Weather", image: UIImage(systemName: "cloud"), selectedImage: UIImage(systemName: "cloud.drizzle.fill"))
       let icon6 = UITabBarItem(title: "Location", image: UIImage(systemName: "location"), selectedImage: UIImage(systemName: "location.fill"))
@@ -33,12 +37,11 @@ class TabVC: UITabBarController, UITabBarControllerDelegate {
       item1.tabBarItem = icon1
       item3.tabBarItem = icon3
       item6.tabBarItem = icon6
-
       item4.tabBarItem = icon4
       item5.tabBarItem = icon5
       item2.tabBarItem = icon2
 
-    let controllers = [item1,item2,item3,item4,item5,item6] //array of the root view controllers displayed by the tab bar interface
+    let controllers = [item1,item3,item4,item6,item5,item2] //array of the root view controllers displayed by the tab bar interface
     self.viewControllers = controllers
   }
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
