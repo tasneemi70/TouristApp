@@ -17,7 +17,7 @@ class FavoriteServiceVisitor {
   let favoriteCollection = Firestore.firestore().collection("Favorite")
 
 
-  func addToFavorite(favPlace: FavArabic) {
+  func addToFavorite(favPlace: FavVisitor) {
       favoriteCollection.document(favPlace.name).setData([
         "image": favPlace.image ,
         "name": favPlace.name
@@ -25,21 +25,21 @@ class FavoriteServiceVisitor {
     ])
   }
 
-  func listenToFavoriteBook(completion: @escaping (([FavArabic]) -> Void)) {
+  func listenToFavoritePlace(completion: @escaping (([FavVisitor]) -> Void)) {
       favoriteCollection.addSnapshotListener { snapshot, error in
       if error != nil {
         return
       }
       guard let documents = snapshot?.documents else { return }
-      var favorite: Array<FavArabic> = []
+      var favorite: Array<FavVisitor> = []
       for document in documents {
         let data = document.data()
-        let fBook = FavArabic(
+        let fPlace = FavVisitor(
             image:(data["image"] as? String) ?? "No Image" ,
             name:(data["name"] as? String) ?? "No Name"
 
         )
-          favorite.append(fBook)
+          favorite.append(fPlace)
       }
       completion(favorite)
     }

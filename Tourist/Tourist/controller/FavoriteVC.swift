@@ -11,7 +11,7 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 
     
     
-    var APlace: Array<FavArabic> = []
+    var APlace: Array<FavVisitor> = []
     
     var selectedIndex = -1
 
@@ -33,7 +33,7 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
 //        setGradientBackground()
 
         view.backgroundColor = .white
-        self.title = "My List"
+        self.title = NSLocalizedString("My List", comment: "")
         view.reloadInputViews()
         
         view.addSubview(placeTV)
@@ -41,13 +41,13 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
             placeTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             placeTV.heightAnchor.constraint(equalToConstant: 100),
             placeTV.widthAnchor.constraint(equalToConstant: -100),
-            placeTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 100),
-            placeTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 10),
-            placeTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: 150),
+            placeTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            placeTV.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            placeTV.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: 0),
         ])
         
         
-        FavoriteServiceVisitor.shared.listenToFavoriteBook { favPlace in
+        FavoriteServiceVisitor.shared.listenToFavoritePlace { favPlace in
                        self.APlace = favPlace
                        self.placeTV.reloadData()
             

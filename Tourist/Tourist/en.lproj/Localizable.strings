@@ -6,7 +6,7 @@
   
 */
 
-
+//login vc
 "Login" = "Login" ;
 
 "Register" = "Register" ;
@@ -15,28 +15,35 @@
 
 "Enter Password ..." = "Enter Password ...";
 
-"Visitor 🛬" = "Visitor 🛬" ;
+//home
+"Visitor" = "Visitor" ;
 
-"Share a Place" = "Share a Place 📸 " ;
+"Share a Place" = "Share a Place" ;
 
-"Welcome to my city" = "          Welcome to Abha city" ;
+"         Welcome to Abha city " = "          Welcome to Abha city" ;
 
+//ProfileVC
 "Save" = "Save" ; 
 
+//visitorCell
 "ABHA CITY " = "ABHA CITY " ;
 
 " Place Name...." = " Place Name...." ;
 
+//TabVC
 "Home" = "Home" ;
 
 "Share" = "Share" ;
 
 "Weather" = "Weather" ;
 
-"video" = "video" ;
+"Video" = "video" ;
 
-"Favourite" = "Favourite" ;
+"My List" = "My List" ;
 
 "Profile" = "Profile" ;
 
 "Location" = "Location" ;
+ 
+"My List" = "My List" ;
+

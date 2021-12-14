@@ -1,5 +1,5 @@
 //
-//  ArabicCell.swift
+
 //  Tourist
 //
 //  Created by Tsnim Alqahtani  on 19/04/1443 AH.
@@ -8,39 +8,39 @@
 
 import UIKit
 
-var favoritBook: [abhPlace] = []
+var favoritPlace: [abhPlace] = []
 
 
 class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
 
     static let identfir = "cell"
-    var book: abhPlace!
+    var place: abhPlace!
     var isActive: Bool = false
 
     let people: [abhPlace] = []
 
-    private let bookImage: UIImageView = {
-        let bookImage = UIImageView()
-        bookImage.image = UIImage(named: "a1")
+    private let placeImage: UIImageView = {
+        let placeImage = UIImageView()
+        placeImage.image = UIImage(named: "a1")
        
-        bookImage.layer.borderWidth = 1
-        bookImage.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-        bookImage.layer.cornerRadius = 20
-        bookImage.backgroundColor = .systemTeal
+        placeImage.layer.borderWidth = 1
+        placeImage.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+        placeImage.layer.cornerRadius = 20
+        placeImage.backgroundColor = .systemTeal
 
-        return bookImage
+        return placeImage
     }()
 
     private let nameLabel: UILabel = {
-        let namebook = UILabel()
-        namebook.text = ""
-        namebook.textColor = .darkGray
-        namebook.textAlignment = .right
-        namebook.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
-        namebook.layer.cornerRadius = 0
-        namebook.layer.masksToBounds = true
+        let nameplace = UILabel()
+        nameplace.text = ""
+        nameplace.textColor = .darkGray
+        nameplace.textAlignment = .right
+        nameplace.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        nameplace.layer.cornerRadius = 0
+        nameplace.layer.masksToBounds = true
 
-        return namebook
+        return nameplace
 
     }()
 
@@ -67,15 +67,15 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
 
         }
         
-        let bookname = nameLabel.text ?? ""
-        _ = bookImage.image ?? UIImage(systemName: "house")
-        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavArabic(image: book.image, name: bookname))
+        let placename = nameLabel.text ?? ""
+        _ = placeImage.image ?? UIImage(systemName: "house")
+        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: place.image, name: placename))
     }
 
-    func setCell(book: abhPlace) {
-        bookImage.image = UIImage(named: book.image)
-        nameLabel.text = book.name
-        self.book = book
+    func setCell(place: abhPlace) {
+        placeImage.image = UIImage(named: place.image)
+        nameLabel.text = place.name
+        self.place = place
 
     }
     
@@ -83,7 +83,7 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        contentView.addSubview(bookImage)
+        contentView.addSubview(placeImage)
         contentView.addSubview(nameLabel)
         contentView.addSubview(favButton)
         contentView.clipsToBounds = true
@@ -102,7 +102,7 @@ class VisitorCell: UICollectionViewCell, UISearchBarDelegate {
         // x: right and left
         // y: up and down
 
-        bookImage.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
+        placeImage.frame = CGRect(x: 1, y: 5, width: 180, height: 190)
         nameLabel.frame = CGRect(x: -60 , y: contentView.frame.size.height - 55, width: contentView.frame.size.width - 5, height: 40)
         favButton.frame = CGRect(x: 140, y: contentView.frame.size.height - 55, width: 40, height: 40)
        

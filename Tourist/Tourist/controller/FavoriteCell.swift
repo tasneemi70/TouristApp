@@ -14,9 +14,6 @@ class FavouriteCell: UITableViewCell {
 
     static let identfir = "Fav"
 
-//    func{
-//
-//    }
 
      let placeImage2: UIImageView = {
         let placeImage = UIImageView()
@@ -67,11 +64,11 @@ class FavouriteCell: UITableViewCell {
         
     
         
-        placeImage2.frame = CGRect(x: 100, y: 5, width: 180, height: 190)
+        placeImage2.frame = CGRect(x: 200, y: 5, width: 180, height: 190)
 //        nameLabel2.frame = CGRect(x: 50 , y: contentView.frame.size.height - 40, width: contentView.frame.size.width - 5, height: 40)
-        nameLabel2.frame =  CGRect(x: -3,
+        nameLabel2.frame =  CGRect(x: 30,
                                y: 20 ,
-                             width: 100,
+                             width: 150,
                              height: 40)
       }
 }

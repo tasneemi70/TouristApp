@@ -12,7 +12,7 @@ extension UIViewController {
     
     func setGradientBackground() {
         
-        view.backgroundColor = .white
+        //view.backgroundColor = .white
         
         let colorTop = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3).cgColor
         let colorBottom = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 1.0).cgColor

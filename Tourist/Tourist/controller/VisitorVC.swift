@@ -1,5 +1,4 @@
 //
-//  ArabicVC.swift
 //  Tourist
 //
 //  Created by Tsnim Alqahtani  on 18/04/1443 AH.
@@ -28,7 +27,7 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         titlelabel.font = UIFont(name: "AvenirNextCondensed-Medium", size: 23.0)
         titlelabel.textColor = .white
         titlelabel.textAlignment = .center
-         titlelabel.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 1.0)
+         titlelabel.backgroundColor = UIColor(  #colorLiteral(red: 0.1437019706, green: 0.1230279282, blue: 0.4485198259, alpha: 0.9251603891)        )
         titlelabel.layer.cornerRadius = 100
         titlelabel.layer.masksToBounds = true
         titlelabel.translatesAutoresizingMaskIntoConstraints = false
@@ -40,6 +39,7 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
 //        setGradientBackground()
 
         if #available(iOS 15, *) {
@@ -50,7 +50,6 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
              navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
            }
         
-        view.backgroundColor = .white
         view.addSubview(collectionView)
         view.addSubview(title1)
        // view.addSubview(favButton)
@@ -116,12 +115,11 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VisitorCell
         
         
-        cell.setCell(book: searchPlace[indexPath.item])
+        cell.setCell(place: searchPlace[indexPath.item])
 
         
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 35
-        //title1.text = book.name
         return cell
     }
     

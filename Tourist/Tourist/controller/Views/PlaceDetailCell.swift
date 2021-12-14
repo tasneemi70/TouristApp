@@ -29,10 +29,9 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
       
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.black, for: .normal)
-        share.setTitle("Send To Friend ⬆️", for: .normal)
+        share.setImage(UIImage(named: "send"), for: .normal)
+        share.setTitle("Send To Friend", for: .normal)
         share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 0.1)
-        let image = UIImage(named: "fav")?.withRenderingMode(.alwaysTemplate)
-        share.setImage(image, for: .normal)
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
         share.backgroundColor = UIColor(named: "Color")
@@ -102,9 +101,9 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //share
    @objc func sharePressed (_ sender: Any) {
-       let shareBook = UIActivityViewController(activityItems: [self.Places?.name ?? ""], applicationActivities: nil)
-       shareBook.popoverPresentationController?.sourceView = self.view
-     self.present(shareBook, animated: true, completion: nil)
+       let sharePlace = UIActivityViewController(activityItems: [self.Places?.name ?? ""], applicationActivities: nil)
+       sharePlace.popoverPresentationController?.sourceView = self.view
+     self.present(sharePlace, animated: true, completion: nil)
    }
     }
 
@@ -176,9 +175,9 @@ class PlaceCell1: UITableViewCell {
     
     let placeDeatil: UILabel = {
      let placeDeatil = UILabel()
-        placeDeatil.font = UIFont(name: "AvenirNextCondensed-Medium", size: 10.0)
+        placeDeatil.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
         placeDeatil.textAlignment = .center
-        placeDeatil.textColor = .red
+        placeDeatil.textColor = .darkGray
         placeDeatil.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
         placeDeatil.layer.cornerRadius = 20
         placeDeatil.translatesAutoresizingMaskIntoConstraints = false

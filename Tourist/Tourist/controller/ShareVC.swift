@@ -1,5 +1,5 @@
 //
-//  EnglishVC.swift
+
 //  tourist
 //
 //  Created by Tsnim Alqahtani on 18/04/1443 AH.
@@ -152,16 +152,16 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
 
     
     @objc func sharePlace() {
+        
         let name = fieldPlace.text ?? ""
+      //  let image1 = Image.image ?? ""
         
         
-        
-        
-//        let updatedPlace = abhPlace(image:  Image.image ,
-//                                      name: fieldPlace.text ?? "",
-//                                      placeA: [])
-//
-//        PlaceList.append(updatedPlace)
+        let updatedPlace = abhPlace(image:  "\(String(describing: Image.image))" ,
+                                      name: fieldPlace.text ?? "",
+                                      placeA: [])
+
+        PlaceList.append(updatedPlace)
         
         let alert1 = UIAlertController(
             title: ("Done ✅"),message: "Thnak you for sharing ",preferredStyle: .alert)
