@@ -14,7 +14,7 @@
 		8F6E5CA1274CF819009C7BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CA0274CF819009C7BD8 /* Assets.xcassets */; };
 		8F6E5CA4274CF819009C7BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CA2274CF819009C7BD8 /* LaunchScreen.storyboard */; };
 		8F6E5CB4274CFE08009C7BD8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */; };
-		8F6E5CDB274E7A6D009C7BD8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CDA274E7A6D009C7BD8 /* Data.swift */; };
+		8F6E5CDB274E7A6D009C7BD8 /* ToursisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CDA274E7A6D009C7BD8 /* ToursisData.swift */; };
 		8F6E5CDD274E7A7C009C7BD8 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */; };
 		8F6E5CE1274E7AAA009C7BD8 /* VisitorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */; };
 		8F6E5CE3274E7AB4009C7BD8 /* VisitorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5CE2274E7AB4009C7BD8 /* VisitorVC.swift */; };
@@ -52,7 +52,7 @@
 		8F6E5CA3274CF819009C7BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F6E5CA5274CF819009C7BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8F6E5CDA274E7A6D009C7BD8 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8F6E5CDA274E7A6D009C7BD8 /* ToursisData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToursisData.swift; sourceTree = "<group>"; };
 		8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabVC.swift; path = Views/TabVC.swift; sourceTree = "<group>"; };
 		8F6E5CE0274E7AAA009C7BD8 /* VisitorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorCell.swift; sourceTree = "<group>"; };
 		8F6E5CE2274E7AB4009C7BD8 /* VisitorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorVC.swift; sourceTree = "<group>"; };
@@ -147,8 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				8F6E5CB3274CFE08009C7BD8 /* GoogleService-Info.plist */,
-				8FFCF0DD2757AB21002B5A95 /* Videos */,
 				8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */,
+				8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */,
+				8FFCF0DD2757AB21002B5A95 /* Videos */,
 				8FFCF0DC2757AAFD002B5A95 /* Service */,
 				8FF37ACA2768901A00C7F57F /* LogIn */,
 				8FFCF0D92757A0A0002B5A95 /* ProfileVC */,
@@ -167,7 +168,7 @@
 			children = (
 				8FF37AC827688BEF00C7F57F /* User.swift */,
 				8F6E5CF92752B1CE009C7BD8 /* DataWeather.swift */,
-				8F6E5CDA274E7A6D009C7BD8 /* Data.swift */,
+				8F6E5CDA274E7A6D009C7BD8 /* ToursisData.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -218,7 +219,6 @@
 				8F6E5D142754AF71009C7BD8 /* video3.mp4 */,
 				8F6E5D122754AF71009C7BD8 /* video2.mp4 */,
 				8F6E5D102754AF58009C7BD8 /* video1.mp4 */,
-				8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 				8FAA484827609B6E008D5915 /* HomeCell.swift in Sources */,
 				8F6E5D0F2754AC06009C7BD8 /* videoCell.swift in Sources */,
 				8F6E5CE1274E7AAA009C7BD8 /* VisitorCell.swift in Sources */,
-				8F6E5CDB274E7A6D009C7BD8 /* Data.swift in Sources */,
+				8F6E5CDB274E7A6D009C7BD8 /* ToursisData.swift in Sources */,
 				8F9DD07A2754F8BB00E48F40 /* MyProfileVC.swift in Sources */,
 				8F6E5CE3274E7AB4009C7BD8 /* VisitorVC.swift in Sources */,
 				8F6E5CE9274E7AC7009C7BD8 /* WeatherVC.swift in Sources */,

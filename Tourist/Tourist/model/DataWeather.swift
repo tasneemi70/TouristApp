@@ -9,12 +9,14 @@
 import UIKit
 
 
+// add struct weather
 
 struct weatherAPI: Codable {
     var name: String
     var weather: Array<weather>
     var main: main
 }
+// add struct weather
 
     struct weather: Codable {
         var main: String
@@ -22,7 +24,8 @@ struct weatherAPI: Codable {
 
     }
 
-struct main: Codable {
+// add struct weather
+   struct main: Codable {
 
     var humidity: Double
     var feels_like: Double

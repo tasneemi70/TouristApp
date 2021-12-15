@@ -10,13 +10,12 @@ import UIKit
 
 extension UIViewController {
     
+    //Color
     func setGradientBackground() {
         
-        //view.backgroundColor = .white
         
-        let colorTop = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3).cgColor
-        let colorBottom = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 1.0).cgColor
-        //UIColor(red: 1.00, green: 0.93, blue: 0.88, alpha: 1.00).cgColor
+    let colorTop = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3).cgColor
+    let colorBottom = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 1.0).cgColor
         
                     
         let gradientLayer = CAGradientLayer()
@@ -29,7 +28,7 @@ extension UIViewController {
     
 }
 
-
+   //Gradient
 class customButton : UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)

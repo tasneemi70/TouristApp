@@ -11,9 +11,13 @@ import FirebaseAuth
 
 
 
-
+////profile class
+///
 class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldDelegate, UINavigationControllerDelegate{
 
+    
+    
+    // image profile
     lazy var profileImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +26,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         view.isUserInteractionEnabled = true
         return view
     }()
-    
+
     lazy var imagePicker : UIImagePickerController = {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -31,6 +35,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return imagePicker
     }()
     
+    // name profile
     let name : UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = NSLocalizedString("Write your name", comment: "")
@@ -42,6 +47,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return $0
     }(UITextField())
 
+    // sign out from tourist app
     let signOutButton : UIButton = {
         $0.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
@@ -52,6 +58,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return $0
     }(UIButton())
     
+    //change language to english and arabic
     let changeLanguage : UIButton = {
         let change = UIButton()
         change.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
@@ -65,6 +72,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return change
     }()
     
+    // sharr app
     let shareApp : UIButton = {
         let shareApp = UIButton()
         shareApp.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
@@ -77,6 +85,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return shareApp
     }()
     
+    // function to share app
     @objc func shareTheApp(sender:UIView){
            UIGraphicsBeginImageContext(view.frame.size)
            view.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -95,7 +104,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
                activityVC.popoverPresentationController?.sourceView = sender
                self.present(activityVC, animated: true, completion: nil)
            }    }
-    
+    // function change language
    @objc func btnChangeLangauge() {
        let currentLangauge = Locale.current.languageCode
        print("currentLangauge: \(currentLangauge ?? "")")
@@ -104,14 +113,14 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         exit(0)
     }
     
-
+// function to open image
     @objc func OpenImage(_ sender: Any) {
         let pick = UIImagePickerController()
         pick.allowsEditing = true
         pick.delegate = self
         present(pick, animated: true)
     }
-
+// image piket
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = (info[.editedImage] ?? info[.originalImage]) as? UIImage;
         profileImage.image = image
@@ -119,11 +128,14 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     }
     
     
-
+    
+// view did load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // gradient color
       setGradientBackground()
-     view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+      view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
 
         self.title = NSLocalizedString("Profile", comment: "")
         view.backgroundColor = UIColor(named: "Color")
@@ -138,7 +150,9 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         profileImage.contentMode = .scaleAspectFit
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileImage)
-
+        
+        
+// constraint
         NSLayoutConstraint.activate([
             profileImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
@@ -182,7 +196,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         ])
 
 
-
+// firestore connect
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
         Firestore.firestore()
             .document("users/\(currentUserID)")
@@ -196,7 +210,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
             }
     }
-
+// function action
     @objc func imageTapped() {
         print("Image tapped")
         present(imagePicker, animated: true)

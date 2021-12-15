@@ -1,10 +1,10 @@
 //
-//  wellcomScreen.swift
-//  Final Project
+//  videoVC.swift
+//  Tourist
 //
-//  Created by Hassan Yahya on 03/05/1443 AH.
+//  Created by Tsnim Alqahtani on 24/04/1443 AH.
 //
-//
+
 
 import UIKit
 import FirebaseAuth

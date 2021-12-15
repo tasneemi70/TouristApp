@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 
 
-
+//  favorite connect with firestore
 class FavoriteServiceVisitor {
 
 

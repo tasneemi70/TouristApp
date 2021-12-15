@@ -28,10 +28,10 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
        let share = UIButton()
       
         share.translatesAutoresizingMaskIntoConstraints = false
-        share.setTitleColor(.black, for: .normal)
+        share.setTitleColor(.darkGray, for: .normal)
         share.setImage(UIImage(named: "send"), for: .normal)
-        share.setTitle("Send§", for: .normal)
-        share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 0.1)
+       // share.setTitle("       Send", for: .normal)
+      //  share.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
        // share.backgroundColor = UIColor(named: "Color")
@@ -44,7 +44,7 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(named: "Color")
+      view.backgroundColor = .white
 
       view.addSubview(sharePlace)
       
@@ -62,10 +62,10 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView1.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
       // x: right and left
       // y: up and down
-      sharePlace.widthAnchor.constraint(equalToConstant: 100),
+      sharePlace.widthAnchor.constraint(equalToConstant: 70),
       sharePlace.heightAnchor.constraint(equalToConstant: 50),
       sharePlace.topAnchor.constraint(equalTo: tableView1.bottomAnchor),
-      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 100),
+      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
       sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
     
 

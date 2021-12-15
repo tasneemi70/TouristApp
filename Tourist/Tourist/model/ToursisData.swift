@@ -8,17 +8,22 @@ import UIKit
 
 var newPlace: Array<abhPlace> = []
 
+// add struct abhPlace
+
 struct abhPlace {
     var image: String
     let name: String
     let placeA: Array<PlaceInformation>
 }
+// add struct favorit
 
 struct FavVisitor {
     var image: String
     var name: String
    
 }
+// add struct PlaceInformation
+
 struct PlaceInformation {
   let PlaceImage0: String
     let PlaceImage1: String
@@ -28,7 +33,7 @@ struct PlaceInformation {
     let placeDetail: String
 }
 var PlaceList = [
-   
+   //Details
     abhPlace(image: "4", name: "KAYA Cafe ⠀⠀", placeA: [
         PlaceInformation(PlaceImage0: "a1",PlaceImage1: "a2", PlaceImage2: "a3", PlaceImage3: "4" ,PlaceName: "KAYA cafe ☕️", placeDetail: "إطلاله بين الأشجار")
       ]),
@@ -69,10 +74,7 @@ var PlaceList = [
                  PlaceInformation(PlaceImage0: "w1",PlaceImage1: "w2", PlaceImage2: "w3", PlaceImage3: "1", PlaceName: "Jabal sawda ⛰", placeDetail: "منتزه سياحي ")
       ]),
       
-  abhPlace(image: "6", name: "Fog cafe ☕️  ⠀", placeA: [
-    PlaceInformation(PlaceImage0: "d1",PlaceImage1: "d2", PlaceImage2: "d3", PlaceImage3: "6", PlaceName: "Fog cafe ☕️", placeDetail: "مقهى رائع ومطل على ابها من فوق و جلسات داخلية راقية جداً")
-
-      ]),
+  
       abhPlace(image: "3", name: "  على بالي  ☕️", placeA: [
         PlaceInformation(PlaceImage0: "c1",PlaceImage1: "c2", PlaceImage2: "c3", PlaceImage3: "3", PlaceName: "  على بالي  ☕️", placeDetail: "على بالي ، مطعم وكافيه لبناني")
       ]),

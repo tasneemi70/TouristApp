@@ -9,7 +9,7 @@ import AVFoundation
 import UIKit
 
 
-
+//share Place class
 class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     
@@ -24,17 +24,21 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        //gradienView Page
         setGradientBackground()
 
 
       view.backgroundColor = .white
             setUpImage()
+        
+        //Sup view
         view.addSubview(btnPlace)
         view.addSubview(fieldPlace)
    }
     
     
-    
+    // Image Piker
   let imagePicker = UIImagePickerController()
     
   var Image: UIImageView = {
@@ -44,6 +48,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     return pI
   }()
     
+    // description
     var fieldPlace: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +60,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
         return tf
     }()
 
+    // button to chare place in visitor vc
     var btnPlace: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +78,9 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
       
+      
+      
+      //constraint
       
        Image.translatesAutoresizingMaskIntoConstraints = false
       btnPlace.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +109,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     
     
     
+    // function action when pressed button
   @objc private func presentPhotoInputActionsheet() {
       let actionSheet = UIAlertController(title: "Attach Photo camera ",
                         message: "Where would you like to attach a photo from",
@@ -129,15 +139,16 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     
     
     
+    // action present photo
   func setUpImage() {
     Image.isUserInteractionEnabled = true
     let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentPhotoInputActionsheet))
     Image.addGestureRecognizer(tapRecognizer)
+      //add subview
     view.addSubview(Image)
-      //self.newP = newP
   }
     
-    
+    // image piker
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
    picker.dismiss(animated: true, completion: nil)
    guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
@@ -150,7 +161,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     var indexPath: IndexPath!
 
 
-    
+    // function to move image and descripton to visior page
     @objc func sharePlace() {
         
         _ = fieldPlace.text ?? ""
@@ -163,6 +174,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
 
         PlaceList.append(updatedPlace)
         
+        // alert Done
         let alert1 = UIAlertController(
             title: ("Done ✅"),message: "Thnak you for sharing ",preferredStyle: .alert)
         alert1.addAction(UIAlertAction(title: "OK",style: .default,handler: { action in

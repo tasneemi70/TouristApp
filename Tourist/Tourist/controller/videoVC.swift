@@ -6,23 +6,27 @@
 //
 
 import UIKit
-struct VideoModel {
+
+
+// struct video
+    struct VideoModel {
     let caption: String
     let username: String
     let audioTrackName: String
     let videoFileName: String
-   let videoFileFormat: String
+    let videoFileFormat: String
   
 }
 
-class TikTok: UIViewController {
-//    let isfavorit : Bool
+    class TikTok: UIViewController {
     private var collectionView: UICollectionView?
 
         private var data = [VideoModel]()
     
-    override func viewDidLoad() {
+        // view did load
+        override func viewDidLoad() {
         super.viewDidLoad()
+            
         view.backgroundColor = .white
         
    
@@ -30,6 +34,7 @@ class TikTok: UIViewController {
 
         // Do any additional setup after loading the view.
         
+            // video
         for _ in 0..<1{
             let model = VideoModel(caption: "Kaya",
                                    username: "@tasnim",
@@ -64,7 +69,7 @@ class TikTok: UIViewController {
         }
 
     let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: view.frame.size.width,
                                  height: view.frame.size.height)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
@@ -80,8 +85,7 @@ class TikTok: UIViewController {
     override func viewDidLayoutSubviews () {
         super.viewDidLayoutSubviews ()
         collectionView? .frame = view.bounds
-//        view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1);                        let image = UIImage(systemName: "video.fill")
-//            tabBarItem = .init(title: NSLocalizedString("video", comment: ""), image: image, selectedImage: image)
+
     }
     
 }
@@ -99,7 +103,7 @@ extension TikTok: UICollectionViewDataSource{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
             for: indexPath) as! VideoCollectionViewCell
             cell.configure(with: model)
-                cell.delegate = self
+            cell.delegate = self
             return cell
 }
 }
