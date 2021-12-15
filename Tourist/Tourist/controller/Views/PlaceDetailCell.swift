@@ -30,11 +30,11 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.black, for: .normal)
         share.setImage(UIImage(named: "send"), for: .normal)
-        share.setTitle("Send To Friend", for: .normal)
+        share.setTitle("Send§", for: .normal)
         share.backgroundColor = UIColor(displayP3Red: 230/255, green:  237/255, blue: 184/255, alpha: 0.1)
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
-        share.backgroundColor = UIColor(named: "Color")
+       // share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
        return share
@@ -44,12 +44,12 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-//      setGradientBackground()
+    view.backgroundColor = UIColor(named: "Color")
 
       view.addSubview(sharePlace)
       
        view.addSubview(tableView1)
-      view.backgroundColor = .white
+    //  view.backgroundColor = UIColor(named: "Color")
 
       
       

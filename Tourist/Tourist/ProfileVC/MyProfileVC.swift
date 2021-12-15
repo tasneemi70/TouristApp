@@ -33,7 +33,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     
     let name : UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.placeholder = "Write your name"
+        $0.placeholder = NSLocalizedString("Write your name", comment: "")
         $0.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         $0.layer.cornerRadius = 20
         $0.textAlignment = .center
@@ -44,7 +44,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
     let signOutButton : UIButton = {
         $0.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-        $0.setTitle("sign out", for: .normal)
+        $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         change.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         change.translatesAutoresizingMaskIntoConstraints = false
         change.layer.cornerRadius = 20
-        change.setTitle("Change Language", for: .normal)
+        change.setTitle(NSLocalizedString("Change Language", comment: ""), for: .normal)
         change.setTitleColor(.black, for: .normal)
         change.addTarget(self, action: #selector(btnChangeLangauge), for: .touchUpInside)
         
@@ -70,7 +70,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         shareApp.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         shareApp.translatesAutoresizingMaskIntoConstraints = false
         shareApp.layer.cornerRadius = 20
-        shareApp.setTitle("Share App", for: .normal)
+        shareApp.setTitle(NSLocalizedString("Share App", comment: ""), for: .normal)
         shareApp.setTitleColor(.black, for: .normal)
         shareApp.addTarget(self, action: #selector(shareTheApp), for: .touchUpInside)
         
@@ -124,10 +124,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         super.viewDidLoad()
       setGradientBackground()
      view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-//        let image = UIImage(systemName: "person.crop.rectangle.fill")
-//                           tabBarItem = .init(title: NSLocalizedString("profile", comment: ""), image: image, selectedImage: image)
 
-        self.title = "Profile"
+        self.title = NSLocalizedString("Profile", comment: "")
         view.backgroundColor = UIColor(named: "Color")
     
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
@@ -208,7 +206,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            let vc = LoginVC()
+            let vc = LogInVC()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
          

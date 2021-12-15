@@ -7,14 +7,24 @@
 */
 
 //login vc
-"Login" = "Login" ;
-
-"Register" = "Register" ;
+"LogIn" = "LogIn" ;
+"sign out" = "sign out" ;
+"Sing up" = "Sing up" ;
+"busy" = "busy" ;
+"Sign in" = "تسجيل دخول" ;
+"Profile" = "Profile" ;
+"Write your name" = "Write your name";
 
 "Enter Email .."  = "Enter Email ...";
-
-"Enter Password ..." = "Enter Password ...";
-
+"Change Language" = "Change Language" ; 
+" Password..." = "Enter Password ...";
+"Share App" = "Share App" ;
+"Register" = "Register" ;
+" First Name..." = " First Name..." ;
+"  Email Address..." = "  Email Address..." ;
+"  Last Name..." = "  Last Name..." ;
+"did you have account? " = "did you have account? " ;
+"Sing up" = "Sing up" ;
 //home
 "Visitor" = "Visitor" ;
 
@@ -27,7 +37,7 @@
 
 //visitorCell
 "ABHA CITY " = "ABHA CITY " ;
-
+" Search..." = " Search..." ;
 " Place Name...." = " Place Name...." ;
 
 //TabVC

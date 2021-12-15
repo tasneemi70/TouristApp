@@ -30,7 +30,7 @@ struct PlaceInformation {
 var PlaceList = [
    
     abhPlace(image: "4", name: "KAYA Cafe ⠀⠀", placeA: [
-        PlaceInformation(PlaceImage0: "a1",PlaceImage1: "a2", PlaceImage2: "a3", PlaceImage3: "4" ,PlaceName: "KAYA cafe ☕️", placeDetail: "مقهى كايا بإطلاله بين الأشجار")
+        PlaceInformation(PlaceImage0: "a1",PlaceImage1: "a2", PlaceImage2: "a3", PlaceImage3: "4" ,PlaceName: "KAYA cafe ☕️", placeDetail: "إطلاله بين الأشجار")
       ]),
       abhPlace(image: "5", name: "High City ⠀⠀", placeA: [
         PlaceInformation(PlaceImage0: "s1",PlaceImage1: "s2", PlaceImage2: "s3", PlaceImage3: "s4", PlaceName: "high city 🏞", placeDetail: " مطاعم ومقاهي وفندق "),

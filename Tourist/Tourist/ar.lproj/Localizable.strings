@@ -6,21 +6,38 @@
   
 */
 // loginVC
-"Login" = "تسجيل" ;
+"LogIn" = " دخول" ;
 
-"Register" = "تسجيل جديد" ;
-
+"Sign up" = "تسجيل " ;
+"sign out" = "تسجيل خروج" ;
+"Sign in" = " دخول " ;
 "Enter Email .."  = " الايميل ...";
+"Change Language" = "English" ;
+"busy" = "مشغول " ;
+" First Name..." = " الإسم الأول..." ;
+"Profile" = "الملف لشخصي" ;
+"  Password..." = "أدخل كلمه السر";
+"Share App" = "شارك التطبيق " ;
+"Write your name" = "اسمك";
 
-"Enter Password ..." = "أدخل كلمه السر";
+"Share a Place" = "شارك مكان"  ;
 
-"Share a Place" = " شارك صوره لمكان" ;
+"Register" = "تسجيل" ;
+"  Last Name..." = " الإسم الأخير " ;
 
 
+"Register" = "تسجيل جديد " ;
+
+"Enter Email .." = " البريد الالكتروني .. " ;
+
+"  Email Address..." = "  البريد الالكتروني..." ;
+
+"Don’t have account?" = "ليس لديك حساب ؟" ;
+"did you have account? " = "لديك حساب ؟  " ;
 //home
 "Visitor" = "زائر" ;
 
-"         Welcome to Abha city " = "    أهلا بك في مدينة أبها        " ;
+"         Welcome to Abha city " = "             أهلا بك في مدينة أبها        " ;
 
 
 //profile VC
@@ -28,7 +45,7 @@
 
 //visitor Cell
 "ABHA CITY " = "مدينة أبها" ;
-
+" Search..." = " بحث..." ;
 " Place Name...." = " اسم المكان" ;
 
 //tabVC

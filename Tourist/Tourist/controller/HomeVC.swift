@@ -39,7 +39,9 @@ var pageControl = UIPageControl()
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
             let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+            cv.layer.cornerRadius = 30
+
+             cv.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
              return cv
        }()
     var visitorBtn: UIButton = {
@@ -47,9 +49,9 @@ var pageControl = UIPageControl()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 100
         btn.setTitleColor(.black, for: .normal)
-        btn.setImage(UIImage(named: "travel"), for: .normal)
         btn.setTitle(NSLocalizedString("Visitor", comment: ""), for: .normal)
-        btn.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
+        btn.setImage(UIImage(named: "travel"), for: .normal)
+        btn.backgroundColor = UIColor(named: "Color")
         btn.addTarget(self, action: #selector(visitorButtonPressed), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true
@@ -61,9 +63,10 @@ var pageControl = UIPageControl()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 100
         btn.setTitleColor(.black, for: .normal)
-        btn.setImage(UIImage(named: "camera"), for: .normal)
         btn.setTitle(NSLocalizedString("Share a Place", comment: ""), for: .normal)
-        btn.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
+
+        btn.setImage(UIImage(named: "camera"), for: .normal)
+        btn.backgroundColor = UIColor(named: "Color")
         btn.addTarget(self, action: #selector(sharePlaceButtonPressed), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true

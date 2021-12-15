@@ -47,10 +47,10 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     var fieldPlace: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-       // tf.isSecureTextEntry = true
-        tf.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
+        tf.backgroundColor = UIColor(named: "Color")
         tf.layer.cornerRadius = .minimumMagnitude(20, 20)
-        tf.text = ""
+        tf.textColor = .black
+
         tf.placeholder = (NSLocalizedString(" Place Name....", comment: ""))
         return tf
     }()
@@ -61,7 +61,7 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
 //        btn.layer.cornerRadius = .maximumMagnitude(20, 20)
         btn.setTitleColor(.black, for: .normal)
         btn.setTitle(NSLocalizedString("Share", comment: ""), for: .normal)
-        btn.backgroundColor = UIColor(red: 194/255, green: 201/255, blue: 203/255, alpha: 1)
+        btn.backgroundColor = UIColor(named: "Color")
         btn.addTarget(self, action: #selector(sharePlace), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true
@@ -153,13 +153,13 @@ class ShareVC : UIViewController,UIImagePickerControllerDelegate , UINavigationC
     
     @objc func sharePlace() {
         
-        let name = fieldPlace.text ?? ""
-      //  let image1 = Image.image ?? ""
+        _ = fieldPlace.text ?? ""
+        _ = Image.image
         
         
         let updatedPlace = abhPlace(image:  "\(String(describing: Image.image))" ,
-                                      name: fieldPlace.text ?? "",
-                                      placeA: [])
+            name: fieldPlace.text ?? "",
+            placeA: [])
 
         PlaceList.append(updatedPlace)
         

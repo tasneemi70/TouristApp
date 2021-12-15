@@ -63,7 +63,7 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         collectionView.reloadData()
         
         searchBar.searchBarStyle = UISearchBar.Style.default
-        searchBar.placeholder = " Search..."
+        searchBar.placeholder =  NSLocalizedString(" Search...", comment: "")
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.backgroundImage = UIImage()
