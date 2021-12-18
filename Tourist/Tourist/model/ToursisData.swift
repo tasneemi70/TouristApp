@@ -15,13 +15,37 @@ struct abhPlace {
     let name: String
     let placeA: Array<PlaceInformation>
 }
+
+
+struct coffee {
+    var image: String
+    let name: String
+    let placeB: Array<PlaceInformationC>
+}
+struct PlaceInformationC {
+  var PlaceImageC1: String
+    var PlaceImageC2: String
+    var PlaceNameC: String
+    var placeDetailC: String
+}
+var coffeeList = [coffee(image: "4", name: "KAYA Cafe ⠀⠀", placeB: [ PlaceInformationC(PlaceImageC1: "a1", PlaceImageC2: "a2", PlaceNameC: "KAYA Cafe ⠀⠀", placeDetailC: "إطلاله بين الأشجار")
+                                                             ]),
+     coffee(image: "8", name: "Candy Tree Cafe", placeB: [ PlaceInformationC(PlaceImageC1: "z1", PlaceImageC2: "z2", PlaceNameC: "Candy Tree Cafe", placeDetailC: "مقهى رائع وجلسات داخلية راقية "),
+                                                         ]),
+    coffee(image: "10", name: "Piano Cafe  ☕️", placeB: [ PlaceInformationC(PlaceImageC1: "p1", PlaceImageC2: "p2", PlaceNameC: "Piano Cafe  ☕️", placeDetailC: "مقهى رائع وجلسات داخلية راقية "),
+                                              ]),
+    coffee(image: "10", name: "Piano Cafe  ☕️", placeB: [ PlaceInformationC(PlaceImageC1: "p1", PlaceImageC2: "p2", PlaceNameC: "Piano Cafe  ☕️", placeDetailC: "مقهى رائع وجلسات داخلية راقية "),
+                                                        ]),
+]
 // add struct favorit
 
 struct FavVisitor {
     var image: String
     var name: String
-   
+
 }
+
+
 // add struct PlaceInformation
 
 struct PlaceInformation {

@@ -12,7 +12,8 @@ class Place1: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
   var Places: abhPlace?
-    
+    var PlacesC: coffee?
+
     
   lazy var tableView1: UITableView = {
     let t = UITableView()
@@ -248,3 +249,5 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
   }
     
 }
+
+

@@ -68,7 +68,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         change.setTitleColor(.black, for: .normal)
         change.addTarget(self, action: #selector(btnChangeLangauge), for: .touchUpInside)
         
-        
+      
         return change
     }()
     

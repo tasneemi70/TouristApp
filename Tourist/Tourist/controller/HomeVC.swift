@@ -44,36 +44,88 @@ var pageControl = UIPageControl()
              cv.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
              return cv
        }()
-    var visitorBtn: UIButton = {
+    var coffeeBtn: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 100
         btn.setTitleColor(.black, for: .normal)
-        btn.setTitle(NSLocalizedString("Visitor", comment: ""), for: .normal)
-        btn.setImage(UIImage(named: "travel"), for: .normal)
+        btn.setTitle(NSLocalizedString("Coffee ", comment: ""), for: .normal)
+        btn.setImage(UIImage(named: "Cofffe"), for: .normal)
         btn.backgroundColor = UIColor(named: "Color")
-        btn.addTarget(self, action: #selector(visitorButtonPressed), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(coffeeButtonPressed), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true
         return btn
     }()
+
+    var restuBtn: UIButton = {
+        let restuBtn = UIButton()
+        restuBtn.translatesAutoresizingMaskIntoConstraints = false
+        restuBtn.layer.cornerRadius = 100
+        restuBtn.setTitleColor(.black, for: .normal)
+        restuBtn.setTitle(NSLocalizedString("Coffee ", comment: ""), for: .normal)
+        restuBtn.setImage(UIImage(named: "Rest"), for: .normal)
+        restuBtn.backgroundColor = UIColor(named: "Color")
+       // restuBtn.addTarget(self, action: #selector(coffeeButtonPressed), for: .touchUpInside)
+        restuBtn.layer.cornerRadius = 25
+        restuBtn.layer.masksToBounds = true
+        return restuBtn
+    }()
+    var naturalBtn: UIButton = {
+        let naturalBtn = UIButton()
+        naturalBtn.translatesAutoresizingMaskIntoConstraints = false
+        naturalBtn.layer.cornerRadius = 100
+        naturalBtn.setTitleColor(.black, for: .normal)
+        naturalBtn.setTitle(NSLocalizedString("Coffee ", comment: ""), for: .normal)
+        naturalBtn.setImage(UIImage(named: "sdh"), for: .normal)
+        naturalBtn.backgroundColor = UIColor(named: "Color")
+       // naturalBtn.addTarget(self, action: #selector(coffeeButtonPressed), for: .touchUpInside)
+        naturalBtn.layer.cornerRadius = 25
+        naturalBtn.layer.masksToBounds = true
+        return naturalBtn
+    }()
     
-    var sharePlaceBtn: UIButton = {
+    var ParksBtn: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 100
         btn.setTitleColor(.black, for: .normal)
-        btn.setTitle(NSLocalizedString("Share a Place", comment: ""), for: .normal)
+        btn.setTitle(NSLocalizedString("Parks", comment: ""), for: .normal)
 
-        btn.setImage(UIImage(named: "camera"), for: .normal)
+        btn.setImage(UIImage(named: "parks"), for: .normal)
         btn.backgroundColor = UIColor(named: "Color")
-        btn.addTarget(self, action: #selector(sharePlaceButtonPressed), for: .touchUpInside)
+      //  btn.addTarget(self, action: #selector(ParksPage), for: .touchUpInside)
         btn.layer.cornerRadius = 25
         btn.layer.masksToBounds = true
         return btn
     }()
-    
+    var LakesBtn: UIButton = {
+        let LakesBtn = UIButton()
+        LakesBtn.translatesAutoresizingMaskIntoConstraints = false
+        LakesBtn.layer.cornerRadius = 100
+        LakesBtn.setTitleColor(.black, for: .normal)
+        LakesBtn.setTitle(NSLocalizedString("Coffee ", comment: ""), for: .normal)
+        LakesBtn.setImage(UIImage(named: "lake"), for: .normal)
+        LakesBtn.backgroundColor = UIColor(named: "Color")
+      //  LakesBtn.addTarget(self, action: #selector(coffeeButtonPressed), for: .touchUpInside)
+        LakesBtn.layer.cornerRadius = 25
+        LakesBtn.layer.masksToBounds = true
+        return LakesBtn
+    }()
+    var cableCarBtn: UIButton = {
+        let cableCarBtn = UIButton()
+        cableCarBtn.translatesAutoresizingMaskIntoConstraints = false
+        cableCarBtn.layer.cornerRadius = 100
+        cableCarBtn.setTitleColor(.black, for: .normal)
+        cableCarBtn.setTitle(NSLocalizedString("Parks", comment: ""), for: .normal)
 
+        cableCarBtn.setImage(UIImage(named: "cable"), for: .normal)
+        cableCarBtn.backgroundColor = UIColor(named: "Color")
+      //  cableCarBtn.addTarget(self, action: #selector(ParksPage), for: .touchUpInside)
+        cableCarBtn.layer.cornerRadius = 25
+        cableCarBtn.layer.masksToBounds = true
+        return cableCarBtn
+    }()
     var WelcLabel: UILabel = {
         let welcome = UILabel()
         welcome.translatesAutoresizingMaskIntoConstraints = false
@@ -99,10 +151,16 @@ var pageControl = UIPageControl()
         tabBarItem = .init(title: NSLocalizedString("Home", comment: ""), image: image, selectedImage: image)
     
         
-        view.addSubview(visitorBtn)
+        view.addSubview(coffeeBtn)
+        view.addSubview(restuBtn)
         view.addSubview(WelcLabel)
-        view.addSubview(sharePlaceBtn)
+      //  view.addSubview(TLabel)
+
+        view.addSubview(ParksBtn)
+        view.addSubview(LakesBtn)
         view.addSubview(collectionView)
+        view.addSubview(naturalBtn)
+        view.addSubview(cableCarBtn)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -112,7 +170,7 @@ var pageControl = UIPageControl()
         
         func setupCollectionConstraints() {
              collectionView.translatesAutoresizingMaskIntoConstraints = false
-             collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+             collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 120).isActive = true
              collectionView.heightAnchor.constraint(equalToConstant: 250).isActive = true
              collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
              collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -120,22 +178,42 @@ var pageControl = UIPageControl()
 
         
           NSLayoutConstraint.activate([
-            visitorBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: 95),
-            visitorBtn.self.heightAnchor.constraint(equalToConstant: 170),
-            visitorBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            visitorBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            coffeeBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: -95),
+            coffeeBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            coffeeBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            coffeeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
             
-            sharePlaceBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
-            sharePlaceBtn.self.heightAnchor.constraint(equalToConstant: 170),
-            sharePlaceBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            sharePlaceBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            ParksBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
+            ParksBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            ParksBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            ParksBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
             
+            LakesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            LakesBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            LakesBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            LakesBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
+            
+            cableCarBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
+            cableCarBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            cableCarBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            cableCarBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            
+            naturalBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            naturalBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            naturalBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            naturalBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
+            
+            restuBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
+            restuBtn.self.heightAnchor.constraint(equalToConstant: 100),
+            restuBtn.self.widthAnchor.constraint(equalToConstant: 170),
+            restuBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
             
             WelcLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             WelcLabel.self.heightAnchor.constraint(equalToConstant: 50),
             WelcLabel.self.widthAnchor.constraint(equalToConstant: 250),
-            WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100)])
-        
+            WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+
+          ])
     }
     @objc func moveToNextIndex(){
                 if currentCellIndex < arrCollecPhoto.count - 1{
@@ -169,17 +247,25 @@ var pageControl = UIPageControl()
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 350, height: 250)
     }
-    @objc func visitorButtonPressed() {
-        let visitorPage = VisitorVC()
-        visitorPage.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(visitorPage, animated: true)
+    @objc func coffeeButtonPressed() {
+        let coffePage = CoffeeVC()
+        coffePage.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(coffePage, animated: true)
 
     
     }
+
+//    @objc func sharePlaceButtonPressed() {
+//        let sharePlacePage = ParksVC()
+//        self.present(sharePlacePage, animated: true)
     
-    @objc func sharePlaceButtonPressed() {
-        let sharePlacePage = ShareVC()
-        self.present(sharePlacePage, animated: true)
+    @objc func ParksPage() {
+        let ParksPage = ParksVC()
+        ParksPage.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(ParksPage, animated: true)
     }
-         
+//    @objc func coffePage() {
+//        let coffePage = CofffeeVC()
+//        coffePage.navigationItem.largeTitleDisplayMode = .never
+//        navigationController?.pushViewController(coffePage, animated: true)
 }
