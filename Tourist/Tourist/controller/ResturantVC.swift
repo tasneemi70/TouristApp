@@ -1,17 +1,18 @@
+////
+////  Parks.swift
+////  Tourist
+////
+////  Created by Tsnim Alqahtani on 14/05/1443 AH.
+////
 //
-//  Tourist
-//
-//  Created by Tsnim Alqahtani  on 18/04/1443 AH.
-//
-
 import UIKit
 
 
-class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
+class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
-    var searchPlace: Array<abhPlace> = PlaceList
+    var searchPlace: Array<abhPlace> = resturantList
     
-    var a : abhPlace?
+    var c : abhPlace?
     
     lazy var searchBar:UISearchBar = UISearchBar()
     
@@ -55,8 +56,8 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
        // view.addSubview(favButton)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(VisitorCell.self,
-                                forCellWithReuseIdentifier: "cell")
+        collectionView.register(ResturantCell.self,
+                                forCellWithReuseIdentifier: "CellR")
         setupCollectionConstraints()
         
         collectionView.frame = view.bounds
@@ -112,15 +113,14 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VisitorCell
+        let cell2  = collectionView.dequeueReusableCell(withReuseIdentifier: "CellR", for: indexPath) as! ResturantCell
         
         
-        cell.setCell(place: searchPlace[indexPath.item])
-
-        
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 35
-        return cell
+        cell2.setCell(placeR: searchPlace[indexPath.item])
+//
+        cell2.backgroundColor = .white
+        cell2.layer.cornerRadius = 35
+        return cell2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -130,9 +130,9 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         if searchText.isEmpty {
-            searchPlace = PlaceList
+            searchPlace = resturantList
         } else {
-            searchPlace = PlaceList.filter({oneplace in
+            searchPlace = resturantList.filter({oneplace in
                 return oneplace.name.starts(with: searchText)
             })
         }
@@ -143,15 +143,15 @@ class VisitorVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC = Place1()
-        newVC.title = a?.placeA[indexPath.row].PlaceName
-        newVC.Places = PlaceList[indexPath.row]
-        
-        newVC.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(newVC, animated: true)
+        let newVC1 = CoffeeDetailsCell()
+        newVC1.title = c?.placeA[indexPath.row].PlaceName
+        newVC1.PlacesC = resturantList[indexPath.row]
+        newVC1.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(newVC1, animated: true)
         
     }
     
    
     
 }
+

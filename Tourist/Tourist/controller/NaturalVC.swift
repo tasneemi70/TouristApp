@@ -1,18 +1,21 @@
+////
+////  Tourist
+////
+////  Created by Tsnim Alqahtani  on 18/04/1443 AH.
+////
 //
-//  Parks.swift
-//  Tourist
+//import UIKit
 //
-//  Created by Tsnim Alqahtani on 14/05/1443 AH.
 //
 
 import UIKit
 
 
-class ParksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
+class NaturallVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
-    var searchPlace: Array<abhPlace> = PlaceList
+    var searchPlace: Array<abhPlace> = naturalList
     
-    var a : abhPlace?
+    var c : abhPlace?
     
     lazy var searchBar:UISearchBar = UISearchBar()
     
@@ -56,8 +59,7 @@ class ParksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
        // view.addSubview(favButton)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(VisitorCell.self,
-                                forCellWithReuseIdentifier: "cell")
+    collectionView.register(NaturalCell.self,  forCellWithReuseIdentifier:"CellN")
         setupCollectionConstraints()
         
         collectionView.frame = view.bounds
@@ -113,15 +115,14 @@ class ParksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VisitorCell
+        let cell2  = collectionView.dequeueReusableCell(withReuseIdentifier: "CellN", for: indexPath) as! NaturalCell
         
         
-        cell.setCell(place: searchPlace[indexPath.item])
-
-        
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 35
-        return cell
+        cell2.setCell(placeR: searchPlace[indexPath.item])
+//
+        cell2.backgroundColor = .white
+        cell2.layer.cornerRadius = 35
+        return cell2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -131,9 +132,9 @@ class ParksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         if searchText.isEmpty {
-            searchPlace = PlaceList
+            searchPlace = naturalList
         } else {
-            searchPlace = PlaceList.filter({oneplace in
+            searchPlace = naturalList.filter({oneplace in
                 return oneplace.name.starts(with: searchText)
             })
         }
@@ -144,16 +145,15 @@ class ParksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC = Place1()
-        newVC.title = a?.placeA[indexPath.row].PlaceName
-        newVC.Places = PlaceList[indexPath.row]
-        
-        newVC.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(newVC, animated: true)
-        
+        let newVC1 = NaturalDetailsCell()
+        newVC1.title = c?.placeA[indexPath.row].PlaceName
+        newVC1.PlacesC = naturalList[indexPath.row]
+        newVC1.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(newVC1, animated: true)
     }
     
    
     
 }
+
 

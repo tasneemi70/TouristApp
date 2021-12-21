@@ -6,16 +6,16 @@
 //
 import UIKit
 
-var favoritCoffee: [coffee] = []
+var favoritCoffee: [abhPlace] = []
 
 
 class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
 
-    static let identfir = "cell1"
-    var placeC: coffee!
+    static let identfir = "Cell"
+    var placeC: abhPlace!
     var isActive: Bool = false
 
-    let peopleC: [coffee] = []
+    let peopleC: [abhPlace] = []
 
     private let placeImageC: UIImageView = {
         let placeImageC = UIImageView()
@@ -70,7 +70,7 @@ class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
         FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: placeC.image, name: CoffeeName))
     }
 
-    func setCell(placeC: coffee) {
+    func setCell(placeC: abhPlace) {
         placeImageC.image = UIImage(named: placeC.image)
         nameCoffee.text = placeC.name
         self.placeC = placeC

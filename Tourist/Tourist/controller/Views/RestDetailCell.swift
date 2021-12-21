@@ -1,14 +1,15 @@
+////
+////  PlaceDetailVCl.swift
+////  Tourist
+////
+////  Created by Tsnim Alqahtani on 22/04/1443 AH.
+////
 //
-//  CoffeeDetails.swift
-//  Tourist
 //
-//  Created by Tsnim Alqahtani on 14/05/1443 AH.
-//
-
 
 import UIKit
 
-class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     var Places: abhPlace?
@@ -20,7 +21,7 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
       table.translatesAutoresizingMaskIntoConstraints = false
       table.delegate = self
       table.dataSource = self
-      table.register(CoffeeCell1.self, forCellReuseIdentifier: CoffeeCell1.identifier)
+      table.register(ResturantDetailsCell.self, forCellReuseIdentifier: ResturantCell.identfir)
     return table
    }()
     
@@ -78,17 +79,17 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
     return  PlacesC?.placeA.count ?? 0
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeeCell1", for: indexPath) as! CoffeeCell1
+    let cellR = tableView.dequeueReusableCell(withIdentifier: "ResturantCell", for: indexPath) as! ResturantDetailsCell
     let b = PlacesC!.placeA[indexPath.item]
-      cell.PlaceNameC.text = b.PlaceName
-      cell.PlaceImageC1.image = UIImage(named: b.PlaceImage1)
-      cell.PlaceImageC2.image = UIImage(named:  b.PlaceImage2)
-      cell.placeDetailC.text = b.placeDetail
-      cell.PlaceImageC3.image = UIImage(named: b.PlaceImage3)
-      cell.PlaceImageC4.image = UIImage(named: b.PlaceImage0)
+      cellR.PlaceNameR.text = b.PlaceName
+      cellR.PlaceImageR1.image = UIImage(named: b.PlaceImage1)
+      cellR.PlaceImageR2.image = UIImage(named:  b.PlaceImage2)
+      cellR.placeDetailR.text = b.placeDetail
+      cellR.PlaceImageR3.image = UIImage(named: b.PlaceImage3)
+      cellR.PlaceImageR4.image = UIImage(named: b.PlaceImage0)
 
 
-    return cell
+    return cellR
   }
   var selectedIndex = -1
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -107,80 +108,77 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
    }
     }
 
-class CoffeeCell1: UITableViewCell {
+class ResturantDetailsCell: UITableViewCell {
     
- static let identifier = "CoffeeCell1"
-  let pdfTitle = Date()
-    
-  //@objc var webView: WKWebView?
-    
-   let PlaceImageC1: UIImageView = {
-    let PlaceImageC1 = UIImageView()
-       PlaceImageC1.layer.borderWidth = 1
-       PlaceImageC1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-       PlaceImageC1.layer.cornerRadius = 20
-       PlaceImageC1.contentMode = .scaleAspectFill
-       PlaceImageC1.clipsToBounds = true
-       PlaceImageC1.backgroundColor = .systemTeal
-    return PlaceImageC1
+ static let identifier = "ResturantCell"
+        
+   let PlaceImageR1: UIImageView = {
+    let PlaceImageR1 = UIImageView()
+       PlaceImageR1.layer.borderWidth = 1
+       PlaceImageR1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+       PlaceImageR1.layer.cornerRadius = 20
+       PlaceImageR1.contentMode = .scaleAspectFill
+       PlaceImageR1.clipsToBounds = true
+       PlaceImageR1.backgroundColor = .systemTeal
+    return PlaceImageR1
   }()
     
 
  
-    var PlaceImageC2: UIImageView = {
-        var PlaceImageC2 = UIImageView()
-        PlaceImageC2.layer.borderWidth = 1
-        PlaceImageC2.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-        PlaceImageC2.layer.cornerRadius = 20
-        PlaceImageC2.contentMode = .scaleAspectFill
-        PlaceImageC2.clipsToBounds = true
-        PlaceImageC2.backgroundColor = .systemTeal
-     return PlaceImageC2
+    var PlaceImageR2: UIImageView = {
+        var PlaceImageR2 = UIImageView()
+        PlaceImageR2.layer.borderWidth = 1
+        PlaceImageR2.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+        PlaceImageR2.layer.cornerRadius = 20
+        PlaceImageR2.contentMode = .scaleAspectFill
+        PlaceImageR2.clipsToBounds = true
+        PlaceImageR2.backgroundColor = .systemTeal
+     return PlaceImageR2
    }()
     
    
-    var PlaceImageC4: UIImageView = {
-        var PlaceImageC4 = UIImageView()
-        PlaceImageC4.layer.borderWidth = 1
-        PlaceImageC4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-        PlaceImageC4.layer.cornerRadius = 20
-        PlaceImageC4.contentMode = .scaleAspectFill
-        PlaceImageC4.clipsToBounds = true
-        PlaceImageC4.backgroundColor = .systemTeal
-     return PlaceImageC4
+    var PlaceImageR4: UIImageView = {
+        var PlaceImageR4 = UIImageView()
+        PlaceImageR4.layer.borderWidth = 1
+        PlaceImageR4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+        PlaceImageR4.layer.cornerRadius = 20
+        PlaceImageR4.contentMode = .scaleAspectFill
+        PlaceImageR4.clipsToBounds = true
+        PlaceImageR4.backgroundColor = .systemTeal
+     return PlaceImageR4
    }()
     
-    var PlaceImageC3: UIImageView = {
-        var PlaceImageC3 = UIImageView()
-        PlaceImageC3.layer.borderWidth = 1
-        PlaceImageC3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
-        PlaceImageC3.layer.cornerRadius = 20
-        PlaceImageC3.contentMode = .scaleAspectFill
-        PlaceImageC3.clipsToBounds = true
-        PlaceImageC3.backgroundColor = .systemTeal
-     return PlaceImageC3
+    var PlaceImageR3: UIImageView = {
+        var PlaceImageR3 = UIImageView()
+        PlaceImageR3.layer.borderWidth = 1
+        PlaceImageR3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+        PlaceImageR3.layer.cornerRadius = 20
+        PlaceImageR3.contentMode = .scaleAspectFill
+        PlaceImageR3.clipsToBounds = true
+        PlaceImageR3.backgroundColor = .systemTeal
+     return PlaceImageR3
    }()
     
-    var PlaceNameC: UILabel = {
-    let PlaceNameC = UILabel()
-       PlaceNameC.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
-       PlaceNameC.textAlignment = .center
-       PlaceNameC.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
-       PlaceNameC.layer.cornerRadius = 20
-       PlaceNameC.layer.masksToBounds = true
-    return PlaceNameC
+    var PlaceNameR: UILabel = {
+    let PlaceNameR = UILabel()
+        PlaceNameR.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
+        PlaceNameR.textAlignment = .center
+        PlaceNameR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        PlaceNameR.layer.cornerRadius = 20
+        PlaceNameR.layer.masksToBounds = true
+    return PlaceNameR
   }()
     
-    let placeDetailC: UILabel = {
-     let placeDetailC = UILabel()
-        placeDetailC.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
-        placeDetailC.textAlignment = .center
-        placeDetailC.textColor = .darkGray
-        placeDetailC.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
-        placeDetailC.layer.cornerRadius = 20
-        placeDetailC.translatesAutoresizingMaskIntoConstraints = false
-        placeDetailC.layer.masksToBounds = true
-     return placeDetailC
+     let placeDetailR: UILabel = {
+     let placeDetailR = UILabel()
+         placeDetailR.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
+         placeDetailR.textAlignment = .center
+         placeDetailR.textColor = .darkGray
+         placeDetailR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
+         placeDetailR.layer.cornerRadius = 20
+         placeDetailR.translatesAutoresizingMaskIntoConstraints = false
+         placeDetailR.layer.masksToBounds = true
+  return placeDetailR
    }()
        
 
@@ -189,13 +187,13 @@ class CoffeeCell1: UITableViewCell {
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 //    super.init(style: style, reuseIdentifier: reuseIdentifier)
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    contentView.addSubview(PlaceImageC1)
-    contentView.addSubview(PlaceImageC2)
-    contentView.addSubview(PlaceNameC)
-    contentView.addSubview(PlaceImageC4)
+    contentView.addSubview(PlaceImageR1)
+    contentView.addSubview(PlaceImageR2)
+    contentView.addSubview(PlaceNameR)
+    contentView.addSubview(PlaceImageR4)
 
-    contentView.addSubview(PlaceImageC3)
-    contentView.addSubview(placeDetailC)
+    contentView.addSubview(PlaceImageR3)
+    contentView.addSubview(placeDetailR)
 
 
    
@@ -213,34 +211,34 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     // x: right and left
     // y: up and down
       
-      PlaceImageC1.frame = CGRect(x: 10,
+      PlaceImageR1.frame = CGRect(x: 10,
                 y: 10 ,
                 width: 190,
                 height: 200)
-      PlaceImageC2.frame = CGRect(x: 205,
+      PlaceImageR2.frame = CGRect(x: 205,
                   y: 10 ,
                   width: 190,
                   height: 200)
       
-      PlaceImageC3.frame = CGRect(x: 10,
+      PlaceImageR3.frame = CGRect(x: 10,
                   y: 220 ,
                   width: 190,
                   height: 200)
       
-      PlaceNameC.frame = CGRect(x: 10,
+      PlaceNameR.frame = CGRect(x: 10,
                     y: 430 ,
                   width: 150,
                   height: 50)
       
       
-      PlaceImageC4.frame = CGRect(x: 205,
+      PlaceImageR4.frame = CGRect(x: 205,
                                   y: 220 ,
                                 width: 190,
                                 height: 200)
 
 
 
-      placeDetailC.frame =  CGRect(x: 230,
+      placeDetailR.frame =  CGRect(x: 230,
                              y: 430 ,
                            width: 150,
                            height: 50)

@@ -1,15 +1,16 @@
 //
-//  CoffeeVC.swift
+//  HotelsVC.swift
 //  Tourist
 //
-//  Created by Tsnim Alqahtani on 14/05/1443 AH.
+//  Created by Tsnim Alqahtani on 16/05/1443 AH.
 //
+
 import UIKit
 
 
-class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
+class HotelVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
-    var searchPlace: Array<abhPlace> = coffeelist
+    var searchPlace: Array<abhPlace> = hotelsList
     
     var c : abhPlace?
     
@@ -39,8 +40,6 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //under cell
         view.backgroundColor = .white
 //        setGradientBackground()
 
@@ -57,8 +56,7 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
        // view.addSubview(favButton)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(CoffeeCell.self,
-                                forCellWithReuseIdentifier: "Cell")
+        collectionView.register(HotelCell.self,forCellWithReuseIdentifier: "CellH")
         setupCollectionConstraints()
         
         collectionView.frame = view.bounds
@@ -92,7 +90,6 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         let cv = UICollectionView(frame:.zero , collectionViewLayout: layout)
-        // right cell
         cv.backgroundColor = .white
         
         return cv
@@ -115,11 +112,11 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell2  = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CoffeeCell
+        let cell2  = collectionView.dequeueReusableCell(withReuseIdentifier: "CellH", for: indexPath) as! HotelCell
         
         
-        cell2.setCell(placeC: searchPlace[indexPath.item])
-//        
+        cell2.setCell(placeR: searchPlace[indexPath.item])
+//
         cell2.backgroundColor = .white
         cell2.layer.cornerRadius = 35
         return cell2
@@ -132,9 +129,9 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         if searchText.isEmpty {
-            searchPlace = coffeelist
+            searchPlace = hotelsList
         } else {
-            searchPlace = coffeelist.filter({oneplace in
+            searchPlace = hotelsList.filter({oneplace in
                 return oneplace.name.starts(with: searchText)
             })
         }
@@ -147,13 +144,13 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let newVC1 = CoffeeDetailsCell()
         newVC1.title = c?.placeA[indexPath.row].PlaceName
-        newVC1.PlacesC = coffeelist[indexPath.row]
+        newVC1.PlacesC = resturantList[indexPath.row]
         newVC1.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(newVC1, animated: true)
-        
     }
     
    
     
 }
+
 
