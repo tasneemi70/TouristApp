@@ -4,11 +4,10 @@
 //
 //  Created by Tsnim Alqahtani on 18/04/1443 AH.
 //
-
-import UIKit
-
 struct User {
-    var id: String
-    var name: String
-    var email: String
+  let id: String
+  let name: String
+  let status : String
+  let image : String
+  let location : String
 }
