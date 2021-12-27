@@ -61,8 +61,8 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     
 
  //  var image = UIImage(systemName: "like2")
-//        let image = UIImage(systemName: "checkmark.seal.fill")
-//                           tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
+ let image = UIImage(systemName: "checkmark.seal.fill")
+           tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return APlace.count
