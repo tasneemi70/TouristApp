@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSource{
 
@@ -23,16 +24,20 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
           tableV.dataSource = self
           tableV.register(FavouriteCell.self, forCellReuseIdentifier: "Fav")
           tableV.isHidden = false
-        tableV.backgroundColor = .white
+          tableV.backgroundColor = UIColor(named: "setGradientBackground")
           
           return tableV
       }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setGradientBackground()
-
-        view.backgroundColor = .white
+        setGradientBackground()
+        FavoriteServiceVisitor.shared.listenToFavoritePlace { cartFromFS in
+            self.APlace = cartFromFS
+            self.placeTV.reloadData()
+            
+        }
+//        view.backgroundColor = UIColor(named: "setGradientBackground")
         self.title = NSLocalizedString("My List", comment: "")
         view.reloadInputViews()
         
@@ -70,9 +75,7 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
         
         cell.nameLabel2.text = a.name
         cell.placeImage2.image = UIImage(named: a.image)
-        cell.backgroundColor = .white
-        
-        
+        cell.backgroundColor =  UIColor( #colorLiteral(red: 0.0111169992, green: 0.1637375057, blue: 0.2295970917, alpha: 1) )
         return cell
     }
     
@@ -106,9 +109,11 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
                           style: UIAlertAction.Style.destructive,
                           handler: { Action in
                 if editingStyle == .delete {
-                    self.APlace.remove(at: indexPath.row)
-                    self.placeTV.deleteRows(at: [indexPath], with: .fade)
+                    
+                 Firestore.firestore().collection("Favorite").document(cell.name).delete()
+                    
                 }
+                              
                 self.placeTV.reloadData()
             })
             
@@ -119,3 +124,4 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     }
 }
 
+ 

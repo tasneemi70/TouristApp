@@ -21,6 +21,8 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
       table.translatesAutoresizingMaskIntoConstraints = false
       table.delegate = self
       table.dataSource = self
+      table.backgroundColor = UIColor(named: "setGradientBackground")
+
       table.register(ResturantDetailsCell.self, forCellReuseIdentifier: ResturantCell.identfir)
     return table
    }()
@@ -43,15 +45,33 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
        
    }()
     
+     let LocationBtn1: UIButton = {
+        let LocationBtn1 = UIButton()
+
+         LocationBtn1.translatesAutoresizingMaskIntoConstraints = false
+         LocationBtn1.setTitleColor(.darkGray, for: .normal)
+         LocationBtn1.setImage(UIImage(named: "Location"), for: .normal)
+ //        LocationBtn.setTitle("       Location", for: .normal)
+         LocationBtn1.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
+         LocationBtn1.layer.cornerRadius = 20
+         LocationBtn1.layer.masksToBounds = true
+ //        LocationBtn.backgroundColor = .blue
+         LocationBtn1.addTarget(self, action: #selector(locationPressed1), for: .touchUpInside)
+
+
+         return LocationBtn1
+
+    }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      view.backgroundColor = .white
+      view.backgroundColor = UIColor(named: "setGradientBackground")
+      setGradientBackground()
 
       view.addSubview(sharePlace)
-      
+      view.addSubview(LocationBtn1)
+
        view.addSubview(tableView2)
-    //  view.backgroundColor = UIColor(named: "Color")
 
       
       
@@ -69,7 +89,12 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
       sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
       sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
       sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
-    
+        
+        LocationBtn1.widthAnchor.constraint(equalToConstant: 70),
+        LocationBtn1.heightAnchor.constraint(equalToConstant: 50),
+        LocationBtn1.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
+        LocationBtn1.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 250),
+        LocationBtn1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
 
     ])
       
@@ -106,15 +131,23 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
        sharePlace.popoverPresentationController?.sourceView = self.view
      self.present(sharePlace, animated: true, completion: nil)
    }
-    }
 
+    
+    @objc func locationPressed1 (_ sender: Any) {
+        if let url1 = URL(string: "https://goo.gl/maps/D4AtqqEh59YCefMi8") {
+                   UIApplication.shared.open(url1)
+        
+
+                  }
+    }
+    
 class ResturantDetailsCell: UITableViewCell {
     
  static let identifier = "ResturantCell"
         
    let PlaceImageR1: UIImageView = {
     let PlaceImageR1 = UIImageView()
-       PlaceImageR1.layer.borderWidth = 1
+//       PlaceImageR1.layer.borderWidth = 1
        PlaceImageR1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
        PlaceImageR1.layer.cornerRadius = 20
        PlaceImageR1.contentMode = .scaleAspectFill
@@ -127,7 +160,7 @@ class ResturantDetailsCell: UITableViewCell {
  
     var PlaceImageR2: UIImageView = {
         var PlaceImageR2 = UIImageView()
-        PlaceImageR2.layer.borderWidth = 1
+//        PlaceImageR2.layer.borderWidth = 1
         PlaceImageR2.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageR2.layer.cornerRadius = 20
         PlaceImageR2.contentMode = .scaleAspectFill
@@ -139,7 +172,7 @@ class ResturantDetailsCell: UITableViewCell {
    
     var PlaceImageR4: UIImageView = {
         var PlaceImageR4 = UIImageView()
-        PlaceImageR4.layer.borderWidth = 1
+//        PlaceImageR4.layer.borderWidth = 1
         PlaceImageR4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageR4.layer.cornerRadius = 20
         PlaceImageR4.contentMode = .scaleAspectFill
@@ -150,7 +183,7 @@ class ResturantDetailsCell: UITableViewCell {
     
     var PlaceImageR3: UIImageView = {
         var PlaceImageR3 = UIImageView()
-        PlaceImageR3.layer.borderWidth = 1
+//        PlaceImageR3.layer.borderWidth = 1
         PlaceImageR3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageR3.layer.cornerRadius = 20
         PlaceImageR3.contentMode = .scaleAspectFill
@@ -174,7 +207,7 @@ class ResturantDetailsCell: UITableViewCell {
          placeDetailR.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
          placeDetailR.textAlignment = .center
          placeDetailR.textColor = .darkGray
-         placeDetailR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
+      //   placeDetailR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
          placeDetailR.layer.cornerRadius = 20
          placeDetailR.translatesAutoresizingMaskIntoConstraints = false
          placeDetailR.layer.masksToBounds = true
@@ -198,8 +231,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
    
     contentView.clipsToBounds = true
-    contentView.backgroundColor = .white
-  }
+    contentView.backgroundColor = UIColor (  #colorLiteral(red: 0.01546635386, green: 0.1756357253, blue: 0.2539866269, alpha: 1))  }
   required init?(coder: NSCoder) {
     fatalError("init(coder: has not implement>>>")
   }
@@ -246,3 +278,4 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     
 }
 
+}

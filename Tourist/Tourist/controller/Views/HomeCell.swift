@@ -7,6 +7,7 @@
 //
 //
 import UIKit
+
 class collectionViewCell : UICollectionViewCell {
     static let identfire = "collectionViewCell"
         

@@ -102,20 +102,6 @@ var pageControl = UIPageControl()
         return btn
     }()
 
-//    var cableCarBtn: UIButton = {
-//        let cableCarBtn = UIButton()
-//        cableCarBtn.translatesAutoresizingMaskIntoConstraints = false
-//        cableCarBtn.layer.cornerRadius = 100
-//        cableCarBtn.setTitleColor(.black, for: .normal)
-//        cableCarBtn.setTitle(NSLocalizedString("Parks", comment: ""), for: .normal)
-//
-//        cableCarBtn.setImage(UIImage(named: "cable"), for: .normal)
-//        cableCarBtn.backgroundColor = UIColor(named: "Color")
-//      //  cableCarBtn.addTarget(self, action: #selector(ParksPage), for: .touchUpInside)
-//        cableCarBtn.layer.cornerRadius = 25
-//        cableCarBtn.layer.masksToBounds = true
-//        return cableCarBtn
-//    }()
     var WelcLabel: UILabel = {
         let welcome = UILabel()
         welcome.translatesAutoresizingMaskIntoConstraints = false
@@ -126,17 +112,72 @@ var pageControl = UIPageControl()
         return welcome
     }()
     
+    var nameGroup: UILabel = {
+        let nameGroup = UILabel()
+        nameGroup.translatesAutoresizingMaskIntoConstraints = false
+        nameGroup.layer.cornerRadius = .maximumMagnitude(30, 20)
+        nameGroup.text = (NSLocalizedString("Hotels", comment: ""))
+        nameGroup.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
+        nameGroup.textAlignment = .center
+        nameGroup.backgroundColor = .white
+        nameGroup.layer.cornerRadius = 20
+        nameGroup.translatesAutoresizingMaskIntoConstraints =
+        nameGroup.textColor == .white
+        nameGroup.layer.masksToBounds = true
+        return nameGroup
+    }()
+    var nameGroup1: UILabel = {
+        let nameGroup1 = UILabel()
+        nameGroup1.translatesAutoresizingMaskIntoConstraints = false
+        nameGroup1.layer.cornerRadius = .maximumMagnitude(30, 20)
+        nameGroup1.text = (NSLocalizedString("Coffee Shop", comment: ""))
+        nameGroup1.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
+        nameGroup1.textAlignment = .center
+        nameGroup1.backgroundColor = .white
+        nameGroup1.layer.cornerRadius = 20
+        nameGroup1.translatesAutoresizingMaskIntoConstraints =
+        nameGroup1.textColor == .white
+        nameGroup1.layer.masksToBounds = true
+        return nameGroup1
+    }()
 
 
-    
+    var nameGroup2: UILabel = {
+        let nameGroup2 = UILabel()
+        nameGroup2.translatesAutoresizingMaskIntoConstraints = false
+        nameGroup2.layer.cornerRadius = .maximumMagnitude(30, 20)
+        nameGroup2.text = (NSLocalizedString("Resturants", comment: ""))
+        nameGroup2.font = UIFont(name: "AvenirNextCondensed-Medium", size:    16.0)
+        nameGroup2.textAlignment = .center
+        nameGroup2.backgroundColor = .white
+        nameGroup2.layer.cornerRadius = 20
+        nameGroup2.translatesAutoresizingMaskIntoConstraints =
+        nameGroup2.textColor == .white
+        nameGroup2.layer.masksToBounds = true
+        return nameGroup2
+    }()
+    var nameGroup3: UILabel = {
+        let nameGroup3 = UILabel()
+        nameGroup3.translatesAutoresizingMaskIntoConstraints = false
+        nameGroup3.layer.cornerRadius = .maximumMagnitude(30, 20)
+        nameGroup3.text = (NSLocalizedString("Natural Places", comment: ""))
+        nameGroup3.font = UIFont(name: "AvenirNextCondensed-Medium", size:    16.0)
+        nameGroup3.textAlignment = .center
+        nameGroup3.backgroundColor = .white
+        nameGroup3.layer.cornerRadius = 20
+        nameGroup3.translatesAutoresizingMaskIntoConstraints =
+        nameGroup3.textColor == .white
+        nameGroup3.layer.masksToBounds = true
+        return nameGroup3
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.numberOfPages = arrCollecPhoto.count
                 startTimer()
   setGradientBackground()
 
-     view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
-        //UIColor(named: "Color")
+        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )        //UIColor(named: "Color")
         var image = UIImage(systemName: "house.circle.fill")
         tabBarItem = .init(title: NSLocalizedString("Home", comment: ""), image: image, selectedImage: image)
     
@@ -144,7 +185,11 @@ var pageControl = UIPageControl()
         view.addSubview(coffeeBtn)
         view.addSubview(restuBtn)
         view.addSubview(WelcLabel)
-      //  view.addSubview(TLabel)
+        view.addSubview(nameGroup)
+        view.addSubview(nameGroup1)
+        view.addSubview(nameGroup2)
+        view.addSubview(nameGroup3)
+
 
         view.addSubview(hotelsBtn)
 //        view.addSubview(LakesBtn)
@@ -171,38 +216,50 @@ var pageControl = UIPageControl()
             coffeeBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: -95),
             coffeeBtn.self.heightAnchor.constraint(equalToConstant: 100),
             coffeeBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            coffeeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
+            coffeeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 450),
             
             hotelsBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
             hotelsBtn.self.heightAnchor.constraint(equalToConstant: 100),
             hotelsBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            hotelsBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
-            
-//            LakesBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
-//            LakesBtn.self.heightAnchor.constraint(equalToConstant: 100),
-//            LakesBtn.self.widthAnchor.constraint(equalToConstant: 170),
-//            LakesBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
-//
-//            cableCarBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
-//            cableCarBtn.self.heightAnchor.constraint(equalToConstant: 100),
-//            cableCarBtn.self.widthAnchor.constraint(equalToConstant: 170),
-//            cableCarBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 400),
+            hotelsBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 605),
+        
             
             naturalBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
             naturalBtn.self.heightAnchor.constraint(equalToConstant: 100),
             naturalBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            naturalBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 650),
+            naturalBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 605),
             
             restuBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 95),
             restuBtn.self.heightAnchor.constraint(equalToConstant: 100),
             restuBtn.self.widthAnchor.constraint(equalToConstant: 170),
-            restuBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 520),
+            restuBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 450),
             
             WelcLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             WelcLabel.self.heightAnchor.constraint(equalToConstant: 50),
             WelcLabel.self.widthAnchor.constraint(equalToConstant: 250),
             WelcLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
 
+            nameGroup1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
+            nameGroup1.self.heightAnchor.constraint(equalToConstant: 30),
+            nameGroup1.self.widthAnchor.constraint(equalToConstant: 100),
+            nameGroup1.topAnchor.constraint(equalTo: coffeeBtn.bottomAnchor, constant: 2),
+            
+            nameGroup.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -100),
+            nameGroup.self.heightAnchor.constraint(equalToConstant: 30),
+            nameGroup.self.widthAnchor.constraint(equalToConstant: 100),
+            nameGroup.topAnchor.constraint(equalTo: hotelsBtn.bottomAnchor, constant: 2),
+            
+         
+            nameGroup3.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 90),
+            nameGroup3.self.heightAnchor.constraint(equalToConstant: 30),
+            nameGroup3.self.widthAnchor.constraint(equalToConstant: 100),
+            nameGroup3.topAnchor.constraint(equalTo: naturalBtn.bottomAnchor, constant: 2),
+
+
+            nameGroup2.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 90),
+            nameGroup2.self.heightAnchor.constraint(equalToConstant: 30),
+            nameGroup2.self.widthAnchor.constraint(equalToConstant: 100),
+            nameGroup2.topAnchor.constraint(equalTo: restuBtn.bottomAnchor, constant: 2),
           ])
     }
     @objc func moveToNextIndex(){
@@ -250,24 +307,18 @@ var pageControl = UIPageControl()
         navigationController?.pushViewController(RestPage, animated: true)
         
     }
-        
-//    @objc func sharePlaceButtonPressed() {
-//        let sharePlacePage = ParksVC()
-//        self.present(sharePlacePage, animated: true)
-    
+   
     @objc func HotelPage() {
         let HotelPage = HotelVC()
         HotelPage.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(HotelPage, animated: true)
     }
+    
     @objc func NaturalButtonPressed() {
         let NaturalPage = NaturallVC()
         NaturalPage.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(NaturalPage, animated: true)
     }
-//    @objc func coffePage() {
-//        let coffePage = CofffeeVC()
-//        coffePage.navigationItem.largeTitleDisplayMode = .never
-//        navigationController?.pushViewController(coffePage, animated: true)
+
 }
 

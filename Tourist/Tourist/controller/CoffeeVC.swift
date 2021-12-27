@@ -27,7 +27,7 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         titlelabel.font = UIFont(name: "AvenirNextCondensed-Medium", size: 23.0)
         titlelabel.textColor = .white
         titlelabel.textAlignment = .center
-         titlelabel.backgroundColor = UIColor(  #colorLiteral(red: 0.1437019706, green: 0.1230279282, blue: 0.4485198259, alpha: 0.9251603891)        )
+         titlelabel.backgroundColor = UIColor(   #colorLiteral(red: 0.6843472719, green: 0.7290751934, blue: 0.7528939843, alpha: 1)     )
         titlelabel.layer.cornerRadius = 100
         titlelabel.layer.masksToBounds = true
         titlelabel.translatesAutoresizingMaskIntoConstraints = false
@@ -41,13 +41,13 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         super.viewDidLoad()
         
         //under cell
-        view.backgroundColor = .white
-//        setGradientBackground()
+      view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
+         setGradientBackground()
 
         if #available(iOS 15, *) {
              let appearance = UINavigationBarAppearance()
              appearance.configureWithOpaqueBackground()
-   //          appearance.backgroundColor = < your tint color >
+            appearance.backgroundColor = UIColor(  #colorLiteral(red: 0.08766946942, green: 0.2745897174, blue: 0.3569372594, alpha: 0.4541080298) )
              navigationController?.navigationBar.standardAppearance = appearance;
              navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
            }
@@ -68,6 +68,7 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         searchBar.placeholder =  NSLocalizedString(" Search...", comment: "")
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
+        
         searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
@@ -93,8 +94,8 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         layout.minimumInteritemSpacing = 5
         let cv = UICollectionView(frame:.zero , collectionViewLayout: layout)
         // right cell
-        cv.backgroundColor = .white
-        
+        cv.backgroundColor = UIColor(named: "setGradientBackground")
+
         return cv
     }()
     
@@ -120,7 +121,7 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         cell2.setCell(placeC: searchPlace[indexPath.item])
 //        
-        cell2.backgroundColor = .white
+//        cell2.backgroundColor = .white
         cell2.layer.cornerRadius = 35
         return cell2
     }

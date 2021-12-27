@@ -107,7 +107,6 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
         ///
         
         
-        //            videoContainer.clipsToBounds = true
         //Video Back
         
         contentView.sendSubviewToBack(videoContainer)

@@ -21,6 +21,8 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
       table.translatesAutoresizingMaskIntoConstraints = false
       table.delegate = self
       table.dataSource = self
+      table.backgroundColor = UIColor(named: "setGradientBackground")
+
       table.register(NaturalDetailsCell1.self, forCellReuseIdentifier: NaturalCell.identfir)
     return table
    }()
@@ -32,11 +34,8 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.darkGray, for: .normal)
         share.setImage(UIImage(named: "send"), for: .normal)
-       // share.setTitle("       Send", for: .normal)
-      //  share.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
-       // share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
        return share
@@ -49,12 +48,10 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
         LocationBtn.translatesAutoresizingMaskIntoConstraints = false
         LocationBtn.setTitleColor(.darkGray, for: .normal)
         LocationBtn.setImage(UIImage(named: "Location"), for: .normal)
-//        LocationBtn.setTitle("       Location", for: .normal)
         LocationBtn.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         LocationBtn.layer.cornerRadius = 20
         LocationBtn.layer.masksToBounds = true
-//        LocationBtn.backgroundColor = .blue
-        LocationBtn.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
+        LocationBtn.addTarget(self, action: #selector(LocationPressed4), for: .touchUpInside)
 
        return LocationBtn
 
@@ -62,13 +59,13 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      view.backgroundColor = .white
+      
+      setGradientBackground()
 
       view.addSubview(sharePlace)
       view.addSubview(LocationBtn)
        view.addSubview(tableView2)
-    //  view.backgroundColor = UIColor(named: "Color")
-
+      view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
 
 
     NSLayoutConstraint.activate([
@@ -128,23 +125,24 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
        sharePlace.popoverPresentationController?.sourceView = self.view
      self.present(sharePlace, animated: true, completion: nil)
    }
+    @objc func LocationPressed4 (_ sender: Any) {
+        if let url4 = URL(string: "https://goo.gl/maps/tPDLy7tWz2RReKox6") {
+                   UIApplication.shared.open(url4)
+        
+
+                  }
     }
 
 class NaturalDetailsCell1: UITableViewCell {
 
  static let identifier = "CellN"
   let pdfTitle = Date()
-
-  //@objc var webView: WKWebView?
-
    let PlaceImageN1: UIImageView = {
     let PlaceImageN1 = UIImageView()
        PlaceImageN1.layer.borderWidth = 1
-       PlaceImageN1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
        PlaceImageN1.layer.cornerRadius = 20
        PlaceImageN1.contentMode = .scaleAspectFill
        PlaceImageN1.clipsToBounds = true
-       PlaceImageN1.backgroundColor = .systemTeal
     return PlaceImageN1
   }()
 
@@ -152,35 +150,29 @@ class NaturalDetailsCell1: UITableViewCell {
 
     var PlaceImageN2: UIImageView = {
         var PlaceImageN2 = UIImageView()
-        PlaceImageN2.layer.borderWidth = 1
-        PlaceImageN2.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+//        PlaceImageN2.layer.borderWidth = 1
         PlaceImageN2.layer.cornerRadius = 20
         PlaceImageN2.contentMode = .scaleAspectFill
         PlaceImageN2.clipsToBounds = true
-        PlaceImageN2.backgroundColor = .systemTeal
      return PlaceImageN2
    }()
 
 
     var PlaceImageN4: UIImageView = {
         var PlaceImageN4 = UIImageView()
-        PlaceImageN4.layer.borderWidth = 1
-        PlaceImageN4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+//        PlaceImageN4.layer.borderWidth = 1
         PlaceImageN4.layer.cornerRadius = 20
         PlaceImageN4.contentMode = .scaleAspectFill
         PlaceImageN4.clipsToBounds = true
-        PlaceImageN4.backgroundColor = .systemTeal
      return PlaceImageN4
    }()
 
     var PlaceImageN3: UIImageView = {
         var PlaceImageN3 = UIImageView()
-        PlaceImageN3.layer.borderWidth = 1
-        PlaceImageN3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+//        PlaceImageN3.layer.borderWidth = 1
         PlaceImageN3.layer.cornerRadius = 20
         PlaceImageN3.contentMode = .scaleAspectFill
         PlaceImageN3.clipsToBounds = true
-        PlaceImageN3.backgroundColor = .systemTeal
      return PlaceImageN3
    }()
 
@@ -200,7 +192,6 @@ class NaturalDetailsCell1: UITableViewCell {
         placeDetailN.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
         placeDetailN.textAlignment = .center
         placeDetailN.textColor = .darkGray
-        placeDetailN.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
         placeDetailN.layer.cornerRadius = 20
         placeDetailN.translatesAutoresizingMaskIntoConstraints = false
         placeDetailN.layer.masksToBounds = true
@@ -211,7 +202,6 @@ class NaturalDetailsCell1: UITableViewCell {
 
 
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: reuseIdentifier)
     super.init(style: style, reuseIdentifier: reuseIdentifier)
      contentView.addSubview(PlaceImageN1)
      contentView.addSubview(PlaceImageN2)
@@ -224,7 +214,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 
     contentView.clipsToBounds = true
-    contentView.backgroundColor = .white
+    contentView.backgroundColor = UIColor (  #colorLiteral(red: 0.01546635386, green: 0.1756357253, blue: 0.2539866269, alpha: 1))
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder: has not implement>>>")
@@ -272,3 +262,4 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 }
 
+}

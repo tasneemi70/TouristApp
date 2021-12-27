@@ -21,11 +21,11 @@ class FavouriteCell: UITableViewCell {
            placeImage.layer.borderWidth = 1
            placeImage.layer.borderColor = .init(    #colorLiteral(red: 0.1756414473, green: 0.2335938513, blue: 0.3966174424, alpha: 0.7637624172) )
            placeImage.clipsToBounds = false
-         placeImage.layer.shadowColor = UIColor.white.cgColor
+           placeImage.layer.shadowColor = UIColor.white.cgColor
            //placeImage.layer.shadowOpacity = 9.0
            //placeImage.layer.shadowRadius = 10
            placeImage.layer.masksToBounds = false
-
+           placeImage.backgroundColor = UIColor(named: "")
 
               return placeImage
     }()
@@ -39,7 +39,7 @@ class FavouriteCell: UITableViewCell {
          nameplace.textAlignment = .center
          nameplace.layer.cornerRadius = 5
          nameplace.layer.masksToBounds = true
-         nameplace.backgroundColor =  UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.1)
+         nameplace.backgroundColor = UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
 
         return nameplace
 
@@ -57,7 +57,6 @@ class FavouriteCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
         // x: right and left
         // y: up and down
 
@@ -65,7 +64,7 @@ class FavouriteCell: UITableViewCell {
     
         
         placeImage2.frame = CGRect(x: 200, y: 5, width: 180, height: 190)
-//        nameLabel2.frame = CGRect(x: 50 , y: contentView.frame.size.height - 40, width: contentView.frame.size.width - 5, height: 40)
+
         nameLabel2.frame =  CGRect(x: 30,
                                y: 20 ,
                              width: 150,

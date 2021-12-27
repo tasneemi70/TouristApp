@@ -69,7 +69,7 @@ import UIKit
         }
 
     let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+            layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: view.frame.size.width,
                                  height: view.frame.size.height)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)

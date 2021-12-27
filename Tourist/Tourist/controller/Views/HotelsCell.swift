@@ -24,10 +24,10 @@ class HotelCell: UICollectionViewCell, UISearchBarDelegate {
         let placeImageR = UIImageView()
         placeImageR.image = UIImage(named: "a1")
        
-        placeImageR.layer.borderWidth = 1
-        placeImageR.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+//        placeImageR.layer.borderWidth = 1
+        //placeImageR.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         placeImageR.layer.cornerRadius = 20
-        placeImageR.backgroundColor = .systemTeal
+        //placeImageR.backgroundColor = .systemTeal
 
         return placeImageR
     }()
@@ -37,7 +37,7 @@ class HotelCell: UICollectionViewCell, UISearchBarDelegate {
         nameRest.text = ""
         nameRest.textColor = .darkGray
         nameRest.textAlignment = .right
-        nameRest.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        nameRest.backgroundColor = UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
         nameRest.layer.cornerRadius = 0
         nameRest.layer.masksToBounds = true
 
@@ -70,7 +70,7 @@ class HotelCell: UICollectionViewCell, UISearchBarDelegate {
         
         let RestName = nameRest.text ?? ""
         _ = placeImageR.image ?? UIImage(systemName: "house")
-        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: placeR.image, name: RestName))
+        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: placeR.image, name: RestName, id: placeR.id))
     }
 
     func setCell(placeR: abhPlace) {

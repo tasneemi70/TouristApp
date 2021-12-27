@@ -21,8 +21,8 @@ class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
         let placeImageC = UIImageView()
         placeImageC.image = UIImage(named: "a1")
        
-        placeImageC.layer.borderWidth = 1
-        placeImageC.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
+//        placeImageC.layer.borderWidth = 1
+       // placeImageC.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         placeImageC.layer.cornerRadius = 20
         placeImageC.backgroundColor = .systemTeal
 
@@ -34,7 +34,7 @@ class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
         nameCoffee.text = ""
         nameCoffee.textColor = .darkGray
         nameCoffee.textAlignment = .right
-        nameCoffee.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        nameCoffee.backgroundColor = UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
         nameCoffee.layer.cornerRadius = 0
         nameCoffee.layer.masksToBounds = true
 
@@ -67,7 +67,7 @@ class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
         
         let CoffeeName = nameCoffee.text ?? ""
         _ = placeImageC.image ?? UIImage(systemName: "house")
-        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: placeC.image, name: CoffeeName))
+        FavoriteServiceVisitor.shared.addToFavorite(favPlace: FavVisitor(image: placeC.image, name: CoffeeName, id: placeC.id))
     }
 
     func setCell(placeC: abhPlace) {

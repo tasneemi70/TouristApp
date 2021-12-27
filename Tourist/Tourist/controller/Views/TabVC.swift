@@ -21,7 +21,7 @@ class TabVC: UITabBarController, UITabBarControllerDelegate {
     super.viewWillAppear(animated)
     let item1 = HomeVC()
       let item3 = Weather()
-      let item6 =  ViewController()
+      //let item6 =  ViewController()
      let item4 =  TikTok()
       let item5 = FavouriteVC()
       let item2 = ProfileVC()
@@ -30,18 +30,18 @@ class TabVC: UITabBarController, UITabBarControllerDelegate {
     //  tabBar.backgroundColor = .white
     let icon1 = UITabBarItem(title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "contextualmenu.and.cursorarrow"), selectedImage: UIImage(systemName: "contextualmenu.and.cursorarrow"))
       let icon3 = UITabBarItem(title:NSLocalizedString("Weather", comment: "") , image: UIImage(systemName: "cloud"), selectedImage: UIImage(systemName: "cloud.drizzle.fill"))
-      let icon6 = UITabBarItem(title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location"), selectedImage: UIImage(systemName: "location.fill"))
+//let icon6 = UITabBarItem(title: NSLocalizedString("Location", comment: ""), image: UIImage(systemName: "location"), selectedImage: UIImage(systemName: "location.fill"))
       let icon4 = UITabBarItem(title: NSLocalizedString("Video", comment: ""), image: UIImage(systemName: "video"), selectedImage: UIImage(systemName: "video.fill"))
       let icon5 = UITabBarItem(title: NSLocalizedString("My List", comment: ""), image: UIImage(systemName: "text.badge.plus"), selectedImage: UIImage(systemName: "list.bullet.circle.fill"))
       let icon2 = UITabBarItem(title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person"))
       item1.tabBarItem = icon1
       item3.tabBarItem = icon3
-      item6.tabBarItem = icon6
+    //  item6.tabBarItem = icon6
       item4.tabBarItem = icon4
       item5.tabBarItem = icon5
       item2.tabBarItem = icon2
 
-    let controllers = [item1,item3,item4,item6,item5,item2] //array of the root view controllers displayed by the tab bar interface
+    let controllers = [item1,item3,item4,item5,item2] //array of the root view controllers displayed by the tab bar interface
     self.viewControllers = controllers
   }
   func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

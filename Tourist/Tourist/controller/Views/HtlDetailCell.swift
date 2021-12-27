@@ -20,6 +20,8 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
       table.translatesAutoresizingMaskIntoConstraints = false
       table.delegate = self
       table.dataSource = self
+      table.backgroundColor = UIColor(named: "setGradientBackground")
+      
       table.register(HotelsDetailsCell1.self, forCellReuseIdentifier: HotelCell.identfir)
     return table
    }()
@@ -41,16 +43,31 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
        return share
 
    }()
+    let LocationBtn: UIButton = {
+       let LocationBtn = UIButton()
+
+        LocationBtn.translatesAutoresizingMaskIntoConstraints = false
+        LocationBtn.setTitleColor(.darkGray, for: .normal)
+        LocationBtn.setImage(UIImage(named: "Location"), for: .normal)
+//        LocationBtn.setTitle("       Location", for: .normal)
+        LocationBtn.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
+        LocationBtn.layer.cornerRadius = 20
+        LocationBtn.layer.masksToBounds = true
+//        LocationBtn.backgroundColor = .blue
+        LocationBtn.addTarget(self, action: #selector(locationPressed3), for: .touchUpInside)
+
+       return LocationBtn
+
+   }()
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      view.backgroundColor = .white
-
+setGradientBackground()
       view.addSubview(sharePlace)
+      view.addSubview(LocationBtn)
 
        view.addSubview(tableView2)
-    //  view.backgroundColor = UIColor(named: "Color")
 
 
 
@@ -68,7 +85,13 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
       sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
       sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
       sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
-
+        
+        LocationBtn.widthAnchor.constraint(equalToConstant: 70),
+        LocationBtn.heightAnchor.constraint(equalToConstant: 50),
+        LocationBtn.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
+        LocationBtn.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 250),
+        LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
+          
 
     ])
 
@@ -78,7 +101,7 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
     return  PlacesC?.placeA.count ?? 0
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cellH = tableView.dequeueReusableCell(withIdentifier: "HotelsCell", for: indexPath) as! HotelsDetailsCell1
+    let cellH = tableView.dequeueReusableCell(withIdentifier: "CellH", for: indexPath) as! HotelsDetailsCell1
     let b = PlacesC!.placeA[indexPath.item]
       cellH.PlaceNameH.text = b.PlaceName
       cellH.PlaceImageH1.image = UIImage(named: b.PlaceImage1)
@@ -105,18 +128,24 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
        sharePlace.popoverPresentationController?.sourceView = self.view
      self.present(sharePlace, animated: true, completion: nil)
    }
+    @objc func locationPressed3 (_ sender: Any) {
+        if let url3 = URL(string: "https://goo.gl/maps/Lt4jupvnPHQcJCGKA") {
+                   UIApplication.shared.open(url3)
+        
+
+                  }
     }
 
 class HotelsDetailsCell1: UITableViewCell {
 
- static let identifier = "HotelsCell"
+ static let identifier = "CellH"
   let pdfTitle = Date()
 
   //@objc var webView: WKWebView?
 
    let PlaceImageH1: UIImageView = {
     let PlaceImageH1 = UIImageView()
-       PlaceImageH1.layer.borderWidth = 1
+//       PlaceImageH1.layer.borderWidth = 1
        PlaceImageH1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
        PlaceImageH1.layer.cornerRadius = 20
        PlaceImageH1.contentMode = .scaleAspectFill
@@ -129,7 +158,7 @@ class HotelsDetailsCell1: UITableViewCell {
 
     var PlaceImageH2: UIImageView = {
         var PlaceImageH2 = UIImageView()
-        PlaceImageH2.layer.borderWidth = 1
+//        PlaceImageH2.layer.borderWidth = 1
         PlaceImageH2.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageH2.layer.cornerRadius = 20
         PlaceImageH2.contentMode = .scaleAspectFill
@@ -141,7 +170,7 @@ class HotelsDetailsCell1: UITableViewCell {
 
     var PlaceImageH4: UIImageView = {
         var PlaceImageH4 = UIImageView()
-        PlaceImageH4.layer.borderWidth = 1
+//        PlaceImageH4.layer.borderWidth = 1
         PlaceImageH4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageH4.layer.cornerRadius = 20
         PlaceImageH4.contentMode = .scaleAspectFill
@@ -152,7 +181,7 @@ class HotelsDetailsCell1: UITableViewCell {
 
     var PlaceImageH3: UIImageView = {
         var PlaceImageH3 = UIImageView()
-        PlaceImageH3.layer.borderWidth = 1
+//        PlaceImageH3.layer.borderWidth = 1
         PlaceImageH3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageH3.layer.cornerRadius = 20
         PlaceImageH3.contentMode = .scaleAspectFill
@@ -165,7 +194,7 @@ class HotelsDetailsCell1: UITableViewCell {
     let PlaceNameH = UILabel()
         PlaceNameH.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameH.textAlignment = .center
-        PlaceNameH.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        PlaceNameH.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
         PlaceNameH.layer.cornerRadius = 20
         PlaceNameH.layer.masksToBounds = true
     return PlaceNameH
@@ -173,7 +202,7 @@ class HotelsDetailsCell1: UITableViewCell {
 
      let placeDetailH: UILabel = {
      let placeDetailH = UILabel()
-         placeDetailH.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
+         placeDetailH.font = UIFont(name: "AvenirNextCondensed-Medium", size:   30.0)
          placeDetailH.textAlignment = .center
          placeDetailH.textColor = .darkGray
          placeDetailH.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
@@ -200,7 +229,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 
     contentView.clipsToBounds = true
-    contentView.backgroundColor = .white
+    contentView.backgroundColor = UIColor (  #colorLiteral(red: 0.01546635386, green: 0.1756357253, blue: 0.2539866269, alpha: 1))
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder: has not implement>>>")
@@ -248,3 +277,4 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 }
 
+}

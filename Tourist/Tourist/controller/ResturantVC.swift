@@ -28,7 +28,7 @@ class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         titlelabel.font = UIFont(name: "AvenirNextCondensed-Medium", size: 23.0)
         titlelabel.textColor = .white
         titlelabel.textAlignment = .center
-         titlelabel.backgroundColor = UIColor(  #colorLiteral(red: 0.1437019706, green: 0.1230279282, blue: 0.4485198259, alpha: 0.9251603891)        )
+         titlelabel.backgroundColor = UIColor( #colorLiteral(red: 0.6971340775, green: 0.7144420743, blue: 0.7253066897, alpha: 1))
         titlelabel.layer.cornerRadius = 100
         titlelabel.layer.masksToBounds = true
         titlelabel.translatesAutoresizingMaskIntoConstraints = false
@@ -40,13 +40,15 @@ class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-//        setGradientBackground()
+        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
+
+        setGradientBackground()
+       
 
         if #available(iOS 15, *) {
              let appearance = UINavigationBarAppearance()
              appearance.configureWithOpaqueBackground()
-   //          appearance.backgroundColor = < your tint color >
+            appearance.backgroundColor = UIColor(  #colorLiteral(red: 0.08766946942, green: 0.2745897174, blue: 0.3569372594, alpha: 0.4541080298) )
              navigationController?.navigationBar.standardAppearance = appearance;
              navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
            }
@@ -91,8 +93,8 @@ class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         let cv = UICollectionView(frame:.zero , collectionViewLayout: layout)
-        cv.backgroundColor = .white
-        
+        cv.backgroundColor = UIColor(named: "setGradientBackground")
+
         return cv
     }()
     
@@ -118,7 +120,7 @@ class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
         cell2.setCell(placeR: searchPlace[indexPath.item])
 //
-        cell2.backgroundColor = .white
+        //cell2.backgroundColor = .blue
         cell2.layer.cornerRadius = 35
         return cell2
     }
