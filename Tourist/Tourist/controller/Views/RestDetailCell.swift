@@ -64,6 +64,19 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
     }()
 
   override func viewDidLoad() {
+      
+      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+      view.addSubview(textView)
+      textView.contentInsetAdjustmentBehavior = .automatic
+      textView.textAlignment = NSTextAlignment.center
+      textView.textColor = UIColor.black
+      textView.backgroundColor = UIColor.lightGray
+      textView.isUserInteractionEnabled = true
+      textView.layer.cornerRadius = 18
+    
+      
+      
+      
     super.viewDidLoad()
       view.backgroundColor = UIColor(named: "setGradientBackground")
       setGradientBackground()
@@ -76,27 +89,36 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
       
       
     NSLayoutConstraint.activate([
-        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+        
+        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
         tableView2.heightAnchor.constraint(equalToConstant: 400),
         tableView2.widthAnchor.constraint(equalToConstant: 10),
         tableView2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
         tableView2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
+        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200),
+        
+        
       // x: right and left
       // y: up and down
-      sharePlace.widthAnchor.constraint(equalToConstant: 70),
-      sharePlace.heightAnchor.constraint(equalToConstant: 50),
-      sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
-      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
-        
-        LocationBtn1.widthAnchor.constraint(equalToConstant: 70),
-        LocationBtn1.heightAnchor.constraint(equalToConstant: 50),
-        LocationBtn1.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-        LocationBtn1.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 250),
-        LocationBtn1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
 
+        
+        sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50),
+        sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
+        sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
+        sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+        
+        LocationBtn1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
+        LocationBtn1.self.heightAnchor.constraint(equalToConstant: 50),
+        LocationBtn1.self.widthAnchor.constraint(equalToConstant: 70),
+        LocationBtn1.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+       
+
+        
+        
     ])
+
+
+
       
 
   }

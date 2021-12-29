@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */; };
+		8F0FD0B2277C4EE000BC5ED6 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */; };
 		8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43F3FC27661BDA000EDF59 /* GradientView2.swift */; };
 		8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */; };
 		8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
 		8F43F3FC27661BDA000EDF59 /* GradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView2.swift; sourceTree = "<group>"; };
 		8F6E5C94274CF817009C7BD8 /* Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,9 +133,10 @@
 				8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */,
 				8FAA48552761F078008D5915 /* FavoriteVC.swift */,
 				8F6F1184276E55B9009F0F08 /* CoffeeVC.swift */,
+				8F6E5CE2274E7AB4009C7BD8 /* NaturalVC.swift */,
 				8F6F1182276E08B2009F0F08 /* ResturantVC.swift */,
 				8F6F118A27705A22009F0F08 /* HotelsVC.swift */,
-				8F6E5CE2274E7AB4009C7BD8 /* NaturalVC.swift */,
+				8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */,
 				8FAA4842275DE801008D5915 /* Views */,
 			);
 			path = controller;
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F0FD0B2277C4EE000BC5ED6 /* Pages.swift in Sources */,
 				8F6E5CDD274E7A7C009C7BD8 /* TabVC.swift in Sources */,
 				8F6E5CE7274E7AC3009C7BD8 /* HotelsCell.swift in Sources */,
 				8F6E5CF3274F5FD1009C7BD8 /* GradientView.swift in Sources */,

@@ -43,9 +43,10 @@ class NaturallVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
-
-        setGradientBackground()
+        
+        //under cell
+      view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
+         setGradientBackground()
 
         if #available(iOS 15, *) {
              let appearance = UINavigationBarAppearance()

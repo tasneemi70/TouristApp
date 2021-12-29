@@ -32,11 +32,8 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.darkGray, for: .normal)
         share.setImage(UIImage(named: "send"), for: .normal)
-       // share.setTitle("       Send", for: .normal)
-      //  share.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
-       // share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
        return share
@@ -67,6 +64,20 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
 
   override func viewDidLoad() {
     super.viewDidLoad()
+      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+      view.addSubview(textView)
+      textView.contentInsetAdjustmentBehavior = .automatic
+      textView.textAlignment = NSTextAlignment.center
+      textView.textColor = UIColor.black
+      textView.backgroundColor = UIColor.lightGray
+      textView.isUserInteractionEnabled = true
+      textView.layer.cornerRadius = 18
+    
+      
+      
+      
+      
+      
       view.backgroundColor = UIColor(named: "setGradientBackground")
 
       setGradientBackground()
@@ -80,28 +91,35 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
       
       
     NSLayoutConstraint.activate([
-        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+        
+        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
         tableView2.heightAnchor.constraint(equalToConstant: 400),
         tableView2.widthAnchor.constraint(equalToConstant: 10),
         tableView2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
         tableView2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
+        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200),
+        
+        
       // x: right and left
       // y: up and down
+
         
-      sharePlace.widthAnchor.constraint(equalToConstant: 70),
-      sharePlace.heightAnchor.constraint(equalToConstant: 50),
-      sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
-      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
-    
-        LocationBtn.widthAnchor.constraint(equalToConstant: 70),
-        LocationBtn.heightAnchor.constraint(equalToConstant: 50),
-        LocationBtn.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-        LocationBtn.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 250),
-        LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
+        sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50),
+        sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
+        sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
+        sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+        
+        LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
+        LocationBtn.self.heightAnchor.constraint(equalToConstant: 50),
+        LocationBtn.self.widthAnchor.constraint(equalToConstant: 70),
+        LocationBtn.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+       
+
+        
+
     ])
-      
+
+
 
   }
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

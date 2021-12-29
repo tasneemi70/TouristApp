@@ -8,14 +8,15 @@
 
 
 import UIKit
+import Firebase
 
 class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-
+var textComment = false
     var Places: abhPlace?
     var PlacesC: abhPlace?
 
-
+    
   lazy var tableView2: UITableView = {
     let table = UITableView()
       table.translatesAutoresizingMaskIntoConstraints = false
@@ -59,41 +60,58 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
       
+      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+      view.addSubview(textView)
+      textView.contentInsetAdjustmentBehavior = .automatic
+      textView.textAlignment = NSTextAlignment.center
+      textView.textColor = UIColor.black
+      textView.backgroundColor = UIColor(   #colorLiteral(red: 0.9463635087, green: 0.9465219378, blue: 0.9463427663, alpha: 1)  )
+      textView.isUserInteractionEnabled = true
+      textView.layer.cornerRadius = 18
+    
       setGradientBackground()
 
       view.addSubview(sharePlace)
       view.addSubview(LocationBtn)
        view.addSubview(tableView2)
-      view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
-
+      
+      
 
     NSLayoutConstraint.activate([
-        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+        tableView2.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
         tableView2.heightAnchor.constraint(equalToConstant: 400),
         tableView2.widthAnchor.constraint(equalToConstant: 10),
         tableView2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
         tableView2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
-        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150),
+        tableView2.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -200),
+        
+        
       // x: right and left
       // y: up and down
-      sharePlace.widthAnchor.constraint(equalToConstant: 70),
-      sharePlace.heightAnchor.constraint(equalToConstant: 50),
-      sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-      sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 150),
-      sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
+
         
-        LocationBtn.widthAnchor.constraint(equalToConstant: 70),
-        LocationBtn.heightAnchor.constraint(equalToConstant: 50),
-        LocationBtn.topAnchor.constraint(equalTo: tableView2.bottomAnchor),
-        LocationBtn.leftAnchor.constraint(equalTo: view.leftAnchor,constant: 250),
-        LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 10),
-          
+        sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50),
+        sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
+        sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
+        sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+        
+        LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
+        LocationBtn.self.heightAnchor.constraint(equalToConstant: 50),
+        LocationBtn.self.widthAnchor.constraint(equalToConstant: 70),
+        LocationBtn.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+       
+
+
 
     ])
 
 
   }
+
+
+    
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return  PlacesC?.placeA.count ?? 0
   }
@@ -180,7 +198,7 @@ class NaturalDetailsCell1: UITableViewCell {
     let PlaceNameN = UILabel()
         PlaceNameN.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameN.textAlignment = .center
-        PlaceNameN.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        PlaceNameN.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
         PlaceNameN.layer.cornerRadius = 20
         PlaceNameN.layer.masksToBounds = true
     return PlaceNameN
@@ -189,7 +207,7 @@ class NaturalDetailsCell1: UITableViewCell {
     
     let placeDetailN: UILabel = {
     let placeDetailN = UILabel()
-        placeDetailN.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
+        placeDetailN.font = UIFont(name: "AvenirNextCondensed-Medium", size:    25.0)
         placeDetailN.textAlignment = .center
         placeDetailN.textColor = .darkGray
         placeDetailN.layer.cornerRadius = 20
@@ -214,8 +232,9 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 
     contentView.clipsToBounds = true
-    contentView.backgroundColor = UIColor (  #colorLiteral(red: 0.01546635386, green: 0.1756357253, blue: 0.2539866269, alpha: 1))
-  }
+    
+    contentView.backgroundColor = UIColor (  #colorLiteral(red: 0.01546635386, green: 0.1756357253, blue: 0.2539866269, alpha: 1))  }
+  
   required init?(coder: NSCoder) {
     fatalError("init(coder: has not implement>>>")
   }
