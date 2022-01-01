@@ -12,10 +12,10 @@ import Firebase
 class TabVC: UITabBarController, UITabBarControllerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
-      self.tabBar.tintColor = UIColor.gray
+    //  self.tabBar.tintColor = UIColor.gray
       // tab bar icon tint color
           self.tabBar.isTranslucent = false
-          UITabBar.appearance().barTintColor = UIColor.lightGray // tab bar background color
+          UITabBar.appearance().barTintColor = UIColor(   #colorLiteral(red: 0.7919430137, green: 0.7920770049, blue: 0.7919253707, alpha: 0.8596854305)   )// tab bar background color
     delegate = self
   }
   override func viewWillAppear(_ animated: Bool) {

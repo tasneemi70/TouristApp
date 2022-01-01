@@ -64,16 +64,16 @@ class CoffeeDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataS
 
   override func viewDidLoad() {
     super.viewDidLoad()
-      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-      view.addSubview(textView)
-      textView.contentInsetAdjustmentBehavior = .automatic
-      textView.textAlignment = NSTextAlignment.center
-      textView.textColor = UIColor.black
-      textView.backgroundColor = UIColor.lightGray
-      textView.isUserInteractionEnabled = true
-      textView.layer.cornerRadius = 18
-    
-      
+//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+//      view.addSubview(textView)
+//      textView.contentInsetAdjustmentBehavior = .automatic
+//      textView.textAlignment = NSTextAlignment.center
+//      textView.textColor = UIColor.white
+//      textView.backgroundColor = UIColor.lightGray
+//      textView.isUserInteractionEnabled = true
+//      textView.layer.cornerRadius = 18
+//    
+//      
       
       
       
@@ -219,7 +219,7 @@ class CoffeeCell1: UITableViewCell {
     let PlaceNameC = UILabel()
        PlaceNameC.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
        PlaceNameC.textAlignment = .center
-       PlaceNameC.backgroundColor =   UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
+       PlaceNameC.backgroundColor =   UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 0.10)
        PlaceNameC.layer.cornerRadius = 20
        PlaceNameC.layer.masksToBounds = true
     return PlaceNameC

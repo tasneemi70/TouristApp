@@ -35,7 +35,7 @@ class FavouriteCell: UITableViewCell {
         let nameplace = UILabel()
 
          nameplace.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
-         nameplace.textColor = .black
+         nameplace.textColor = .white
          nameplace.textAlignment = .center
          nameplace.layer.cornerRadius = 5
          nameplace.layer.masksToBounds = true

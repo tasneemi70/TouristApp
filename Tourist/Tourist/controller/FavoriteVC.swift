@@ -37,7 +37,6 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
             self.placeTV.reloadData()
             
         }
-//        view.backgroundColor = UIColor(named: "setGradientBackground")
         self.title = NSLocalizedString("My List", comment: "")
         view.reloadInputViews()
         
@@ -60,7 +59,6 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
         
     
 
- //  var image = UIImage(systemName: "like2")
  let image = UIImage(systemName: "checkmark.seal.fill")
            tabBarItem = .init(title: NSLocalizedString("My List", comment: ""), image: image, selectedImage: image)
     }

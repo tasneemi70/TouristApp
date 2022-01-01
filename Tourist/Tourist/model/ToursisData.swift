@@ -81,17 +81,17 @@ abhPlace(image: "u1", name: "فندق السروات بارك", placeA: [ PlaceI
 ]
 
 var naturalList = [
-    abhPlace(image: "t1", name: "AZIZAH ⠀⠀ ", placeA: [
-    PlaceInformation(PlaceImage0: "2",PlaceImage1: "t2", PlaceImage2: "t3", PlaceImage3: "t4", PlaceName: "AZIZAH ⛰", placeDetail: "⭐️⭐️⭐️⭐️")
+    abhPlace(image: "t1", name: "العزيزه ⠀⠀ ", placeA: [
+    PlaceInformation(PlaceImage0: "2",PlaceImage1: "t2", PlaceImage2: "t3", PlaceImage3: "t4", PlaceName: "العزيزه ⛰", placeDetail: "⭐️⭐️⭐️⭐️")
     ], id: UUID().uuidString),
-    abhPlace(image: "7", name: "Abha Dam lake ⠀", placeA: [
-      PlaceInformation(PlaceImage0: "q3",PlaceImage1: "q2", PlaceImage2: "q1", PlaceImage3: "7", PlaceName: "Abha Dam Lake", placeDetail: "⭐️⭐️⭐️⭐️")
+    abhPlace(image: "7", name: "بحيره السد⠀", placeA: [
+      PlaceInformation(PlaceImage0: "q3",PlaceImage1: "q2", PlaceImage2: "q1", PlaceImage3: "7", PlaceName: "بحيرة السد ", placeDetail: "⭐️⭐️⭐️⭐️")
     ], id: UUID().uuidString),
-    abhPlace(image: "1", name: "Jabal sawda ⛰", placeA: [
-      PlaceInformation(PlaceImage0: "w1",PlaceImage1: "w2", PlaceImage2: "w3", PlaceImage3: "1", PlaceName: "Jabal sawda ⛰", placeDetail: "⭐️⭐️⭐️⭐️")
+    abhPlace(image: "1", name: "جبال السوده ⛰", placeA: [
+      PlaceInformation(PlaceImage0: "w1",PlaceImage1: "w2", PlaceImage2: "w3", PlaceImage3: "1", PlaceName: "جبال السوده ⛰", placeDetail: "⭐️⭐️⭐️⭐️")
     ], id: UUID().uuidString),
-    abhPlace(image: "9", name: "Abu Kheyal Park", placeA: [
-        PlaceInformation(PlaceImage0: "f1",PlaceImage1: "f2", PlaceImage2: "f3", PlaceImage3: "9", PlaceName: "Abu Kheyal Park", placeDetail: "⭐️⭐️⭐️⭐️")
+    abhPlace(image: "9", name: "حديقة ابو خيال", placeA: [
+        PlaceInformation(PlaceImage0: "f1",PlaceImage1: "f2", PlaceImage2: "f3", PlaceImage3: "9", PlaceName: "حديقة ابو خيال", placeDetail: "⭐️⭐️⭐️⭐️")
     ], id: UUID().uuidString),
 
     

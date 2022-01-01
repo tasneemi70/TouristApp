@@ -58,16 +58,16 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
 
   override func viewDidLoad() {
       
-      
-      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-      view.addSubview(textView)
-      textView.contentInsetAdjustmentBehavior = .automatic
-      textView.textAlignment = NSTextAlignment.center
-      textView.textColor = UIColor.black
-      textView.backgroundColor = UIColor.lightGray
-      textView.isUserInteractionEnabled = true
-      textView.layer.cornerRadius = 18
-    
+//      
+//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+//      view.addSubview(textView)
+//      textView.contentInsetAdjustmentBehavior = .automatic
+//      textView.textAlignment = NSTextAlignment.center
+//      textView.textColor = UIColor.white
+//      textView.backgroundColor = UIColor.lightGray
+//      textView.isUserInteractionEnabled = true
+//      textView.layer.cornerRadius = 18
+//    
       
       
       
@@ -75,7 +75,6 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
        setGradientBackground()
       view.addSubview(sharePlace)
       view.addSubview(LocationBtn)
-
        view.addSubview(tableView2)
 
 
@@ -207,7 +206,7 @@ class HotelsDetailsCell1: UITableViewCell {
     let PlaceNameH = UILabel()
         PlaceNameH.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameH.textAlignment = .center
-        PlaceNameH.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
+        PlaceNameH.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 0.10)
         PlaceNameH.layer.cornerRadius = 20
         PlaceNameH.layer.masksToBounds = true
     return PlaceNameH

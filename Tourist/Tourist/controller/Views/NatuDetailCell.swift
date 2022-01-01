@@ -9,10 +9,12 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
+import FirebaseAuth
+
 
 class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-var textComment = false
     var Places: abhPlace?
     var PlacesC: abhPlace?
 
@@ -57,23 +59,39 @@ var textComment = false
        return LocationBtn
 
    }()
-
+    
+//
+//    let SaveComment: UIButton = {
+//       let SaveComment = UIButton()
+//        SaveComment.translatesAutoresizingMaskIntoConstraints = false
+//        SaveComment.setTitleColor(.white, for: .normal)
+//        SaveComment.setTitle("Save", for: .normal)
+//        SaveComment.layer.cornerRadius = 20
+//        SaveComment.layer.masksToBounds = true
+//     //  SaveComment.addTarget(self, action: #selector(SaveComment1), for: .touchUpInside)
+//        return SaveComment
+//
+//    }()
+    
+        
   override func viewDidLoad() {
     super.viewDidLoad()
 
       
-      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-      view.addSubview(textView)
-      textView.contentInsetAdjustmentBehavior = .automatic
-      textView.textAlignment = NSTextAlignment.center
-      textView.textColor = UIColor.black
-      textView.backgroundColor = UIColor(   #colorLiteral(red: 0.9463635087, green: 0.9465219378, blue: 0.9463427663, alpha: 1)  )
-      textView.isUserInteractionEnabled = true
-      textView.layer.cornerRadius = 18
-    
+//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+//      view.addSubview(textView)
+//      textView.contentInsetAdjustmentBehavior = .automatic
+//      textView.textAlignment = NSTextAlignment.center
+//      textView.textColor = UIColor.white
+//      textView.backgroundColor = UIColor(   #colorLiteral(red: 0.9463635087, green: 0.9465219378, blue: 0.9463427663, alpha: 1)  )
+//      textView.isUserInteractionEnabled = true
+//      textView.layer.cornerRadius = 18
+//    
       setGradientBackground()
 
       view.addSubview(sharePlace)
+     // view.addSubview(SaveComment)
+
       view.addSubview(LocationBtn)
        view.addSubview(tableView2)
       
@@ -96,6 +114,12 @@ var textComment = false
         sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
         sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
         sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+      
+//        SaveComment.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40),
+//        SaveComment.self.heightAnchor.constraint(equalToConstant: 50),
+//        SaveComment.self.widthAnchor.constraint(equalToConstant: 70),
+//        SaveComment.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+//
         
         LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
         LocationBtn.self.heightAnchor.constraint(equalToConstant: 50),
@@ -104,15 +128,22 @@ var textComment = false
        
 
 
-
     ])
-
-
+//      let id = UUID().uuidString
+//      Firestore.firestore().collection("Comment").document(id).setData([
+//        "a": textView.text
+//
+//          ])
   }
-
-
+//    @objc func SaveComment1() {
+    //        let id = UUID().uuidString
+    //        Firestore.firestore().collection("Comment").document(id).setData([
+    //           // "a": textView.text
+    //            ])
+  //  }
     
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return  PlacesC?.placeA.count ?? 0
   }
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -198,7 +229,8 @@ class NaturalDetailsCell1: UITableViewCell {
     let PlaceNameN = UILabel()
         PlaceNameN.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameN.textAlignment = .center
-        PlaceNameN.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 1)
+        PlaceNameN.textColor = .white
+        PlaceNameN.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 0.10)
         PlaceNameN.layer.cornerRadius = 20
         PlaceNameN.layer.masksToBounds = true
     return PlaceNameN

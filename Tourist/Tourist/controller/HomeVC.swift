@@ -119,10 +119,10 @@ var pageControl = UIPageControl()
         nameGroup.text = (NSLocalizedString("Hotels", comment: ""))
         nameGroup.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
         nameGroup.textAlignment = .center
-        nameGroup.backgroundColor = .white
+        nameGroup.backgroundColor = UIColor(named: "Color")
         nameGroup.layer.cornerRadius = 20
         nameGroup.translatesAutoresizingMaskIntoConstraints =
-        nameGroup.textColor == .white
+        nameGroup.textColor == UIColor(named: "Color")
         nameGroup.layer.masksToBounds = true
         return nameGroup
     }()
@@ -133,10 +133,10 @@ var pageControl = UIPageControl()
         nameGroup1.text = (NSLocalizedString("Coffee Shop", comment: ""))
         nameGroup1.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
         nameGroup1.textAlignment = .center
-        nameGroup1.backgroundColor = .white
+        nameGroup1.backgroundColor = UIColor(named: "Color")
         nameGroup1.layer.cornerRadius = 20
         nameGroup1.translatesAutoresizingMaskIntoConstraints =
-        nameGroup1.textColor == .white
+        nameGroup1.textColor == UIColor(named: "Color")
         nameGroup1.layer.masksToBounds = true
         return nameGroup1
     }()
@@ -149,10 +149,10 @@ var pageControl = UIPageControl()
         nameGroup2.text = (NSLocalizedString("Resturants", comment: ""))
         nameGroup2.font = UIFont(name: "AvenirNextCondensed-Medium", size:    16.0)
         nameGroup2.textAlignment = .center
-        nameGroup2.backgroundColor = .white
+        nameGroup2.backgroundColor = UIColor(named: "Color")
         nameGroup2.layer.cornerRadius = 20
         nameGroup2.translatesAutoresizingMaskIntoConstraints =
-        nameGroup2.textColor == .white
+        nameGroup2.textColor == UIColor(named: "Color")
         nameGroup2.layer.masksToBounds = true
         return nameGroup2
     }()
@@ -163,10 +163,10 @@ var pageControl = UIPageControl()
         nameGroup3.text = (NSLocalizedString("Natural Places", comment: ""))
         nameGroup3.font = UIFont(name: "AvenirNextCondensed-Medium", size:    16.0)
         nameGroup3.textAlignment = .center
-        nameGroup3.backgroundColor = .white
+        nameGroup3.backgroundColor = UIColor(named: "Color")
         nameGroup3.layer.cornerRadius = 20
         nameGroup3.translatesAutoresizingMaskIntoConstraints =
-        nameGroup3.textColor == .white
+        nameGroup3.textColor == UIColor(named: "Color")
         nameGroup3.layer.masksToBounds = true
         return nameGroup3
     }()
@@ -174,11 +174,11 @@ var pageControl = UIPageControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.numberOfPages = arrCollecPhoto.count
-                startTimer()
-  setGradientBackground()
+        startTimer()
+        setGradientBackground()
 
-        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )        //UIColor(named: "Color")
-        var image = UIImage(systemName: "house.circle.fill")
+        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
+        let image = UIImage(systemName: "house.circle.fill")
         tabBarItem = .init(title: NSLocalizedString("Home", comment: ""), image: image, selectedImage: image)
     
         

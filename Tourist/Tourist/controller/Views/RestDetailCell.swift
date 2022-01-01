@@ -65,17 +65,17 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
 
   override func viewDidLoad() {
       
-      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-      view.addSubview(textView)
-      textView.contentInsetAdjustmentBehavior = .automatic
-      textView.textAlignment = NSTextAlignment.center
-      textView.textColor = UIColor.black
-      textView.backgroundColor = UIColor.lightGray
-      textView.isUserInteractionEnabled = true
-      textView.layer.cornerRadius = 18
-    
-      
-      
+//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
+//      view.addSubview(textView)
+//      textView.contentInsetAdjustmentBehavior = .automatic
+//      textView.textAlignment = NSTextAlignment.center
+//      textView.textColor = UIColor.white
+//      textView.backgroundColor = UIColor.lightGray
+//      textView.isUserInteractionEnabled = true
+//      textView.layer.cornerRadius = 18
+//    
+//      
+//      
       
     super.viewDidLoad()
       view.backgroundColor = UIColor(named: "setGradientBackground")
@@ -218,7 +218,7 @@ class ResturantDetailsCell: UITableViewCell {
     let PlaceNameR = UILabel()
         PlaceNameR.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameR.textAlignment = .center
-        PlaceNameR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
+        PlaceNameR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.10)
         PlaceNameR.layer.cornerRadius = 20
         PlaceNameR.layer.masksToBounds = true
     return PlaceNameR

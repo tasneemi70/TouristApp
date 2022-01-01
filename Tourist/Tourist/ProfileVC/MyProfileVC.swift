@@ -21,7 +21,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     lazy var profileImage: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+        view.backgroundColor =  UIColor(named: "Color")
         view.layer.cornerRadius = 50
         view.isUserInteractionEnabled = true
         return view
@@ -39,7 +39,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     let name : UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = NSLocalizedString("Write your name", comment: "")
-        $0.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+        $0.backgroundColor = UIColor(named: "Color")
+        //UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         $0.layer.cornerRadius = 20
         $0.textAlignment = .center
         $0.font = .boldSystemFont(ofSize: 23)
@@ -49,7 +50,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
     // sign out from tourist app
     let signOutButton : UIButton = {
-        $0.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+        $0.backgroundColor = UIColor(named: "Color")
         $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
@@ -61,7 +62,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     //change language to english and arabic
     let changeLanguage : UIButton = {
         let change = UIButton()
-        change.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+        change.backgroundColor = UIColor(named: "Color")
         change.translatesAutoresizingMaskIntoConstraints = false
         change.layer.cornerRadius = 20
         change.setTitle(NSLocalizedString("Change Language", comment: ""), for: .normal)
@@ -75,7 +76,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     // sharr app
     let shareApp : UIButton = {
         let shareApp = UIButton()
-        shareApp.backgroundColor = UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+        shareApp.backgroundColor = UIColor(named: "Color")
         shareApp.translatesAutoresizingMaskIntoConstraints = false
         shareApp.layer.cornerRadius = 20
         shareApp.setTitle(NSLocalizedString("Share App", comment: ""), for: .normal)
@@ -106,11 +107,14 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
            }    }
     // function change language
    @objc func btnChangeLangauge() {
-       let currentLangauge = Locale.current.languageCode
-       print("currentLangauge: \(currentLangauge ?? "")")
-       let newLanguage = currentLangauge == "en" ? "er" : "en"
-       UserDefaults.standard.setValue([newLanguage], forKey: "AppleLangauges")
-        exit(0)
+       guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+       return
+      }
+      if UIApplication.shared.canOpenURL(settingsUrl) {
+       UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+       print("Settings opened: \(success)")
+       })
+      }
     }
     
 // function to open image
