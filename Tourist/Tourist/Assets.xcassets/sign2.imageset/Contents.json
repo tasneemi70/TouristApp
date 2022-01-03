@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "icons8-login_rounded_right.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "unnamed-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

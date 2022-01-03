@@ -50,8 +50,10 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
     // sign out from tourist app
     let signOutButton : UIButton = {
-        $0.backgroundColor = UIColor(named: "Color")
-        $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
+       // $0.backgroundColor = UIColor(named: "Color")
+       // $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
+        $0.setImage(UIImage(named: "sign2"), for: .normal)
+        $0.setTitle("Sign Out", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.translatesAutoresizingMaskIntoConstraints = false

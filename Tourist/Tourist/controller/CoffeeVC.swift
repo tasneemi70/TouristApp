@@ -5,10 +5,14 @@
 //  Created by Tsnim Alqahtani on 14/05/1443 AH.
 //
 import UIKit
+import Firebase
+import FirebaseFirestore
+
 
 
 class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate  {
     
+ 
     var searchPlace: Array<abhPlace> = coffeelist
     
     var c : abhPlace?
@@ -39,6 +43,8 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         //under cell
       view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
@@ -83,10 +89,10 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         ])
             
         
-       
-        
+
     }
     
+   
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -119,11 +125,11 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         let cell2  = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CoffeeCell
         
         
-        cell2.setCell(placeC: searchPlace[indexPath.item])
+          cell2.setCell(placeC: searchPlace[indexPath.item])
 //        
 //        cell2.backgroundColor = .white
-        cell2.layer.cornerRadius = 35
-        return cell2
+         cell2.layer.cornerRadius = 35
+         return cell2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -146,15 +152,12 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC1 = CoffeeDetailsCell()
+        let newVC1 = CoffeeDetailsVC()
         newVC1.title = c?.placeA[indexPath.row].PlaceName
         newVC1.PlacesC = coffeelist[indexPath.row]
         newVC1.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(newVC1, animated: true)
         
     }
-    
-   
-    
 }
 

@@ -145,7 +145,7 @@ class ResturantVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC1 = CoffeeDetailsCell()
+        let newVC1 = CoffeeDetailsVC()
         newVC1.title = c?.placeA[indexPath.row].PlaceName
         newVC1.PlacesC = resturantList[indexPath.row]
         newVC1.navigationItem.largeTitleDisplayMode = .never

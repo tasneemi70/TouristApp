@@ -17,6 +17,7 @@ class Weather: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
+        label.backgroundColor = .lightGray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 38, weight: .bold)
         label.textColor = UIColor.white
@@ -28,6 +29,7 @@ class Weather: UIViewController {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.text = ""
             label.textAlignment = .center
+            label.backgroundColor = .lightGray
             label.numberOfLines = 0
             label.font = UIFont.systemFont(ofSize: 30, weight: .ultraLight)
             label.textColor = UIColor.white

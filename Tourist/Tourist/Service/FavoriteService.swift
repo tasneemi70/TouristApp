@@ -51,7 +51,7 @@ class FavoriteServiceVisitor {
           favorite.append(fPlace)
       }
       completion(favorite)
-    }
+
+      }
   }
 }
-

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */; };
-		8F0FD0B2277C4EE000BC5ED6 /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */; };
+		8F2090E1278316970019D090 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090E0278316970019D090 /* UserVC.swift */; };
 		8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43F3FC27661BDA000EDF59 /* GradientView2.swift */; };
 		8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */; };
 		8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */; };
@@ -33,8 +33,8 @@
 		8F6E5D172754AF71009C7BD8 /* video3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E5D142754AF71009C7BD8 /* video3.mp4 */; };
 		8F6F1183276E08B2009F0F08 /* ResturantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1182276E08B2009F0F08 /* ResturantVC.swift */; };
 		8F6F1185276E55B9009F0F08 /* CoffeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1184276E55B9009F0F08 /* CoffeeVC.swift */; };
-		8F6F1187276E55C8009F0F08 /* CoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1186276E55C8009F0F08 /* CoffeeCell.swift */; };
-		8F6F1189276E6EC0009F0F08 /* CoffeeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1188276E6EC0009F0F08 /* CoffeeDetails.swift */; };
+		8F6F1187276E55C8009F0F08 /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1186276E55C8009F0F08 /* CoffeeDetailCell.swift */; };
+		8F6F1189276E6EC0009F0F08 /* CoffeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F1188276E6EC0009F0F08 /* CoffeeDetailsVC.swift */; };
 		8F6F118B27705A22009F0F08 /* HotelsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F118A27705A22009F0F08 /* HotelsVC.swift */; };
 		8F6F118D27705A33009F0F08 /* NaturalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F118C27705A33009F0F08 /* NaturalCell.swift */; };
 		8F6F118F27705A4F009F0F08 /* HtlDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6F118E27705A4F009F0F08 /* HtlDetailCell.swift */; };
@@ -52,7 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pages.swift; sourceTree = "<group>"; };
+		8F2090E0278316970019D090 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		8F43F3FC27661BDA000EDF59 /* GradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView2.swift; sourceTree = "<group>"; };
 		8F6E5C94274CF817009C7BD8 /* Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		8F6E5D142754AF71009C7BD8 /* video3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video3.mp4; sourceTree = "<group>"; };
 		8F6F1182276E08B2009F0F08 /* ResturantVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantVC.swift; sourceTree = "<group>"; };
 		8F6F1184276E55B9009F0F08 /* CoffeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeVC.swift; sourceTree = "<group>"; };
-		8F6F1186276E55C8009F0F08 /* CoffeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCell.swift; sourceTree = "<group>"; };
-		8F6F1188276E6EC0009F0F08 /* CoffeeDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetails.swift; sourceTree = "<group>"; };
+		8F6F1186276E55C8009F0F08 /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
+		8F6F1188276E6EC0009F0F08 /* CoffeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsVC.swift; sourceTree = "<group>"; };
 		8F6F118A27705A22009F0F08 /* HotelsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsVC.swift; sourceTree = "<group>"; };
 		8F6F118C27705A33009F0F08 /* NaturalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturalCell.swift; sourceTree = "<group>"; };
 		8F6F118E27705A4F009F0F08 /* HtlDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtlDetailCell.swift; sourceTree = "<group>"; };
@@ -130,13 +130,13 @@
 				8F43F3FC27661BDA000EDF59 /* GradientView2.swift */,
 				8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */,
 				8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */,
+				8F2090E0278316970019D090 /* UserVC.swift */,
 				8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */,
 				8FAA48552761F078008D5915 /* FavoriteVC.swift */,
 				8F6F1184276E55B9009F0F08 /* CoffeeVC.swift */,
 				8F6E5CE2274E7AB4009C7BD8 /* NaturalVC.swift */,
 				8F6F1182276E08B2009F0F08 /* ResturantVC.swift */,
 				8F6F118A27705A22009F0F08 /* HotelsVC.swift */,
-				8F0FD0B1277C4EE000BC5ED6 /* Pages.swift */,
 				8FAA4842275DE801008D5915 /* Views */,
 			);
 			path = controller;
@@ -196,10 +196,10 @@
 				8F6F11902770F774009F0F08 /* NatuDetailCell.swift */,
 				8F6F118E27705A4F009F0F08 /* HtlDetailCell.swift */,
 				8F6E5CF527523C13009C7BD8 /* RestDetailCell.swift */,
-				8F6F1188276E6EC0009F0F08 /* CoffeeDetails.swift */,
+				8F6F1188276E6EC0009F0F08 /* CoffeeDetailsVC.swift */,
 				8F6E5CE6274E7AC3009C7BD8 /* HotelsCell.swift */,
 				8F6F118C27705A33009F0F08 /* NaturalCell.swift */,
-				8F6F1186276E55C8009F0F08 /* CoffeeCell.swift */,
+				8F6F1186276E55C8009F0F08 /* CoffeeDetailCell.swift */,
 				8F6E5CE0274E7AAA009C7BD8 /* ResturantCell.swift */,
 				8FAA484727609B6E008D5915 /* HomeCell.swift */,
 				8FAA48572761F096008D5915 /* FavoriteCell.swift */,
@@ -376,7 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F0FD0B2277C4EE000BC5ED6 /* Pages.swift in Sources */,
 				8F6E5CDD274E7A7C009C7BD8 /* TabVC.swift in Sources */,
 				8F6E5CE7274E7AC3009C7BD8 /* HotelsCell.swift in Sources */,
 				8F6E5CF3274F5FD1009C7BD8 /* GradientView.swift in Sources */,
@@ -386,17 +385,18 @@
 				8F6F118D27705A33009F0F08 /* NaturalCell.swift in Sources */,
 				8F6E5D0F2754AC06009C7BD8 /* videoCell.swift in Sources */,
 				8F6F118F27705A4F009F0F08 /* HtlDetailCell.swift in Sources */,
-				8F6F1189276E6EC0009F0F08 /* CoffeeDetails.swift in Sources */,
+				8F6F1189276E6EC0009F0F08 /* CoffeeDetailsVC.swift in Sources */,
 				8F6E5CE1274E7AAA009C7BD8 /* ResturantCell.swift in Sources */,
 				8F6F1183276E08B2009F0F08 /* ResturantVC.swift in Sources */,
 				8F6E5CDB274E7A6D009C7BD8 /* ToursisData.swift in Sources */,
+				8F2090E1278316970019D090 /* UserVC.swift in Sources */,
 				8F9DD07A2754F8BB00E48F40 /* MyProfileVC.swift in Sources */,
 				8F6F11912770F774009F0F08 /* NatuDetailCell.swift in Sources */,
 				8F6E5CE3274E7AB4009C7BD8 /* NaturalVC.swift in Sources */,
 				8F6E5CE9274E7AC7009C7BD8 /* WeatherVC.swift in Sources */,
 				8FF37AD02768904200C7F57F /* RegisterScreen.swift in Sources */,
 				8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */,
-				8F6F1187276E55C8009F0F08 /* CoffeeCell.swift in Sources */,
+				8F6F1187276E55C8009F0F08 /* CoffeeDetailCell.swift in Sources */,
 				8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */,
 				8F6E5CF627523C13009C7BD8 /* RestDetailCell.swift in Sources */,
 				8F6E5CFA2752B1CE009C7BD8 /* DataWeather.swift in Sources */,
