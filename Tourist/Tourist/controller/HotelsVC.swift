@@ -143,7 +143,7 @@ class HotelVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC1 = HotelDetailsCell()
+        let newVC1 = CoffeeDetailsVC()
         newVC1.title = c?.placeA[indexPath.row].PlaceName
         newVC1.PlacesC = hotelsList[indexPath.row]
         newVC1.navigationItem.largeTitleDisplayMode = .never

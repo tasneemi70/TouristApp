@@ -146,7 +146,7 @@ class NaturallVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let newVC1 = NaturalDetailsCell()
+        let newVC1 = CoffeeDetailsVC()
         newVC1.title = c?.placeA[indexPath.row].PlaceName
         newVC1.PlacesC = naturalList[indexPath.row]
         newVC1.navigationItem.largeTitleDisplayMode = .never
