@@ -18,7 +18,8 @@ struct User {
 
 struct Message {
     let content : String?
-    let sender : String?
-    let reciever : String?
+//    let sender : String?
+//    let reciever : String?
     let id : String? 
 }
+

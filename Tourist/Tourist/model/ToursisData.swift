@@ -31,10 +31,10 @@ struct PlaceInformation {
 
 var  coffeelist = [
     abhPlace(image: "4", name: "KAYA Cafe ⠀⠀", placeA: [
-        PlaceInformation(PlaceImage0: "a1", PlaceImage1: "a2", PlaceImage2: "a3", PlaceImage3: "a3", PlaceName: "KAYA Cafe ⠀⠀", placeDetail: "⭐️⭐️⭐️⭐️"
+        PlaceInformation(PlaceImage0: "a1", PlaceImage1: "a2", PlaceImage2: "a3", PlaceImage3: "4", PlaceName: "KAYA Cafe ⠀⠀", placeDetail: "⭐️⭐️⭐️⭐️"
                         )], id: UUID().uuidString),
     abhPlace(image: "8", name: "Candy Tree Cafe", placeA: [
-        PlaceInformation(PlaceImage0: "z1", PlaceImage1: "z2", PlaceImage2: "a3", PlaceImage3: "a3", PlaceName: "Candy Tree Cafe", placeDetail: "⭐️⭐️⭐️⭐️"
+        PlaceInformation(PlaceImage0: "z1", PlaceImage1: "z2", PlaceImage2: "z3", PlaceImage3: "8", PlaceName: "Candy Tree Cafe", placeDetail: "⭐️⭐️⭐️⭐️"
                         )], id: UUID().uuidString),
     abhPlace(image: "10", name: "Piano Cafe  ☕️", placeA: [
          PlaceInformation(PlaceImage0: "p1",PlaceImage1: "p2", PlaceImage2: "p3", PlaceImage3: "10", PlaceName: "Piano Cafe  ☕️", placeDetail: "⭐️⭐️⭐️⭐️")

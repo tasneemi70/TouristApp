@@ -292,12 +292,12 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 
 
 
-      placeDetailR.frame =  CGRect(x: 230,
-                             y: 430 ,
-                           width: 150,
-                           height: 50)
+        placeDetailR.frame =  CGRect(x: 230,
+                               y: 430 ,
+                             width: 150,
+                             height: 50)
+    }
+      
   }
-    
-}
 
-}
+  }
