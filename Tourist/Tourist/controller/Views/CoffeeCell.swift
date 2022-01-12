@@ -21,17 +21,12 @@ class CoffeeCell1: UICollectionViewCell  {
             share.setImage(UIImage(named: "send"), for: .normal)
             share.layer.cornerRadius = 20
             share.layer.masksToBounds = true
-         //   share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
     
               return share
     
         }()
     
-//    @objc func sharePressed (_ sender: AnyObject) {
-//         let sharePlace = UIActivityViewController(activityItems: [self.PlaceNameC.text ?? ""], applicationActivities: nil)
-//        sharePlace.popoverPresentationController?.sourceView = self.contentView
-//        self.present(sharePlace, animated: true, completion: nil)
-//    }
+
     
          let LocationBtn: UIButton = {
             let LocationBtn = UIButton()

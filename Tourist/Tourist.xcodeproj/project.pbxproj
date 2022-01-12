@@ -10,7 +10,7 @@
 		71234B7F5DBEC96BF05224C0 /* Pods_Tourist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F7DF93B5125DCCD2B6FB28 /* Pods_Tourist.framework */; };
 		8F2090E5278575120019D090 /* CoffeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090E4278575120019D090 /* CoffeeCell.swift */; };
 		8F2090E727857D6B0019D090 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090E627857D6B0019D090 /* CommentCell.swift */; };
-		8F2090E927870ADF0019D090 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090E827870ADF0019D090 /* MessageService.swift */; };
+		8F2090E927870ADF0019D090 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2090E827870ADF0019D090 /* CommentService.swift */; };
 		8F43F3FD27661BDA000EDF59 /* GradientView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43F3FC27661BDA000EDF59 /* GradientView2.swift */; };
 		8F6E5C98274CF817009C7BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */; };
 		8F6E5C9A274CF817009C7BD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6E5C99274CF817009C7BD8 /* SceneDelegate.swift */; };
@@ -55,7 +55,7 @@
 /* Begin PBXFileReference section */
 		8F2090E4278575120019D090 /* CoffeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCell.swift; sourceTree = "<group>"; };
 		8F2090E627857D6B0019D090 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
-		8F2090E827870ADF0019D090 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		8F2090E827870ADF0019D090 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		8F43F3FC27661BDA000EDF59 /* GradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView2.swift; sourceTree = "<group>"; };
 		8F6E5C94274CF817009C7BD8 /* Tourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6E5C97274CF817009C7BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,7 +198,6 @@
 				8F6F118E27705A4F009F0F08 /* HtlDetailCell.swift */,
 				8F6E5CF527523C13009C7BD8 /* RestDetailCell.swift */,
 				8F6F1188276E6EC0009F0F08 /* CoffeeDetailsVC.swift */,
-				8F2090E827870ADF0019D090 /* MessageService.swift */,
 				8F2090E627857D6B0019D090 /* CommentCell.swift */,
 				8F6E5CE6274E7AC3009C7BD8 /* HotelsCell.swift */,
 				8F6F118C27705A33009F0F08 /* NaturalCell.swift */,
@@ -235,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				8FAA48532761D4CE008D5915 /* FavoriteService.swift */,
+				8F2090E827870ADF0019D090 /* CommentService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				8FAA48542761D4CE008D5915 /* FavoriteService.swift in Sources */,
 				8F2090E5278575120019D090 /* CoffeeCell.swift in Sources */,
 				8FF37ACE2768903E00C7F57F /* LoginRegister.swift in Sources */,
-				8F2090E927870ADF0019D090 /* MessageService.swift in Sources */,
+				8F2090E927870ADF0019D090 /* CommentService.swift in Sources */,
 				8FAA48562761F078008D5915 /* FavoriteVC.swift in Sources */,
 				8F6E5D0D2754ABD2009C7BD8 /* videoVC.swift in Sources */,
 				8F6E5CEB274E7ACB009C7BD8 /* HomeVC.swift in Sources */,
@@ -569,6 +569,7 @@
 				DEVELOPMENT_TEAM = SD75LLCY6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tourist/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Abha Tourist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -597,6 +598,7 @@
 				DEVELOPMENT_TEAM = SD75LLCY6G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tourist/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Abha Tourist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

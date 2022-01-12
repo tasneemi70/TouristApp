@@ -12,7 +12,7 @@ import FirebaseAuth
 
 
 ////profile class
-///
+
 class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldDelegate, UINavigationControllerDelegate{
 
     
@@ -52,8 +52,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
     let signOutButton : UIButton = {
        // $0.backgroundColor = UIColor(named: "Color")
        // $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
-        $0.setImage(UIImage(named: "sign2"), for: .normal)
-        $0.setTitle("Sign Out", for: .normal)
+        $0.setImage(UIImage(named: "out"), for: .normal)
+       // $0.setTitle("Sign Out", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -196,8 +196,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         view.addSubview(signOutButton)
         NSLayoutConstraint.activate([
             signOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 680),
-            signOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
-            signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -80),
+            signOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
+            signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100),
             signOutButton.heightAnchor.constraint(equalToConstant: 40)
         ])
 

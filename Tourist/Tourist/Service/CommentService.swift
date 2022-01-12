@@ -1,40 +1,44 @@
 
 
-
-
+//  Tourist
+//
+//  Created by Tsnim Alqahtani on 05/05/1443 AH.
+//
+//
 
 
 import UIKit
 import FirebaseFirestore
-class RenterService {
-  static let shared = RenterService()
-  let hostelsCollection = Firestore.firestore().collection("Comments1")
+
+
+class commentService {
+  static let shared = commentService()
+  let CommentCollection = Firestore.firestore().collection("Comments1")
     
   func addH(hostels: Message) {
-      hostelsCollection.document(hostels.id!).setData([
+      CommentCollection.document(hostels.id!).setData([
       "content": hostels.content,
       "id": hostels.id,
-     // “timestamp”: hostels.timestamp
     ])
   }
  
-  func listenToRenters(completion: @escaping (([Message]) -> Void)) {
-    hostelsCollection.addSnapshotListener { snapshot, error in
+  func listenToComment(completion: @escaping (([Message]) -> Void)) {
+    CommentCollection.addSnapshotListener { snapshot, error in
       if error != nil {
         return
       }
       guard let documents = snapshot?.documents else { return }
-      var hostels: Array<Message> = []
+      var CommentV: Array<Message> = []
       for document in documents {
         let data = document.data()
-        let criminal = Message(
+        let TextComment = Message(
           content: (data["content"] as? String) ?? "No content",
           id: (data["id"] as? String) ?? "No id"
         //  timestamp: (data[“timestamp”] as? Timestamp) ?? Timestamp()
         )
-        hostels.append(criminal)
+        CommentV.append(TextComment)
       }
-      completion(hostels)
+      completion(CommentV)
     }
   }
 }

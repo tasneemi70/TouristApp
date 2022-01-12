@@ -59,34 +59,25 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
        return LocationBtn
 
    }()
-    
-//
-//    let SaveComment: UIButton = {
-//       let SaveComment = UIButton()
-//        SaveComment.translatesAutoresizingMaskIntoConstraints = false
-//        SaveComment.setTitleColor(.white, for: .normal)
-//        SaveComment.setTitle("Save", for: .normal)
-//        SaveComment.layer.cornerRadius = 20
-//        SaveComment.layer.masksToBounds = true
-//     //  SaveComment.addTarget(self, action: #selector(SaveComment1), for: .touchUpInside)
-//        return SaveComment
-//
-//    }()
+
     
         
   override func viewDidLoad() {
     super.viewDidLoad()
 
-      
-//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-//      view.addSubview(textView)
-//      textView.contentInsetAdjustmentBehavior = .automatic
-//      textView.textAlignment = NSTextAlignment.center
-//      textView.textColor = UIColor.white
-//      textView.backgroundColor = UIColor(   #colorLiteral(red: 0.9463635087, green: 0.9465219378, blue: 0.9463427663, alpha: 1)  )
-//      textView.isUserInteractionEnabled = true
-//      textView.layer.cornerRadius = 18
-//    
+      let sharePlace: UIButton = {
+         let share = UIButton()
+
+          share.translatesAutoresizingMaskIntoConstraints = false
+          share.setTitleColor(.darkGray, for: .normal)
+          share.setImage(UIImage(named: "send"), for: .normal)
+          share.layer.cornerRadius = 20
+          share.layer.masksToBounds = true
+          share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
+
+         return share
+
+     }()
       setGradientBackground()
 
       view.addSubview(sharePlace)
@@ -129,18 +120,9 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
 
 
     ])
-//      let id = UUID().uuidString
-//      Firestore.firestore().collection("Comment").document(id).setData([
-//        "a": textView.text
-//
-//          ])
+
   }
-//    @objc func SaveComment1() {
-    //        let id = UUID().uuidString
-    //        Firestore.firestore().collection("Comment").document(id).setData([
-    //           // "a": textView.text
-    //            ])
-  //  }
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
