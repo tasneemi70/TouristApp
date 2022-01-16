@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-   class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
+class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
  
        
        var comments: Array<Message> = []
@@ -23,6 +23,9 @@ import FirebaseFirestore
     override func viewDidLoad() {
         super.viewDidLoad()
   
+        
+
+        
         commentService.shared.listenToComment { newComment in
             self.comments = newComment
               self.commentTableView.reloadData()
@@ -62,6 +65,7 @@ import FirebaseFirestore
     let commentTextField : UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = NSLocalizedString("Comment...", comment: "")
+        $0.textColor = .black
         $0.backgroundColor = .init(white: 0.85, alpha: 1)
         $0.layer.cornerRadius = 15
         return $0
@@ -77,20 +81,56 @@ import FirebaseFirestore
         
     }(UIButton(type: .system))
        
-    func setupUI() {
+     let sharePlace: UIButton = {
+     let share = UIButton()
+     
+                 share.translatesAutoresizingMaskIntoConstraints = false
+                 share.setTitleColor(.darkGray, for: .normal)
+                 share.setImage(UIImage(named: "send"), for: .normal)
+                 share.layer.cornerRadius = 20
+                 share.layer.masksToBounds = true
+                 share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
+     
+                   return share
+     
+             }()
+       let LocationBtn: UIButton = {
+                   let LocationBtn = UIButton()
+       
+                    LocationBtn.translatesAutoresizingMaskIntoConstraints = false
+                    LocationBtn.setTitleColor(.darkGray, for: .normal)
+                    LocationBtn.setImage(UIImage(named: "Location"), for: .normal)
+                    LocationBtn.layer.cornerRadius = 20
+                    LocationBtn.layer.masksToBounds = true
+                   LocationBtn.addTarget(self, action: #selector(locationPressed), for: .touchUpInside)
+       
+                   return LocationBtn
+       
+                }()
+    
+        func setupUI() {
         view.backgroundColor = .red
         navigationItem.title = user?.name
         commentTableView.delegate = self
         commentTableView.dataSource = self
-        view.addSubview(commentTableView)
-        view.addSubview(commentTextField)
-        view.addSubview(sendButton)
+        
+        
+        
+         view.addSubview(commentTableView)
+         view.addSubview(sharePlace)
+         view.addSubview(LocationBtn)
+         view.addSubview(commentTextField)
+         view.addSubview(sendButton)
+        
+        
+        
+        
         NSLayoutConstraint.activate([
             
             commentTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: -95),
-            commentTableView.self.heightAnchor.constraint(equalToConstant: 130),
+            commentTableView.self.heightAnchor.constraint(equalToConstant: 200),
             commentTableView.self.widthAnchor.constraint(equalToConstant: 170),
-            commentTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 700),
+            commentTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 620),
             
             
             commentTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 230),
@@ -103,7 +143,22 @@ import FirebaseFirestore
             sendButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             sendButton.heightAnchor.constraint(equalTo: commentTextField.heightAnchor),
             sendButton.widthAnchor.constraint(equalTo: sendButton.heightAnchor),
-            sendButton.centerYAnchor.constraint(equalTo: commentTextField.centerYAnchor)
+            sendButton.centerYAnchor.constraint(equalTo: commentTextField.centerYAnchor),
+            
+            
+            
+            sharePlace.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 270),
+            sharePlace.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 200),
+            sharePlace.heightAnchor.constraint(equalToConstant: 40),
+            sharePlace.widthAnchor.constraint(equalToConstant: 50),
+            sharePlace.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 250),
+            
+            
+            LocationBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 320),
+            LocationBtn.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 200),
+            LocationBtn.heightAnchor.constraint(equalToConstant: 50),
+            LocationBtn.widthAnchor.constraint(equalToConstant: 50),
+            LocationBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 250),
         ])
     }
     
@@ -125,7 +180,7 @@ import FirebaseFirestore
            collectionView.widthAnchor.constraint(equalToConstant: 10).isActive = true
            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-           collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -150).isActive = true
+           collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -250).isActive = true
        }
        
        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,9 +206,21 @@ import FirebaseFirestore
            return CGSize(width: 400, height: 600)
        }
       
+       //share
+      @objc func sharePressed (_ sender: Any) {
+          let sharePlace = UIActivityViewController(activityItems: [self.PlacesC?.name ?? ""], applicationActivities: nil)
+          sharePlace.popoverPresentationController?.sourceView = self.view
+        self.present(sharePlace, animated: true, completion: nil)
+      }
+       @objc func locationPressed (_ sender: Any) {
+           if let url4 = URL(string: "https://goo.gl/maps/tPDLy7tWz2RReKox6") {
+                      UIApplication.shared.open(url4)
+           
 
+                     }
     
     }
+}
 
 extension CoffeeDetailsVC {
   
@@ -216,9 +283,3 @@ extension CoffeeDetailsVC : UITableViewDelegate , UITableViewDataSource {
         return cell
     }
 }
-
-
-
-
-
-

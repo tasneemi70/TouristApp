@@ -46,7 +46,6 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
        
         
-        //under cell
       view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
          setGradientBackground()
 
@@ -126,8 +125,6 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         
           cell2.setCell(placeC: searchPlace[indexPath.item])
-//        
-//        cell2.backgroundColor = .white
          cell2.layer.cornerRadius = 35
          return cell2
     }

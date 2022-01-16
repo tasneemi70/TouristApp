@@ -65,17 +65,6 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
 
   override func viewDidLoad() {
       
-//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-//      view.addSubview(textView)
-//      textView.contentInsetAdjustmentBehavior = .automatic
-//      textView.textAlignment = NSTextAlignment.center
-//      textView.textColor = UIColor.white
-//      textView.backgroundColor = UIColor.lightGray
-//      textView.isUserInteractionEnabled = true
-//      textView.layer.cornerRadius = 18
-//    
-//      
-//      
       
     super.viewDidLoad()
       view.backgroundColor = UIColor(named: "setGradientBackground")
@@ -104,13 +93,13 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         sharePlace.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -50),
         sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
-        sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
+        sharePlace.self.widthAnchor.constraint(equalToConstant: 170),
         sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
         
         LocationBtn1.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
         LocationBtn1.self.heightAnchor.constraint(equalToConstant: 50),
         LocationBtn1.self.widthAnchor.constraint(equalToConstant: 70),
-        LocationBtn1.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
+        LocationBtn1.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 200),
        
 
         
@@ -169,7 +158,6 @@ class ResturantDetailsCell: UITableViewCell {
         
    let PlaceImageR1: UIImageView = {
     let PlaceImageR1 = UIImageView()
-//       PlaceImageR1.layer.borderWidth = 1
        PlaceImageR1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
        PlaceImageR1.layer.cornerRadius = 20
        PlaceImageR1.contentMode = .scaleAspectFill
@@ -228,25 +216,22 @@ class ResturantDetailsCell: UITableViewCell {
      let placeDetailR = UILabel()
          placeDetailR.font = UIFont(name: "AvenirNextCondensed-Medium", size:    13.0)
          placeDetailR.textAlignment = .center
-         placeDetailR.textColor = .darkGray
-      //   placeDetailR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
+         placeDetailR.textColor = .white
+
+         placeDetailR.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
          placeDetailR.layer.cornerRadius = 20
          placeDetailR.translatesAutoresizingMaskIntoConstraints = false
          placeDetailR.layer.masksToBounds = true
   return placeDetailR
    }()
-       
 
- 
   
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: reuseIdentifier)
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     contentView.addSubview(PlaceImageR1)
     contentView.addSubview(PlaceImageR2)
     contentView.addSubview(PlaceNameR)
     contentView.addSubview(PlaceImageR4)
-
     contentView.addSubview(PlaceImageR3)
     contentView.addSubview(placeDetailR)
 

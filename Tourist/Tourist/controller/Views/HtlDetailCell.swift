@@ -58,18 +58,6 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
 
   override func viewDidLoad() {
       
-//      
-//      let textView = UITextView(frame: CGRect(x: 220.0, y: 620, width: 150.0, height: 70))
-//      view.addSubview(textView)
-//      textView.contentInsetAdjustmentBehavior = .automatic
-//      textView.textAlignment = NSTextAlignment.center
-//      textView.textColor = UIColor.white
-//      textView.backgroundColor = UIColor.lightGray
-//      textView.isUserInteractionEnabled = true
-//      textView.layer.cornerRadius = 18
-//    
-      
-      
       
     super.viewDidLoad()
        setGradientBackground()
@@ -157,7 +145,6 @@ class HotelsDetailsCell1: UITableViewCell {
 
    let PlaceImageH1: UIImageView = {
     let PlaceImageH1 = UIImageView()
-//       PlaceImageH1.layer.borderWidth = 1
        PlaceImageH1.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
        PlaceImageH1.layer.cornerRadius = 20
        PlaceImageH1.contentMode = .scaleAspectFill
@@ -182,7 +169,6 @@ class HotelsDetailsCell1: UITableViewCell {
 
     var PlaceImageH4: UIImageView = {
         var PlaceImageH4 = UIImageView()
-//        PlaceImageH4.layer.borderWidth = 1
         PlaceImageH4.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageH4.layer.cornerRadius = 20
         PlaceImageH4.contentMode = .scaleAspectFill
@@ -193,7 +179,6 @@ class HotelsDetailsCell1: UITableViewCell {
 
     var PlaceImageH3: UIImageView = {
         var PlaceImageH3 = UIImageView()
-//        PlaceImageH3.layer.borderWidth = 1
         PlaceImageH3.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         PlaceImageH3.layer.cornerRadius = 20
         PlaceImageH3.contentMode = .scaleAspectFill
@@ -216,8 +201,8 @@ class HotelsDetailsCell1: UITableViewCell {
      let placeDetailH = UILabel()
          placeDetailH.font = UIFont(name: "AvenirNextCondensed-Medium", size:   30.0)
          placeDetailH.textAlignment = .center
-         placeDetailH.textColor = .darkGray
-         placeDetailH.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha:                                                                      0.3)
+         placeDetailH.textColor = .white
+         placeDetailH.backgroundColor = UIColor(red: 0.02, green: 0.22, blue: 0.31, alpha: 0.3)
          placeDetailH.layer.cornerRadius = 20
          placeDetailH.translatesAutoresizingMaskIntoConstraints = false
          placeDetailH.layer.masksToBounds = true
@@ -228,7 +213,6 @@ class HotelsDetailsCell1: UITableViewCell {
 
 
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//    super.init(style: style, reuseIdentifier: reuseIdentifier)
     super.init(style: style, reuseIdentifier: reuseIdentifier)
      contentView.addSubview(PlaceImageH1)
      contentView.addSubview(PlaceImageH2)

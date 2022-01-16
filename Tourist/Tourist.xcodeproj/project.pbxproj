@@ -194,10 +194,10 @@
 		8FAA4842275DE801008D5915 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8F6F11902770F774009F0F08 /* NatuDetailCell.swift */,
 				8F6F118E27705A4F009F0F08 /* HtlDetailCell.swift */,
 				8F6E5CF527523C13009C7BD8 /* RestDetailCell.swift */,
 				8F6F1188276E6EC0009F0F08 /* CoffeeDetailsVC.swift */,
+				8F6F11902770F774009F0F08 /* NatuDetailCell.swift */,
 				8F2090E627857D6B0019D090 /* CommentCell.swift */,
 				8F6E5CE6274E7AC3009C7BD8 /* HotelsCell.swift */,
 				8F6F118C27705A33009F0F08 /* NaturalCell.swift */,

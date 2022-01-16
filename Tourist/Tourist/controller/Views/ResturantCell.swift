@@ -22,9 +22,6 @@ class ResturantCell: UICollectionViewCell, UISearchBarDelegate {
     private let placeImageR: UIImageView = {
         let placeImageR = UIImageView()
         placeImageR.image = UIImage(named: "a1")
-       
-//        placeImageR.layer.borderWidth = 1
-      //  placeImageR.layer.borderColor = .init(red: 230/255, green: 237/255, blue: 184/255, alpha: 1)
         placeImageR.layer.cornerRadius = 20
         placeImageR.backgroundColor = .systemTeal
 

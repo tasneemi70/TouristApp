@@ -59,31 +59,20 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
        return LocationBtn
 
    }()
+    
 
     
         
   override func viewDidLoad() {
     super.viewDidLoad()
 
-      let sharePlace: UIButton = {
-         let share = UIButton()
+      
 
-          share.translatesAutoresizingMaskIntoConstraints = false
-          share.setTitleColor(.darkGray, for: .normal)
-          share.setImage(UIImage(named: "send"), for: .normal)
-          share.layer.cornerRadius = 20
-          share.layer.masksToBounds = true
-          share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
-         return share
-
-     }()
       setGradientBackground()
 
-      view.addSubview(sharePlace)
-     // view.addSubview(SaveComment)
-
-      view.addSubview(LocationBtn)
+       view.addSubview(sharePlace)
+       view.addSubview(LocationBtn)
        view.addSubview(tableView2)
       
       
@@ -105,12 +94,7 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
         sharePlace.self.heightAnchor.constraint(equalToConstant: 50),
         sharePlace.self.widthAnchor.constraint(equalToConstant: 70),
         sharePlace.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
-      
-//        SaveComment.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40),
-//        SaveComment.self.heightAnchor.constraint(equalToConstant: 50),
-//        SaveComment.self.widthAnchor.constraint(equalToConstant: 70),
-//        SaveComment.topAnchor.constraint(equalTo: tableView2.bottomAnchor, constant: 100),
-//
+
         
         LocationBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 100),
         LocationBtn.self.heightAnchor.constraint(equalToConstant: 50),
@@ -122,7 +106,6 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
     ])
 
   }
-
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -181,7 +164,6 @@ class NaturalDetailsCell1: UITableViewCell {
 
     var PlaceImageN2: UIImageView = {
         var PlaceImageN2 = UIImageView()
-//        PlaceImageN2.layer.borderWidth = 1
         PlaceImageN2.layer.cornerRadius = 20
         PlaceImageN2.contentMode = .scaleAspectFill
         PlaceImageN2.clipsToBounds = true
@@ -191,7 +173,6 @@ class NaturalDetailsCell1: UITableViewCell {
 
     var PlaceImageN4: UIImageView = {
         var PlaceImageN4 = UIImageView()
-//        PlaceImageN4.layer.borderWidth = 1
         PlaceImageN4.layer.cornerRadius = 20
         PlaceImageN4.contentMode = .scaleAspectFill
         PlaceImageN4.clipsToBounds = true
@@ -200,7 +181,6 @@ class NaturalDetailsCell1: UITableViewCell {
 
     var PlaceImageN3: UIImageView = {
         var PlaceImageN3 = UIImageView()
-//        PlaceImageN3.layer.borderWidth = 1
         PlaceImageN3.layer.cornerRadius = 20
         PlaceImageN3.contentMode = .scaleAspectFill
         PlaceImageN3.clipsToBounds = true
@@ -211,7 +191,7 @@ class NaturalDetailsCell1: UITableViewCell {
     let PlaceNameN = UILabel()
         PlaceNameN.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
         PlaceNameN.textAlignment = .center
-        PlaceNameN.textColor = .white
+        PlaceNameN.textColor =  .white //UIColor(named: "Color")
         PlaceNameN.backgroundColor =  UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 0.10)
         PlaceNameN.layer.cornerRadius = 20
         PlaceNameN.layer.masksToBounds = true
@@ -227,7 +207,7 @@ class NaturalDetailsCell1: UITableViewCell {
         placeDetailN.layer.cornerRadius = 20
         placeDetailN.translatesAutoresizingMaskIntoConstraints = false
         placeDetailN.layer.masksToBounds = true
- return placeDetailN
+        return placeDetailN
         
   }()
 
@@ -235,13 +215,13 @@ class NaturalDetailsCell1: UITableViewCell {
 
 override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
      contentView.addSubview(PlaceImageN1)
      contentView.addSubview(PlaceImageN2)
-      contentView.addSubview(PlaceNameN)
+     contentView.addSubview(PlaceNameN)
      contentView.addSubview(PlaceImageN4)
-
-    contentView.addSubview(PlaceImageN3)
-    contentView.addSubview(placeDetailN)
+     contentView.addSubview(PlaceImageN3)
+     contentView.addSubview(placeDetailN)
 
 
 
