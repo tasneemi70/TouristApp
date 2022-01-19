@@ -239,6 +239,14 @@ class RegisterVC: UIViewController , UIImagePickerControllerDelegate , UINavigat
 		vc.modalPresentationStyle = .fullScreen
 		self.present(vc, animated: true, completion: nil)
 	  }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            firstName.resignFirstResponder()
+            lastName.resignFirstResponder()
+            userEmail.resignFirstResponder()
+            userPassword.resignFirstResponder()
+               return true
+           }
 }
 
 import UIKit

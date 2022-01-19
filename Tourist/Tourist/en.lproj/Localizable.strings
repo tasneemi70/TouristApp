@@ -8,7 +8,7 @@
 
 //login vc
 "LogIn" = "LogIn" ;
-"sign out" = "sign out" ;
+"Sign Out" = "Sign Out" ;
 "Sing up" = "Sing up" ;
 "busy" = "busy" ;
 "Sign in" = "Sign in" ;
@@ -67,3 +67,5 @@
 
 "Natural Places" = "Natural Places" ;
 "Comment..." = "Comment..." ;
+
+"Dark Mode" = "Dark Mode" ;

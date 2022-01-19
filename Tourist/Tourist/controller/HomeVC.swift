@@ -12,9 +12,10 @@ import UIKit
 
 class HomeVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var currentCellIndex = 0
+        var currentCellIndex = 0
         var timer :Timer?
-var pageControl = UIPageControl()
+        var pageControl = UIPageControl()
+    
     struct Home {
         var photo: UIImage
         
@@ -58,8 +59,7 @@ var pageControl = UIPageControl()
         btn.layer.masksToBounds = true
         return btn
     }()
-
-    var restuBtn: UIButton = {
+        var restuBtn: UIButton = {
         let restuBtn = UIButton()
         restuBtn.translatesAutoresizingMaskIntoConstraints = false
         restuBtn.layer.cornerRadius = 100
@@ -93,7 +93,6 @@ var pageControl = UIPageControl()
         btn.layer.cornerRadius = 100
         btn.setTitleColor(.black, for: .normal)
         btn.setTitle(NSLocalizedString("Hotels", comment: ""), for: .normal)
-
         btn.setImage(UIImage(named: "parks"), for: .normal)
         btn.backgroundColor = UIColor(named: "Color")
         btn.addTarget(self, action: #selector(HotelPage), for: .touchUpInside)
@@ -191,6 +190,7 @@ var pageControl = UIPageControl()
         view.addSubview(nameGroup3)
 
 
+
         view.addSubview(hotelsBtn)
 //        view.addSubview(LakesBtn)
         view.addSubview(collectionView)
@@ -217,6 +217,8 @@ var pageControl = UIPageControl()
             coffeeBtn.self.heightAnchor.constraint(equalToConstant: 100),
             coffeeBtn.self.widthAnchor.constraint(equalToConstant: 170),
             coffeeBtn.topAnchor.constraint(equalTo: view.topAnchor, constant: 450),
+            
+        
             
             hotelsBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -95),
             hotelsBtn.self.heightAnchor.constraint(equalToConstant: 100),
@@ -291,9 +293,13 @@ var pageControl = UIPageControl()
             return cell
         }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 350, height: 250)
     }
+    
+    
     @objc func coffeeButtonPressed() {
         let coffePage = CoffeeVC()
         coffePage.navigationItem.largeTitleDisplayMode = .never
@@ -301,6 +307,9 @@ var pageControl = UIPageControl()
 
     
     }
+    
+    
+    
     @objc func RestButtonPressed() {
         let RestPage = ResturantVC()
         RestPage.navigationItem.largeTitleDisplayMode = .never
@@ -319,6 +328,8 @@ var pageControl = UIPageControl()
         NaturalPage.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(NaturalPage, animated: true)
     }
+    
+ 
 
 }
 

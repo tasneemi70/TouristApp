@@ -26,6 +26,27 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         view.isUserInteractionEnabled = true
         return view
     }()
+    
+    var nameDarkmode: UILabel = {
+        let nameDarkmode = UILabel()
+        nameDarkmode.translatesAutoresizingMaskIntoConstraints = false
+        nameDarkmode.text = (NSLocalizedString("Dark Mode", comment: ""))
+        nameDarkmode.textColor = .darkGray
+        nameDarkmode.layer.masksToBounds = true
+        return nameDarkmode
+    }()
+    
+     let DarkMoodButton : UISwitch = {
+        let switchControl = UISwitch()
+         switchControl.isOn = true
+         switchControl.setOn(false, animated: true)
+         switchControl.isUserInteractionEnabled = true
+         switchControl.tintColor = .darkGray
+         switchControl.translatesAutoresizingMaskIntoConstraints = false
+         switchControl.addTarget(self, action: #selector(changeToDarkMood), for: .valueChanged)
+         return switchControl
+      }()
+
 
     lazy var imagePicker : UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -40,7 +61,6 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.placeholder = NSLocalizedString("Write your name", comment: "")
         $0.backgroundColor = UIColor(named: "Color")
-        //UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
         $0.layer.cornerRadius = 20
         $0.textAlignment = .center
         $0.font = .boldSystemFont(ofSize: 23)
@@ -50,9 +70,9 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
 
     // sign out from tourist app
     let signOutButton : UIButton = {
-       // $0.backgroundColor = UIColor(named: "Color")
-       // $0.setTitle(NSLocalizedString(NSLocalizedString("sign out", comment: ""), comment: ""), for: .normal)
-        $0.setImage(UIImage(named: "out"), for: .normal)
+        $0.backgroundColor = UIColor(named: "Color")
+        $0.setTitle(NSLocalizedString(NSLocalizedString("Sign Out", comment: ""), comment: ""), for: .normal)
+        //$0.setImage(UIImage(named: "out"), for: .normal)
        // $0.setTitle("Sign Out", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
@@ -75,6 +95,8 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         return change
     }()
     
+
+
     // sharr app
     let shareApp : UIButton = {
         let shareApp = UIButton()
@@ -87,6 +109,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         
         return shareApp
     }()
+    
     
     // function to share app
     @objc func shareTheApp(sender:UIView){
@@ -118,7 +141,7 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
        })
       }
     }
-    
+
 // function to open image
     @objc func OpenImage(_ sender: Any) {
         let pick = UIImagePickerController()
@@ -141,10 +164,10 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         
         // gradient color
       setGradientBackground()
-      view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
+     // view.backgroundColor =  UIColor(displayP3Red: 246/255, green:  246/255, blue: 238/255, alpha: 1)
 
         self.title = NSLocalizedString("Profile", comment: "")
-        view.backgroundColor = UIColor(named: "Color")
+        view.backgroundColor = .white
     
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
 
@@ -165,7 +188,15 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
             profileImage.heightAnchor.constraint(equalToConstant: 200),
             profileImage.widthAnchor.constraint(equalToConstant: 200)
         ])
-
+        
+        
+        view.addSubview(nameDarkmode)
+        NSLayoutConstraint.activate([
+        nameDarkmode.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: -20),
+        nameDarkmode.self.heightAnchor.constraint(equalToConstant: 50),
+        nameDarkmode.self.widthAnchor.constraint(equalToConstant: 150),
+        nameDarkmode.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+])
         view.addSubview(name)
         NSLayoutConstraint.activate([
             name.topAnchor.constraint(equalTo: view.topAnchor,constant: 470),
@@ -198,9 +229,21 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
             signOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 680),
             signOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
             signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100),
-            signOutButton.heightAnchor.constraint(equalToConstant: 40)
+            signOutButton.heightAnchor.constraint(equalToConstant: 40),
+            
+])
+        view.addSubview(DarkMoodButton)
+        NSLayoutConstraint.activate([
+            DarkMoodButton.centerXAnchor.constraint(equalTo: view.centerXAnchor,constant: -20),
+            DarkMoodButton.self.heightAnchor.constraint(equalToConstant: 50),
+            DarkMoodButton.self.widthAnchor.constraint(equalToConstant: 250),
+            DarkMoodButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+
         ])
 
+
+
+     
 
 // firestore connect
         guard let currentUserID = Auth.auth().currentUser?.uid else {return}
@@ -236,8 +279,24 @@ class ProfileVC : UIViewController, UIImagePickerControllerDelegate,UITextFieldD
         }
     }
     
+    @objc func changeToDarkMood(_ sender: UISwitch!) {
+        if sender.isOn {
+            let appDelegate = UIApplication.shared.windows.first
+             appDelegate?.overrideUserInterfaceStyle = .dark
+            }else {
+             let appDelegate = UIApplication.shared.windows.first
+             appDelegate?.overrideUserInterfaceStyle = .light
+            }
+      }
+    
     private func setupGradientView3() {
         let _ = GradientView(self)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            name.resignFirstResponder()
+          
+               return true
+           }
 }
 

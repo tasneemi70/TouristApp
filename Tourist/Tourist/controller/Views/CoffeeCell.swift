@@ -65,7 +65,7 @@ class CoffeeCell1: UICollectionViewCell  {
     var PlaceNameC: UILabel = {
     let PlaceNameC = UILabel()
        PlaceNameC.translatesAutoresizingMaskIntoConstraints =
-       PlaceNameC.textColor == UIColor(named: "Color")
+        PlaceNameC.textColor == .red
        PlaceNameC.font = UIFont(name: "AvenirNextCondensed-Medium", size: 16.0)
        PlaceNameC.textAlignment = .center
        PlaceNameC.backgroundColor = UIColor(red: 0.6468747258, green: 0.6789115071, blue: 0.7230498195, alpha: 0.10)

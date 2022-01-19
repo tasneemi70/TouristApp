@@ -31,7 +31,7 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setGradientBackground()
+        view.backgroundColor =  #colorLiteral(red: 0.0111169992, green: 0.1637375057, blue: 0.2295970917, alpha: 1) //UIColor(named: "  #colorLiteral(red: 0.0111169992, green: 0.1637375057, blue: 0.2295970917, alpha: 1) ")
         FavoriteServiceVisitor.shared.listenToFavoritePlace { cartFromFS in
             self.APlace = cartFromFS
             self.placeTV.reloadData()
@@ -42,7 +42,7 @@ class FavouriteVC : UIViewController , UITableViewDelegate, UITableViewDataSourc
         
         view.addSubview(placeTV)
         NSLayoutConstraint.activate([
-            placeTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            placeTV.topAnchor.constraint(equalTo: view.topAnchor, constant: 10 ),
             placeTV.heightAnchor.constraint(equalToConstant: 100),
             placeTV.widthAnchor.constraint(equalToConstant: -100),
             placeTV.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),

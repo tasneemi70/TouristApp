@@ -64,13 +64,19 @@ Cells:
 
 ### User Stories:
 As a user I want to login/Register, so that I can make account to use app
-As a user I want to Sign out, so that I can login wth another account
+As a user I want to show Home Page, so that I can watch AD for Places and choose place I want to visit
 As a user I want to editing my profile , so that i can ubdate my profile
-As a user I want to search for places , so that I can find it easly
+As a user I want to search for places , so that I can find it easily
+
+As a user I want to Sign out, so that I can login wth another account
+As a user I want to Change language , so that I can ........
+As a user I want to change appearance for the app, so that I can watch it comfotably
+As a user I want to share the App for another Users , so that I can share it for my friends
+As a user I want to the location for the places on the map , so that I can visit easily.
 As a user I want to know the weather of the city , so that I know if suitable for visit this time or no 
 As a user I want to add places to my list , so that I can check and save it to visit any time
 As a user I want to share place i like to another users , so that users can visit any time
-As a user I want to the location of the placescon the map , so that I can visit easly
+As a user I want to the location of the placescon the map , so that I can visit easily
 As a user I want to watch video for places , so that I can see details for places
 
 
@@ -100,7 +106,7 @@ User :
 |                     |                |                                          |
 |       :---          |     :---:      |                  ---:                    |
 |                     |                | Home page, link to visitor List,         |
-|    firstHomePage    |   user only    | navigate to photo place List after       |                                                                               | pressed on visitor button                |
+|    firstHomePage    |   user only    | navigate to photo place List after       |                                                | pressed on visitor button                |
 |                     |                |                                          |
                                                                                   | 
 |       :---          |     :---:      |                  ---:                    |

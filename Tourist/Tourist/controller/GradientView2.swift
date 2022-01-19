@@ -28,7 +28,8 @@ extension UIViewController {
     
 }
 
-   //Gradient
+//MARK: Initialization
+
 class customButton : UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)

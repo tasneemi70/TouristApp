@@ -59,7 +59,6 @@ class CoffeeVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         view.addSubview(collectionView)
         view.addSubview(title1)
-       // view.addSubview(favButton)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(CoffeeCell.self,
@@ -222,6 +221,7 @@ class CoffeeCell: UICollectionViewCell, UISearchBarDelegate {
 
     }
 
+    //MARK: Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)

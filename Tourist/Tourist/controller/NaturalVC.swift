@@ -45,7 +45,7 @@ class NaturallVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         super.viewDidLoad()
         
         //under cell
-      view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
+        view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
          setGradientBackground()
 
         if #available(iOS 15, *) {

@@ -25,7 +25,7 @@ class GradientView: UIView {
         controller.view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
-        layer.cornerRadius = 50
+        layer.cornerRadius = 100
         layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
         let constraints = [
             topAnchor.constraint(equalTo: controller.view.topAnchor),

@@ -122,12 +122,23 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
      }
     }
 
-    //share
+    
+    
+    
+    
+    
+    
+    
+    
+    // share
    @objc func sharePressed (_ sender: Any) {
        let sharePlace = UIActivityViewController(activityItems: [self.PlacesC?.name ?? ""], applicationActivities: nil)
        sharePlace.popoverPresentationController?.sourceView = self.view
      self.present(sharePlace, animated: true, completion: nil)
    }
+    
+    
+    // location
     @objc func locationPressed3 (_ sender: Any) {
         if let url3 = URL(string: "https://goo.gl/maps/Lt4jupvnPHQcJCGKA") {
                    UIApplication.shared.open(url3)
@@ -136,6 +147,9 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
                   }
     }
 
+    
+    
+    
 class HotelsDetailsCell1: UITableViewCell {
 
  static let identifier = "CellH"

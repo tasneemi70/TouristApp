@@ -23,7 +23,7 @@ class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        
+    
 
         
         commentService.shared.listenToComment { newComment in
@@ -38,12 +38,15 @@ class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionV
       view.backgroundColor = UIColor(    #colorLiteral(red: 0.7699097991, green: 0.661706686, blue: 0.7322302461, alpha: 1)   )
          setGradientBackground()
 
-        
         view.addSubview(collectionView)
+        
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         collectionView.register(CoffeeCell1.self,
-                                forCellWithReuseIdentifier: "CoffeeCell1")
+        forCellWithReuseIdentifier: "CoffeeCell1")
+        
+        
         setupCollectionConstraints()
         
         collectionView.frame = view.bounds
@@ -109,7 +112,6 @@ class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 }()
     
         func setupUI() {
-        view.backgroundColor = .red
         navigationItem.title = user?.name
         commentTableView.delegate = self
         commentTableView.dataSource = self

@@ -3,9 +3,8 @@
 ////  Tourist
 ////
 ////  Created by Tsnim Alqahtani on 22/04/1443 AH.
-////
-//
-//
+
+
 
 import UIKit
 
@@ -34,11 +33,8 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
         share.translatesAutoresizingMaskIntoConstraints = false
         share.setTitleColor(.darkGray, for: .normal)
         share.setImage(UIImage(named: "send"), for: .normal)
-       // share.setTitle("       Send", for: .normal)
-      //  share.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         share.layer.cornerRadius = 20
         share.layer.masksToBounds = true
-       // share.backgroundColor = UIColor(named: "Color")
         share.addTarget(self, action: #selector(sharePressed), for: .touchUpInside)
 
        return share
@@ -51,11 +47,9 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
          LocationBtn1.translatesAutoresizingMaskIntoConstraints = false
          LocationBtn1.setTitleColor(.darkGray, for: .normal)
          LocationBtn1.setImage(UIImage(named: "Location"), for: .normal)
- //        LocationBtn.setTitle("       Location", for: .normal)
          LocationBtn1.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
          LocationBtn1.layer.cornerRadius = 20
          LocationBtn1.layer.masksToBounds = true
- //        LocationBtn.backgroundColor = .blue
          LocationBtn1.addTarget(self, action: #selector(locationPressed1), for: .touchUpInside)
 
 

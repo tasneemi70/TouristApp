@@ -10,26 +10,29 @@ import UIKit
 import FirebaseAuth
 
 
-class LogInVC: UIViewController {
+class LogInVC: UIViewController, UITextViewDelegate {
+    
+    
    lazy var userEmail: UITextField = {
 	let userEmail = UITextField()
 	 userEmail.translatesAutoresizingMaskIntoConstraints = false
 	 userEmail.layer.cornerRadius = 12
 	 userEmail.layer.borderWidth = 1
 	 userEmail.layer.borderColor = UIColor.lightGray.cgColor
-	   userEmail.textAlignment = .center
+     userEmail.textAlignment = .center
 	 userEmail.placeholder = NSLocalizedString("Enter Email ..", comment: "")
 	 userEmail.backgroundColor = .secondarySystemBackground
 	   userEmail.text = "ts@gmail.com"
 	return userEmail
   }()
+    
+    
   lazy var userPassword: UITextField = {
 	let userPassword = UITextField()
 	userPassword.translatesAutoresizingMaskIntoConstraints = false
 	userPassword.layer.cornerRadius = 12
 	userPassword.layer.borderWidth = 1
     userPassword.textAlignment = .center
-
 	userPassword.layer.borderColor = UIColor.lightGray.cgColor
 	userPassword.placeholder = NSLocalizedString(" Password...", comment: "")
     userPassword.isSecureTextEntry = true
@@ -38,6 +41,8 @@ class LogInVC: UIViewController {
 	  userPassword.text = "123123"
 	return userPassword
   }()
+    
+    
   lazy var loginButton: UIButton = {
 	let loginButton = UIButton()
 	loginButton.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +55,8 @@ class LogInVC: UIViewController {
 	loginButton.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
 	return loginButton
   }()
+    
+    
   lazy var labelToRegister: UILabel = {
 	let label = UILabel()
 	label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,39 +66,49 @@ class LogInVC: UIViewController {
 	label.text = NSLocalizedString("Don’t have account?", comment: "")
 	return label
   }()
+    
+    
+    
   lazy var registerButton: UIButton = {
 	let registerButton = UIButton()
 	registerButton.translatesAutoresizingMaskIntoConstraints = false
       registerButton.setTitle(NSLocalizedString("Sign up", comment: ""), for: .normal)
 	registerButton.setTitleColor(.white, for: .normal)
-//	registerButton.backgroundColor = .white
 	registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
 	registerButton.titleLabel?.font = .systemFont(ofSize: 12, weight: .medium)
 	return registerButton
   }()
+    
+    
+    
+    
+    
   lazy var imageView: UIImageView = {
 	let imageView = UIImageView()
 	imageView.image = UIImage(named: "20")
-	imageView.contentMode = .scaleAspectFit
-	imageView.layer.cornerRadius = 25
+	imageView.contentMode = .scaleAspectFill
+	imageView.layer.cornerRadius = 50
 	imageView.translatesAutoresizingMaskIntoConstraints = false
 	return imageView
   }()
+    
+    
   override func viewDidLoad() {
 	super.viewDidLoad()
       
       setGradientBackground()
 
-	//view.backgroundColor = .white
 	title = NSLocalizedString("LogIn", comment: "")
 	//Constraint imageView
 	view.addSubview(imageView)
 	NSLayoutConstraint.activate([
 		imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-					imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-					imageView.heightAnchor.constraint(equalToConstant: 300),
-					imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
+		imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+		imageView.heightAnchor.constraint(equalToConstant: 300),
+		imageView.widthAnchor.constraint(equalTo:
+        imageView.heightAnchor,multiplier: 100/100)
 	])
+      
 	//Constraint userEmail
 	view.addSubview(userEmail)
 	NSLayoutConstraint.activate([
@@ -159,4 +176,11 @@ class LogInVC: UIViewController {
 	vc.modalPresentationStyle = .fullScreen
 	self.present(vc, animated: true, completion: nil)
   }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            userEmail.resignFirstResponder()
+            userPassword.resignFirstResponder()
+               return true
+           }
+
 }

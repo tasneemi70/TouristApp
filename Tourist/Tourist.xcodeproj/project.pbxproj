@@ -128,10 +128,10 @@
 		8F4C8345274D010300D7D240 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */,
 				8F6E5CDC274E7A7C009C7BD8 /* TabVC.swift */,
 				8F43F3FC27661BDA000EDF59 /* GradientView2.swift */,
 				8F6E5D0C2754ABD2009C7BD8 /* videoVC.swift */,
-				8F6E5CEA274E7ACB009C7BD8 /* HomeVC.swift */,
 				8F6E5CE8274E7AC6009C7BD8 /* WeatherVC.swift */,
 				8FAA48552761F078008D5915 /* FavoriteVC.swift */,
 				8F6F1184276E55B9009F0F08 /* CoffeeVC.swift */,

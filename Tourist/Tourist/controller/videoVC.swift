@@ -19,6 +19,7 @@ import UIKit
 }
 
     class TikTok: UIViewController {
+        
     private var collectionView: UICollectionView?
 
         private var data = [VideoModel]()
@@ -27,9 +28,9 @@ import UIKit
         override func viewDidLoad() {
         super.viewDidLoad()
             
-      //  view.backgroundColor = .white
+     setGradientBackground()
         
-   
+            view.backgroundColor =  #colorLiteral(red: 0.0111169992, green: 0.1637375057, blue: 0.2295970917, alpha: 1) 
 
 
         // Do any additional setup after loading the view.

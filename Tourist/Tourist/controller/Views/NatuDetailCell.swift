@@ -203,7 +203,7 @@ class NaturalDetailsCell1: UITableViewCell {
     let placeDetailN = UILabel()
         placeDetailN.font = UIFont(name: "AvenirNextCondensed-Medium", size:    25.0)
         placeDetailN.textAlignment = .center
-        placeDetailN.textColor = .darkGray
+        placeDetailN.textColor = .white
         placeDetailN.layer.cornerRadius = 20
         placeDetailN.translatesAutoresizingMaskIntoConstraints = false
         placeDetailN.layer.masksToBounds = true

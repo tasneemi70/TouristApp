@@ -12,12 +12,12 @@ import Foundation
 
 class Weather: UIViewController {
     var climate : weatherAPI?
+    
     // var A = [weather] ()
     let citylabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
-//        label.backgroundColor = .lightGray
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 38, weight: .bold)
         label.textColor = UIColor.white
@@ -74,25 +74,24 @@ class Weather: UIViewController {
 
 
         view.backgroundColor = .white
-//                        let image = UIImage(systemName: "cloud.sun.fill")
-//                        tabBarItem = .init(title: NSLocalizedString("Weather", comment: ""), image: image, selectedImage: image)
 
 
 
 
         let swipelift = UISwipeGestureRecognizer(
               target: self,
-              action: #selector(Riyadh))
+              action: #selector(Najran))
              swipelift.direction = .left
              view.addGestureRecognizer(swipelift)
              view.isUserInteractionEnabled = true
           let swipelifttwo = UISwipeGestureRecognizer(
               target: self,
-              action: #selector(Jeddah))
+              action: #selector(Jazan))
            swipelifttwo.direction = .right
              view.addGestureRecognizer(swipelifttwo)
              view.isUserInteractionEnabled = true
 
+        
 
         simpleGeturlRequest()
 
@@ -178,8 +177,8 @@ class Weather: UIViewController {
          }
              task.resume()
         }
-    @objc func Riyadh() {
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Riyadh&appid=f12e5f499a47eee845b6c9236c9c13a7&units=metric")!
+    @objc func Najran() {
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Najran&appid=f12e5f499a47eee845b6c9236c9c13a7&units=metric")!
         let task = URLSession.shared.dataTask(with: url) {
           (data, response, error) in
           guard let data = data else { return }
@@ -196,8 +195,8 @@ class Weather: UIViewController {
         }
         task.resume()
       }
-    @objc func Jeddah() {
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Jeddah&appid=f12e5f499a47eee845b6c9236c9c13a7&units=metric")!
+    @objc func Jazan() {
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Jazan&appid=f12e5f499a47eee845b6c9236c9c13a7&units=metric")!
         let task = URLSession.shared.dataTask(with: url) {
           (data, response, error) in
           guard let data = data else { return }

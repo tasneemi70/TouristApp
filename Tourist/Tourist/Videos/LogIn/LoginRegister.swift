@@ -14,7 +14,8 @@ class LoginOrRegisterVC: UIViewController {
 	lazy var imageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: "20")
-		imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .red
+        imageView.contentMode = .scaleAspectFit
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.backgroundColor = .black
 		
@@ -53,9 +54,9 @@ lazy var loginButton: UIButton = {
 
 		view.addSubview(imageView)
 		NSLayoutConstraint.activate([
-			imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
-		  imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-		 imageView.heightAnchor.constraint(equalToConstant: 300),
+        imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 180),
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        imageView.heightAnchor.constraint(equalToConstant: 300),
 		imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor,multiplier: 100/100)
 		])
 		//Constraint loginButton

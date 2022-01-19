@@ -9,7 +9,7 @@
 "LogIn" = " دخول" ;
 
 "Sign up" = "تسجيل " ;
-"sign out" = "تسجيل خروج" ;
+"Sign Out" = "تسجيل خروج" ;
 "Sign in" = " دخول " ;
 "Enter Email .."  = " الايميل ...";
 "Change Language" = "English" ;
@@ -74,3 +74,4 @@
 "Natural Places" = " المنتزهات" ;
 
 "Comment..." = "تعليق ..." ;
+"Dark Mode" = "الوضع الليلي" ;

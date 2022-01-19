@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+
 protocol VideoCollectionViewCellDelegate: AnyObject
 {
     func didTapLikeButton(with model: VideoModel)
@@ -80,7 +81,7 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
     private var model: VideoModel?
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //        contentView.backgroundColor = .red
+        contentView.backgroundColor = .init(white: 200, alpha: 1.1)
         contentView.clipsToBounds = true
         addSubviews ()
     }
@@ -127,8 +128,7 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
         
         let ShareButton = UIActivityViewController(activityItems: [self.usernameLabel.text], applicationActivities: nil)
         ShareButton.popoverPresentationController?.sourceView = self.videoContainer
-        //        self.present(ShareButton, AnimationTransition: true, complation: nil)
-        //                    self.present(ShareButton, animated: true, completion: nil)
+
         
         guard let model = model else { return }
         delegate?.didTapShareButton(with: model)
@@ -158,7 +158,6 @@ class VideoCollectionViewCell: UICollectionViewCell, UINavigationControllerDeleg
         likeButton.frame = CGRect(x: width-size, y: height-(size*3)-10, width: size, height: size)
         profileButton.frame = CGRect(x: width-size, y: height-(size*4)-14, width: size, height: size)
         
-        //labels
         // username. caption, audio
         audioLabel.frame = CGRect (x: 5, y: height-50, width: width-size-10, height: 50)
         captionLabel.frame = CGRect (x: 5, y: height-30, width: width-size-10, height: 50)
