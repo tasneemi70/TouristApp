@@ -7,13 +7,14 @@ Tourist it's App enable users to search about touristic places in Abha city
 #Features List:
 
 - Feature 1 App can brows places of city 
-- Feature 2 User can share Photo and description for the place 
 - Feature 3 User can search for places and find location 
 - Feature 4 User can know the weather of the city 
 - Feature 5 User can add place to list and can delete
 - Feature 6 User can Change the App Language (Arabic & English).
 - Feature 7 User can share the App with friends.
 - Feature 7 user can watch video for places
+- Feature 7 user can show the location for places 
+- Feature 7 user can write comment to the place 
 
 
 # Structure:
@@ -21,12 +22,15 @@ screens:
 add screens/models/views/cells
 - HomeVC.
 - visitorVC.
-- ShareVC.
 - FavoriteVC.
 - profileVC.
 - videoVC
-- MapVC
 - WEatherVc
+- Profile 
+- coffee VC
+- resturant VC
+- hotels VC 
+- natural VC 
 
 ##models
 - user
@@ -35,31 +39,21 @@ add screens/models/views/cells
 
 
 ##cells 
+- Comment Cell
+- Home cell
 - visitorCell
 - Favourite Cell
 - Home Cell
 - video Cell
 - Place Detail Cell
-
-# Structure:
-// Add your project screens/models/views/cells
-screens:
-- HomeVC.
-- ArabicBookVC.
-- EnglishBookVC.
-- FavoriteVC.
-- profileVC.
-- pdfBookVC
-Models:
-- User
-- BookData
-Cells:
-- ArabicCell
-- EnglishCell
-- Favourite Cell
-- BookInformationCell
-- ReadBook Cells
-
+- coffee cell
+- resturant cell
+- hotels cell 
+- natural cell 
+- coffee details cell 
+- natural details cell 
+- hotels details cell 
+- resturant details cell 
 
 
 ### User Stories:
@@ -67,7 +61,6 @@ As a user I want to login/Register, so that I can make account to use app
 As a user I want to show Home Page, so that I can watch AD for Places and choose place I want to visit
 As a user I want to editing my profile , so that i can ubdate my profile
 As a user I want to search for places , so that I can find it easily
-
 As a user I want to Sign out, so that I can login wth another account
 As a user I want to Change language , so that I can ........
 As a user I want to change appearance for the app, so that I can watch it comfotably
@@ -84,7 +77,7 @@ As a user I want to watch video for places , so that I can see details for place
  
 User :
 - see your profile
-- see photo and video , location for places and weather for city & share place for visitor 
+- see photo and video , location for places and weather for city & Write comment to the place 
 - see favourite place list
 - can share place for friend to another App
 - can signOut
@@ -105,8 +98,13 @@ User :
 |     LoginPage       |     public     |      navigate to home page after login.  |
 |                     |                |                                          |
 |       :---          |     :---:      |                  ---:                    |
-|                     |                | Home page, link to visitor List,         |
-|    firstHomePage    |   user only    | navigate to photo place List after       |                                                | pressed on visitor button                |
+|                     |                |                                          |
+                                                                                  |
+                                                                                  |
+|    firstHomePage    |   user only    |     Home page, link to Coffee, Resturant ,
+                                             Hotels , natural Places              |
+                                                      List,                       |
+                                                                                  |            
 |                     |                |                                          |
                                                                                   | 
 |       :---          |     :---:      |                  ---:                    |
@@ -116,9 +114,11 @@ User :
 |                     |                | after tap on place image and add         |
                                                description .                      |      
                                                                                   |
-|       :---          |     :---:      |                  ---:                    |
-|                     |                | list visitorpage,link to place details,  |
-|    listVisitorPage  |   user only    |     navigate to place Details            |   
+|       :---          |     :---:      |                  ---:       
+
+                      |
+|                     |                | list coffee page,link to place details, |
+|    list Place Page  |   user only    |     navigate to place Details            |   
 |                     |                |    after pressed on specific place.      |
 |        :---         |     :---:      |                  ---:                    |
 |                     |                |                                          |
@@ -126,8 +126,9 @@ User :
 |       :---          |     :---:      |                  ---:                    |
 |                     |                |                                          |
 |                     |                | information place page, link to share    |
-|PlaceDetails Page    |   user only    | place,navigate to Alert sheet after      |
-|                     |                |   pressed on Share Place Button.         |
+  PlaceDetails Page   |   user only    | place,navigate to Alert sheet after      |
+|                     |                |  pressed on Share Place Button and add 
+                                         comment and shwo Location in google map  |
 |       :---          |     :---:      |                  ---:                    |
 |                     |                |                                          |
 |                     |                |    list place Page, link to add place to |
@@ -136,11 +137,7 @@ User :
 |       :---          |     :---:      |                  ---:                    |
 |                     |                |                                          |
 |                     |                |                                          |
-|   mapPage           |     :---:      |   map Page, link to mapPage View         |
-|                     |                |   navigate to location Place after       |
-                      |                |     pressed on mapPage                   |
-|       :---          |     :---:      |                  ---:                    |
-|                     |                |                                          |
+
 |                     |                |   weather page, link to weather View     | 
 |    weatherPage      |   user only    |   navigate to change country  after      |
 |                     |                |     pressed on left view  "Gesture"      |
@@ -171,19 +168,20 @@ User :
 |    profilePage      |   user only    | navigate to login page after             |
 |                     |                |  pressed on SignOut button.              |
 |       :---          |     :---:      |                  ---:                    |
-
-
-
+|    profilePage      |      :---:     |   profile page, link to change Appearance|
+|                     |                |     to dark , Light mode                 |
+|                     |                |                                          |
 # Components:
 
  - Rigester $ LogIn Page 
  - Home Page (contains collection of pages)
- - share place Page 
- - visitor page
+ - coffee page 
+ - resturant page
+ - Naturals places page
+ - hotels page
  - Favourite Page
  - Profile Page
  - video page
- - location page
  - weather page
  
  # Services
@@ -195,7 +193,7 @@ _ Favourite Services.
 
 # Links: 
 
-_ repository Link:
+_ repository Link:/User/Users/tsnimalqahtani/Downloadss/tsnimalqahtani/Documents
 https://github.com/tasneemi70/TouristApp
 
 -

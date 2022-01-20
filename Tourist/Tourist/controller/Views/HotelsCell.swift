@@ -104,6 +104,7 @@ class HotelCell: UICollectionViewCell, UISearchBarDelegate {
         favButton.frame = CGRect(x: 140, y: contentView.frame.size.height - 55, width: 40, height: 40)
        
         
+        
     }
 }
 

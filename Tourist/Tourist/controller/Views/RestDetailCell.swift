@@ -139,7 +139,7 @@ class RestDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSou
 
     
     @objc func locationPressed1 (_ sender: Any) {
-        if let url1 = URL(string: "https://goo.gl/maps/D4AtqqEh59YCefMi8") {
+        if let url1 = URL(string: "https://www.google.com/maps/place/تونير%E2%80%AD/@18.2549032,42.6285014,17z/data=!3m1!4b1!4m5!3m4!1s0x15fb573bc1d2ad7d:0xd523e1420305bf86!8m2!3d18.2549032!4d42.6306901") {
                    UIApplication.shared.open(url1)
         
 

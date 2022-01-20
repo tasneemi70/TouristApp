@@ -54,7 +54,7 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
         LocationBtn.backgroundColor = UIColor(   #colorLiteral(red: 0.03509925306, green: 0.08644359559, blue: 0.3300599456, alpha: 0.206281043) )
         LocationBtn.layer.cornerRadius = 20
         LocationBtn.layer.masksToBounds = true
-        LocationBtn.addTarget(self, action: #selector(LocationPressed4), for: .touchUpInside)
+     LocationBtn.addTarget(self, action: #selector(LocationPressed4), for: .touchUpInside)
 
        return LocationBtn
 
@@ -142,7 +142,7 @@ class NaturalDetailsCell: UIViewController, UITableViewDelegate, UITableViewData
     @objc func LocationPressed4 (_ sender: Any) {
         if let url4 = URL(string: "https://goo.gl/maps/tPDLy7tWz2RReKox6") {
                    UIApplication.shared.open(url4)
-        
+
 
                   }
     }

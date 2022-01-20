@@ -118,7 +118,6 @@ class HotelVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         cell2.setCell(placeR: searchPlace[indexPath.item])
 //
-      //  cell2.backgroundColor = UIColor(named: "setGradientBackground")
         cell2.layer.cornerRadius = 35
         return cell2
     }

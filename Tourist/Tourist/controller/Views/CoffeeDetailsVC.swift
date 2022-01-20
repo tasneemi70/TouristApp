@@ -214,12 +214,10 @@ class CoffeeDetailsVC: UIViewController, UICollectionViewDelegate, UICollectionV
           sharePlace.popoverPresentationController?.sourceView = self.view
         self.present(sharePlace, animated: true, completion: nil)
       }
-       @objc func locationPressed (_ sender: Any) {
-           if let url4 = URL(string: "https://goo.gl/maps/tPDLy7tWz2RReKox6") {
-                      UIApplication.shared.open(url4)
-           
-
-                     }
+    @objc func locationPressed (_sender: Any) {
+        if let url4 = URL (string: "https://www.google.com/maps/place/Kaya+Cafe+-+Abha/@18.214023,42.490628,17z/data=!3m1!4b1!4m5!3m4!1s0x15e3550134e6ae07:0xb4b970423602d43f!8m2!3d18.214023!4d42.4928167"){
+            UIApplication.shared.open(url4)
+        }
     
     }
 }

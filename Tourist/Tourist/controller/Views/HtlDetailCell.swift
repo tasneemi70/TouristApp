@@ -140,7 +140,7 @@ class HotelDetailsCell: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     // location
     @objc func locationPressed3 (_ sender: Any) {
-        if let url3 = URL(string: "https://goo.gl/maps/Lt4jupvnPHQcJCGKA") {
+        if let url3 = URL(string: "https://www.google.com/maps/place/Bayat+Hotel/@18.2880822,42.7230027,17z/data=!3m1!4b1!4m8!3m7!1s0x15fb59ec857978bb:0xf31a83e69238b734!5m2!4m1!1i2!8m2!3d18.2880822!4d42.7251914") {
                    UIApplication.shared.open(url3)
         
 
